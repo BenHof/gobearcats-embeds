@@ -1,5 +1,5 @@
 {
- "synced_at": "2026-10-23T21:30:29+00:00",
+ "synced_at": "2026-10-23T21:42:40+00:00",
  "source": "/Users/benhofstetter/Documents/antigravity/serene-pythagoras",
  "source_branch": "codex/reconcile-herb-placement",
  "source_commit": "28a809d60a743bdf48dce591cbd80c6a369db602",
@@ -9,15 +9,15 @@
  ],
  "reviewed_bios": 230,
  "plaques_reencoded": "40 PNG to JPEG, <= 1600 px, q82",
- "total_bytes": 59230790,
+ "total_bytes": 59027959,
  "files": {
   "master_wall_plaques.json": {
    "bytes": 217064,
    "sha256": "48dad7fbc9b5d78aeb36cf197f74697e92801973c0bbdfc189dd669082815f7d"
   },
   "wall_3d.html": {
-   "bytes": 970305,
-   "sha256": "c81e17778538750975423e46a7d9600664c93a5f0da5085a1339dcf4f540165a"
+   "bytes": 970828,
+   "sha256": "290a0fa13d4ccd6ffa82962ea6c76e51d0bddde203789d7971a1adda44bcf259"
   },
   "web_assets/atlases/atlas_0_e101acb7.webp": {
    "bytes": 392632,
@@ -40,8 +40,8 @@
    "sha256": "779f43796da78fef58b32131f16557a0380e0839c7a8b5679ec16b5fd201ecf6"
   },
   "web_assets/lindner_atrium_mural.jpg": {
-   "bytes": 664074,
-   "sha256": "274e999b5d0a369e82b61f5216f0a7c2ae7579ade51936b527c1310be78087f0"
+   "bytes": 460720,
+   "sha256": "28bd965ac308384e3ff2cceb3c36fe734dd3e10d0c0c5ca8fa68520911ebc1f5"
   },
   "web_assets/plaque_crops/6387.jpg": {
    "bytes": 189654,

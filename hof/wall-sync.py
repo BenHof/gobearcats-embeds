@@ -59,6 +59,9 @@ PUBLIC_SLOT_FIELDS = ["id", "ref_num", "wall", "col", "row", "name", "sport", "p
                       "class_year", "inducted", "bio", "image", "thumb"]
 PLAQUE_DIR = "web_assets/production_plaques/"
 PLAQUE_EDGE, PLAQUE_QUALITY = 1600, 82
+# The concourse mural is the largest single file (648 KB) and downloads alongside the plaque atlases on a
+# phone; at q76 it is 449 KB at the same 2048 x 1024 size.
+MURAL, MURAL_QUALITY = "web_assets/lindner_atrium_mural.jpg", 76
 
 # Links to the 2D wall planner, which is not published.
 PLANNER_LINKS = [
@@ -118,7 +121,7 @@ EMBED_HEAD = """<style id="gobearcats-embed">
   function webgl2() { try { return !!document.createElement('canvas').getContext('webgl2'); } catch (e) { return false; } }
   function fallback(reason) {
     var s = document.getElementById('status');
-    if (!s || s.getAttribute('data-fallback') || s.classList.contains('done')) return;
+    if (!s || s.getAttribute('data-fallback') || s.classList.contains('done') || s.hasAttribute('data-scene')) return;
     s.setAttribute('data-fallback', reason);
     document.documentElement.classList.add('no3d');
     s.innerHTML = '<div class="ld-card"><div class="ld-title">The 3D wall can\\u2019t load here</div>' +
@@ -230,13 +233,31 @@ const TOUR_STOPS = [
     'A walk-on who became a two-time All-BIG EAST lineman, Kelce went on to six All-Pro selections and a Super Bowl title with the Eagles.')
 ];
 """
+# On a phone the scene is built before the five plaque atlases have downloaded (about 3 s later on 4G, 12 s on a
+# slow connection), so the wall showed rows of blank squares. The loading screen now stays up until the plaque
+# art is in, counting it down, and lifts after 20 s regardless. data-scene tells the fallback script the 3D
+# scene itself is working, so a slow download is never reported as "can't load here".
+STATUS_REVEAL = """{ const st = document.getElementById('status'), step = st.querySelector('.ld-step'), t0 = performance.now();
+  st.setAttribute('data-scene', 'ready');
+  const reveal = () => {
+    st.classList.add('done'); setTimeout(() => st.remove(), 450);
+    if (window.ucHofTrack) ucHofTrack('hof3d_loaded', { mode: document.documentElement.classList.contains('embedded') ? 'dashboard' : 'full_page', wait_ms: Math.round(performance.now() - t0) });
+  };
+  const wait = () => {
+    const n = atlasTex.filter(t => t.image).length;
+    if (n === atlasTex.length || performance.now() - t0 > 20000) return reveal();
+    if (step) step.textContent = 'Hanging the plaques\u2026 ' + Math.round(100 * n / atlasTex.length) + '%';
+    setTimeout(wait, 150);
+  };
+  wait();
+}"""
 TRACK_HOOKS = [
     ("function startTour(fromIdx = 0) {",
      "function startTour(fromIdx = 0) {\n  if (window.ucHofTrack) ucHofTrack('hof3d_tour_start', { from_stop: fromIdx + 1 });"),
     ("  if (idx < 0 || idx >= TOUR_STOPS.length) { stopTour(); return; }",
      "  if (idx < 0 || idx >= TOUR_STOPS.length) { if (idx >= TOUR_STOPS.length && window.ucHofTrack) ucHofTrack('hof3d_tour_complete'); stopTour(); return; }"),
     ("document.getElementById('status').remove();",
-     "{ const st = document.getElementById('status'); st.classList.add('done'); setTimeout(() => st.remove(), 450); }\nif (window.ucHofTrack) ucHofTrack('hof3d_loaded', { mode: document.documentElement.classList.contains('embedded') ? 'dashboard' : 'full_page' });"),
+     STATUS_REVEAL),
 ]
 # Two full-height atrium columns stand where the stairs were once they are hidden; the code cites photos
 # (CRW_3507, CRW_3515) that are not in the workspace, so their placement is unconfirmed. Hide them too.
@@ -450,6 +471,9 @@ def main():
         if a.startswith(PLAQUE_DIR) and a.lower().endswith(".png"):
             renames[a] = a[:-4] + ".jpg"
             plaque_jpeg(src, os.path.join(OUT, renames[a]))
+        elif a == MURAL:
+            os.makedirs(os.path.dirname(os.path.join(OUT, a)), exist_ok=True)
+            Image.open(src).convert("RGB").save(os.path.join(OUT, a), "JPEG", quality=MURAL_QUALITY, optimize=True, progressive=True)
         else:
             os.makedirs(os.path.dirname(os.path.join(OUT, a)), exist_ok=True)
             shutil.copy2(src, os.path.join(OUT, a))

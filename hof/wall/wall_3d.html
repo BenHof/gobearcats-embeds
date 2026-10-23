@@ -249,7 +249,7 @@
   function webgl2() { try { return !!document.createElement('canvas').getContext('webgl2'); } catch (e) { return false; } }
   function fallback(reason) {
     var s = document.getElementById('status');
-    if (!s || s.getAttribute('data-fallback') || s.classList.contains('done')) return;
+    if (!s || s.getAttribute('data-fallback') || s.classList.contains('done') || s.hasAttribute('data-scene')) return;
     s.setAttribute('data-fallback', reason);
     document.documentElement.classList.add('no3d');
     s.innerHTML = '<div class="ld-card"><div class="ld-title">The 3D wall can\u2019t load here</div>' +
@@ -9797,8 +9797,20 @@ renderTouchPanel();
 camera.position.set(OV_X, 1.7, 8.4);
 controls.target.set(OV_X, 1.3, 0);
 checkPlaqueHash();
-{ const st = document.getElementById('status'); st.classList.add('done'); setTimeout(() => st.remove(), 450); }
-if (window.ucHofTrack) ucHofTrack('hof3d_loaded', { mode: document.documentElement.classList.contains('embedded') ? 'dashboard' : 'full_page' });
+{ const st = document.getElementById('status'), step = st.querySelector('.ld-step'), t0 = performance.now();
+  st.setAttribute('data-scene', 'ready');
+  const reveal = () => {
+    st.classList.add('done'); setTimeout(() => st.remove(), 450);
+    if (window.ucHofTrack) ucHofTrack('hof3d_loaded', { mode: document.documentElement.classList.contains('embedded') ? 'dashboard' : 'full_page', wait_ms: Math.round(performance.now() - t0) });
+  };
+  const wait = () => {
+    const n = atlasTex.filter(t => t.image).length;
+    if (n === atlasTex.length || performance.now() - t0 > 20000) return reveal();
+    if (step) step.textContent = 'Hanging the plaques… ' + Math.round(100 * n / atlasTex.length) + '%';
+    setTimeout(wait, 150);
+  };
+  wait();
+}
 window._dbg = { scene, camera, controls, XI, IN };
 renderer.setAnimationLoop(frame);
 setTimeout(() => queueProbe(80), 1700);
