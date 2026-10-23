@@ -212,6 +212,20 @@
 { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/" } }
 </script>
+<style id="gobearcats-embed">
+  .band { flex-wrap:wrap; row-gap:8px; }
+  .band #search-wrap { flex:1 1 150px; min-width:150px; }
+  .hdr-ctl { flex-wrap:wrap; justify-content:flex-end; row-gap:6px; }
+  html.embedded .band .btn.studio, html.embedded .band .kicker { display:none; }
+  .stairs-toggle svg { width:18px; height:18px; display:block; }
+  .stairs-toggle.on { background:var(--red); border-color:var(--red); }
+  #mapctl > .stairs-toggle { display:inline-flex; align-items:center; justify-content:center; }
+  @media (max-width: 900px) { .hdr-ctl #stairs-btn { display:none; } }
+  @media (max-width: 1500px) and (min-width: 901px) { .band .btn.studio .long { display:none; } }
+  @media (max-width: 1280px) and (min-width: 901px) { .band .btn.studio { display:none; } .band .kicker { font-size:7.5px; letter-spacing:.08em; } .band h1 { font-size:20px; } .hdr-ctl #hl-select { max-width:192px; } .hdr-ctl #goto { max-width:150px; } }
+  @media (max-width: 1180px) and (min-width: 901px) { .band #search-wrap { min-width:120px; flex-basis:120px; } .hdr-ctl #goto { max-width:128px; } #search-wrap kbd { display:none; } .hdr-ctl #tour-btn { padding:7px 9px; } }
+</style>
+<script>try { if (window.self !== window.top) document.documentElement.classList.add('embedded'); } catch (e) { document.documentElement.classList.add('embedded'); }</script>
 </head>
 <body>
 <div id="scene"></div>
@@ -250,6 +264,7 @@
       <select id="goto" aria-label="Explore concourse views" title="Jump to any section of the Hall of Fame or concourse"></select>
       <button id="tour-btn" class="btn red" title="Take a guided tour of the James P. Kelly University of Cincinnati Athletics Hall of Fame">▶ Guided Tour</button>
       <button id="walk" class="ico" title="Auto-glide along the Hall of Fame wall (click again to stop)" aria-label="Walk along the wall"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><circle cx="13.5" cy="3.8" r="2.1"/><path d="M11 8.2 7.2 10v4.1h2v-2.8l1.7-.8-1.4 6.6-3.4 4.1 1.6 1.3 3.8-4.6.8-3 2.4 2.3V23h2v-6.6l-2.5-2.5.7-3.3 1.4 1.7h3.2v-2h-2.3l-2.1-2.7a2.1 2.1 0 0 0-2.4-.6z"/></svg></button>
+      <button id="stairs-btn" class="ico stairs-toggle" type="button" aria-pressed="false" title="Hide the stairs" aria-label="Hide the stairs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h5v-5h5v-5h5V5h3"/></svg></button>
       <button id="layers-btn" aria-expanded="false" title="View options: plaque names, labels, and on-screen controls">View ▾</button>
       <button id="spaceplan-btn" style="display:none" title="Official Archibus Level 4 floor plan &amp; architectural dimensions">Floor Plan</button>
       <a class="btn studio" href="index.html" title="Browse the searchable 2D Inductee Directory &amp; Wall Map"><span class="long">Inductee </span>Directory ↗</a>
@@ -319,7 +334,7 @@
   <label style="display:none"><input type="checkbox" data-layer="can" /> Trash can</label><label style="display:none"><input type="checkbox" data-layer="stairs" /> Concourse stairs</label>
   <div class="lh">On-Screen Controls</div>
   <label><input type="checkbox" data-layer="map" /> Floor minimap</label><label><input type="checkbox" data-layer="pad" /> Navigation pad</label><label><input type="checkbox" data-layer="legend" /> Bottom legend bar</label><label style="display:none"><input type="checkbox" data-layer="tpcard" /> Touch panel controls</label></div>
-<div id="mapctl"><button id="layers-fab" aria-expanded="false" title="View Options">View</button><button id="fs-fab" data-fs title="Full screen (F)" aria-label="Full screen">⛶</button></div>
+<div id="mapctl"><button class="stairs-toggle" type="button" aria-pressed="false" title="Hide the stairs" aria-label="Hide the stairs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h5v-5h5v-5h5V5h3"/></svg></button><button id="layers-fab" aria-expanded="false" title="View Options">View</button><button id="fs-fab" data-fs title="Full screen (F)" aria-label="Full screen">⛶</button></div>
 <div id="dock" aria-label="Move around">
   <canvas id="minimap" width="480" height="220" title="Map · click anywhere to go there"></canvas>
   <div id="pad">
@@ -9241,6 +9256,11 @@ document.getElementById('ab-btn').onclick = toggleBefore;
   let saved = false; try { saved = localStorage.getItem(KEY) === '1'; } catch (e) {}
   apply(saved);
   cb.onchange = () => { apply(cb.checked); try { localStorage.setItem(KEY, cb.checked ? '1' : '0'); } catch (e) {} }; }
+{ const btns = [...document.querySelectorAll('.stairs-toggle')], cb = document.getElementById('opt-hide-stairs');   // buttons for Hide stairs
+  const sync = () => btns.forEach(b => { const off = cb.checked; b.classList.toggle('on', off); b.setAttribute('aria-pressed', off ? 'true' : 'false');
+    b.title = off ? 'Show the stairs' : 'Hide the stairs'; b.setAttribute('aria-label', b.title); });
+  btns.forEach(b => { b.onclick = () => { cb.checked = !cb.checked; cb.dispatchEvent(new Event('change')); }; });
+  cb.addEventListener('change', sync); sync(); }
 { const cb = document.getElementById('opt-rulers'), lab = document.getElementById('opt-rulers-lab');   // the old football rulers: up or down (kept in the link)
   lab.style.display = redWall() ? '' : 'none';
   const sync = () => { cb.checked = state.noRulers; lab.classList.toggle('on', state.noRulers); };

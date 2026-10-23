@@ -22,6 +22,8 @@ Edits to the pages, each of which must apply exactly once or the run stops:
   resolves to benhof.github.io when the page runs in an iframe.
 - The 3D page accepts {type: 'uc-hof:plaque', slot} from its parent window, so "Locate on 3D
   Wall" on gobearcats.com/hof flies to a plaque without reloading the scene.
+- The 3D toolbar fits the gobearcats.com frame (and wraps rather than clipping in narrow windows),
+  and gets a stairs button for the existing Hide stairs option.
 
 wall/SOURCE.json records the source commit, any uncommitted source changes and a hash of every
 published file, so a later run can show what changed.
@@ -55,6 +57,41 @@ PUBLIC_SLOT_FIELDS = ["id", "ref_num", "wall", "col", "row", "name", "sport", "p
 MESSAGE_LISTENER = ("addEventListener('message', e => { const d = e.data; "
                     "if (e.source === parent && parent !== window && d && d.type === 'uc-hof:plaque' && SLOT[d.slot]) "
                     "selectSlot(d.slot, true); });\n")
+# The toolbar was laid out for a full browser window and ran off the right edge between 901 and about
+# 1300 px, which is where the gobearcats.com/hof frame sits. Inside that frame the dashboard already
+# names the Hall of Fame and links the directory, so those two go; narrower windows tighten the
+# controls, and below about 1100 px the controls wrap to a second row instead of being cut off.
+EMBED_HEAD = """<style id="gobearcats-embed">
+  .band { flex-wrap:wrap; row-gap:8px; }
+  .band #search-wrap { flex:1 1 150px; min-width:150px; }
+  .hdr-ctl { flex-wrap:wrap; justify-content:flex-end; row-gap:6px; }
+  html.embedded .band .btn.studio, html.embedded .band .kicker { display:none; }
+  .stairs-toggle svg { width:18px; height:18px; display:block; }
+  .stairs-toggle.on { background:var(--red); border-color:var(--red); }
+  #mapctl > .stairs-toggle { display:inline-flex; align-items:center; justify-content:center; }
+  @media (max-width: 900px) { .hdr-ctl #stairs-btn { display:none; } }
+  @media (max-width: 1500px) and (min-width: 901px) { .band .btn.studio .long { display:none; } }
+  @media (max-width: 1280px) and (min-width: 901px) { .band .btn.studio { display:none; } .band .kicker { font-size:7.5px; letter-spacing:.08em; } .band h1 { font-size:20px; } .hdr-ctl #hl-select { max-width:192px; } .hdr-ctl #goto { max-width:150px; } }
+  @media (max-width: 1180px) and (min-width: 901px) { .band #search-wrap { min-width:120px; flex-basis:120px; } .hdr-ctl #goto { max-width:128px; } #search-wrap kbd { display:none; } .hdr-ctl #tour-btn { padding:7px 9px; } }
+</style>
+<script>try { if (window.self !== window.top) document.documentElement.classList.add('embedded'); } catch (e) { document.documentElement.classList.add('embedded'); }</script>
+"""
+# The Hide stairs option survives in the build but its checkbox is hidden; these buttons drive it, so a
+# visitor can clear the staircase that stands between the camera and much of the wall. The toolbar
+# button is for desktop; phones get one in the bottom control bar, where the header has no room.
+STAIRS_SVG = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" '
+              'stroke-linejoin="round" aria-hidden="true"><path d="M3 20h5v-5h5v-5h5V5h3"/></svg>')
+STAIRS_BUTTON = ('<button id="stairs-btn" class="ico stairs-toggle" type="button" aria-pressed="false" title="Hide the stairs" '
+                 'aria-label="Hide the stairs">' + STAIRS_SVG + '</button>\n      ')
+STAIRS_FAB = ('<button class="stairs-toggle" type="button" aria-pressed="false" title="Hide the stairs" '
+              'aria-label="Hide the stairs">' + STAIRS_SVG + '</button>')
+STAIRS_ANCHOR = "cb.onchange = () => { apply(cb.checked); try { localStorage.setItem(KEY, cb.checked ? '1' : '0'); } catch (e) {} }; }"
+STAIRS_JS = """
+{ const btns = [...document.querySelectorAll('.stairs-toggle')], cb = document.getElementById('opt-hide-stairs');   // buttons for Hide stairs
+  const sync = () => btns.forEach(b => { const off = cb.checked; b.classList.toggle('on', off); b.setAttribute('aria-pressed', off ? 'true' : 'false');
+    b.title = off ? 'Show the stairs' : 'Hide the stairs'; b.setAttribute('aria-label', b.title); });
+  btns.forEach(b => { b.onclick = () => { cb.checked = !cb.checked; cb.dispatchEvent(new Event('change')); }; });
+  cb.addEventListener('change', sync); sync(); }"""
 PLAQUE_DIR = "web_assets/production_plaques/"
 PLAQUE_EDGE, PLAQUE_QUALITY = 1600, 82
 
@@ -112,6 +149,15 @@ def public_pages(texts):
                      "wall_3d.html bio link")
     hashchange = "addEventListener('hashchange', () => { if (checkPlaqueHash()) return;"
     w = replace_once(w, hashchange, MESSAGE_LISTENER + hashchange, "wall_3d.html plaque messages")
+    w = replace_once(w, "</head>", EMBED_HEAD + "</head>", "wall_3d.html embed styles")
+    w = replace_once(w, '<button id="layers-btn"', STAIRS_BUTTON + '<button id="layers-btn"', "wall_3d.html stairs button")
+    w = replace_once(w, '<button id="layers-fab"', STAIRS_FAB + '<button id="layers-fab"', "wall_3d.html phone stairs button")
+    block = w.find("KEY = 'hof-wall-hide-stairs'")
+    end = w.find(STAIRS_ANCHOR, block)
+    if block < 0 or end < 0 or w.count("KEY = 'hof-wall-hide-stairs'") != 1:
+        sys.exit("wall_3d.html stairs button code: the Hide stairs block changed; update wall-sync.py.")
+    end += len(STAIRS_ANCHOR)
+    w = w[:end] + STAIRS_JS + w[end:]
     texts["wall_3d.html"] = w
 
     x = texts["index.html"]
