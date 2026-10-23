@@ -1,0 +1,612 @@
+{
+  "reviewedAt": "2026-10-23",
+  "baseMain": "d25f293f169c1f4b64d201843f67928bf244a71d",
+  "basePullRequest": "a142a370a09f8a10ddd61f329404ea838bbd8e55",
+  "provenance": "The new gb-hof-2026-* IDs are local embed keys, not fabricated HOF database UUIDs. No generated portraits or unsupported physical-print changes.",
+  "updates": [
+    {
+      "id": "5668bd69-689b-4031-abab-7c76b6b00527",
+      "originalName": "Fred Heinhold",
+      "changes": {
+        "sports": [
+          "Football",
+          "Men's Track and Field"
+        ],
+        "sport_display": "Football, Men's Track and Field"
+      },
+      "remove": [],
+      "evidence": [
+        "https://gobearcats.com/fred-heinhold"
+      ],
+      "reason": "Correct track-and-field classification; retain legitimate additional sports. No blanket Field Hockey replacement."
+    },
+    {
+      "id": "caf71986-6559-41f8-973e-7b7a79934559",
+      "originalName": "Al Lanier",
+      "changes": {
+        "sports": [
+          "Men's Track and Field"
+        ],
+        "sport_display": "Men's Track and Field"
+      },
+      "remove": [],
+      "evidence": [
+        "https://gobearcats.com/al-lanier"
+      ],
+      "reason": "Correct track-and-field classification; retain legitimate additional sports. No blanket Field Hockey replacement."
+    },
+    {
+      "id": "0ffa7bd9-537a-4dfc-958e-5fc5783dfad3",
+      "originalName": "Jim Schnur",
+      "changes": {
+        "sports": [
+          "Men's Track and Field"
+        ],
+        "sport_display": "Men's Track and Field"
+      },
+      "remove": [],
+      "evidence": [
+        "https://gobearcats.com/jim-schnur"
+      ],
+      "reason": "Correct track-and-field classification; retain legitimate additional sports. No blanket Field Hockey replacement."
+    },
+    {
+      "id": "33c75707-1ac2-4e5d-aa57-e5579a4f33e1",
+      "originalName": "Bob Meier",
+      "changes": {
+        "sports": [
+          "Football",
+          "Men's Track and Field"
+        ],
+        "sport_display": "Football, Men's Track and Field"
+      },
+      "remove": [],
+      "evidence": [
+        "https://gobearcats.com/bob-meier"
+      ],
+      "reason": "Correct track-and-field classification; retain legitimate additional sports. No blanket Field Hockey replacement."
+    },
+    {
+      "id": "b2b6172a-c609-4003-a56f-06a83926bce7",
+      "originalName": "Kari Yli-Renko",
+      "changes": {
+        "sports": [
+          "Football",
+          "Men's Track and Field"
+        ],
+        "sport_display": "Football, Men's Track and Field"
+      },
+      "remove": [],
+      "evidence": [
+        "https://gobearcats.com/kari-yli-renko"
+      ],
+      "reason": "Correct track-and-field classification; retain legitimate additional sports. No blanket Field Hockey replacement."
+    },
+    {
+      "id": "8358fe67-341c-48a3-b9c7-c25d4f3d7f3c",
+      "originalName": "Jeff Johnson",
+      "changes": {
+        "sports": [
+          "Men's Track and Field"
+        ],
+        "sport_display": "Men's Track and Field"
+      },
+      "remove": [],
+      "evidence": [
+        "https://gobearcats.com/jeff-johnson"
+      ],
+      "reason": "Correct track-and-field classification; retain legitimate additional sports. No blanket Field Hockey replacement."
+    },
+    {
+      "id": "1a03a27c-21ac-4062-a3e9-c10697b83670",
+      "originalName": "Lewis Johnson",
+      "changes": {
+        "sports": [
+          "Men's Track and Field"
+        ],
+        "sport_display": "Men's Track and Field"
+      },
+      "remove": [],
+      "evidence": [
+        "https://gobearcats.com/lewis-johnson"
+      ],
+      "reason": "Correct track-and-field classification; retain legitimate additional sports. No blanket Field Hockey replacement."
+    },
+    {
+      "id": "42aaf804-baf1-450d-9d70-bb621fb24dcd",
+      "originalName": "Rodney Van Johnson",
+      "changes": {
+        "sports": [
+          "Men's Track and Field"
+        ],
+        "sport_display": "Men's Track and Field"
+      },
+      "remove": [],
+      "evidence": [
+        "https://gobearcats.com/rodney-van-johnson"
+      ],
+      "reason": "Correct track-and-field classification; retain legitimate additional sports. No blanket Field Hockey replacement."
+    },
+    {
+      "id": "3eca5f89-ed7f-4aaa-b3d3-7c8c09781061",
+      "originalName": "David Payne",
+      "changes": {
+        "sports": [
+          "Men's Track and Field"
+        ],
+        "sport_display": "Men's Track and Field"
+      },
+      "remove": [],
+      "evidence": [
+        "https://gobearcats.com/david-payne"
+      ],
+      "reason": "Correct track-and-field classification; retain legitimate additional sports. No blanket Field Hockey replacement."
+    },
+    {
+      "id": "b83a98bf-3028-4109-83fe-f9b294627763",
+      "originalName": "Mary Wineberg",
+      "changes": {
+        "sports": [
+          "Women's Track and Field"
+        ],
+        "sport_display": "Women's Track and Field"
+      },
+      "remove": [],
+      "evidence": [
+        "https://gobearcats.com/staff/mary-wineberg"
+      ],
+      "reason": "Correct track-and-field classification; retain legitimate additional sports. No blanket Field Hockey replacement."
+    },
+    {
+      "id": "31d36a9b-6467-44a6-bbde-ca68236e1b39",
+      "originalName": "Miriam Merrill",
+      "changes": {
+        "sports": [
+          "Women's Track and Field"
+        ],
+        "sport_display": "Women's Track and Field"
+      },
+      "remove": [],
+      "evidence": [
+        "https://gobearcats.com/news/2012/10/12/the-2012-legion-of-excellence-inductees-are-announced"
+      ],
+      "reason": "Correct track-and-field classification; retain legitimate additional sports. No blanket Field Hockey replacement."
+    },
+    {
+      "id": "b48f6015-02c7-49a6-b4d7-238358623247",
+      "originalName": "Bill Schnier",
+      "changes": {
+        "sports": [
+          "Men's Track and Field",
+          "Women's Track and Field",
+          "Men's Cross Country",
+          "Women's Cross Country"
+        ],
+        "sport_display": "Men's Track and Field, Women's Track and Field, Men's Cross Country, Women's Cross Country"
+      },
+      "remove": [],
+      "evidence": [
+        "https://gobearcats.com/news/2013/01/1/uc-track-field-did-you-know"
+      ],
+      "reason": "Correct track-and-field classification; retain legitimate additional sports. No blanket Field Hockey replacement."
+    },
+    {
+      "id": "b4cada20-972a-4ad1-b7ed-bdb5005eedf7",
+      "originalName": "Jim Stanley",
+      "changes": {
+        "sports": [
+          "Men's Track and Field",
+          "Men's Cross Country"
+        ],
+        "sport_display": "Men's Track and Field, Men's Cross Country"
+      },
+      "remove": [],
+      "evidence": [
+        "https://gobearcats.com/news/2021/08/17/2021-legion-of-excellence-honorees-announced"
+      ],
+      "reason": "Correct track-and-field classification; retain legitimate additional sports. No blanket Field Hockey replacement."
+    },
+    {
+      "id": "fe7e3d75-1f7c-4727-b2f0-7f9c2dde409b",
+      "originalName": "Kathy Klump",
+      "changes": {
+        "sports": [
+          "Women's Track and Field"
+        ],
+        "sport_display": "Women's Track and Field"
+      },
+      "remove": [],
+      "evidence": [
+        "https://gobearcats.com/news/2022/03/31/cincinnati-athletics-announces-2022-hall-of-fame-class"
+      ],
+      "reason": "Correct track-and-field classification; retain legitimate additional sports. No blanket Field Hockey replacement."
+    },
+    {
+      "id": "b27fc762-160e-4e98-84ac-1f576fe0a274",
+      "originalName": "Chris Wineberg",
+      "changes": {
+        "sports": [
+          "Men's Track and Field"
+        ],
+        "sport_display": "Men's Track and Field"
+      },
+      "remove": [],
+      "evidence": [
+        "https://gobearcats.com/news/2023/07/17/cincinnati-athletics-announces-2023-hall-of-fame-class"
+      ],
+      "reason": "Correct track-and-field classification; retain legitimate additional sports. No blanket Field Hockey replacement."
+    },
+    {
+      "id": "44da67bb-5a5e-44db-a1ee-e8153df411ad",
+      "originalName": "Annette Echikunwoke",
+      "changes": {
+        "sports": [
+          "Women's Track and Field"
+        ],
+        "sport_display": "Women's Track and Field"
+      },
+      "remove": [],
+      "evidence": [
+        "https://gobearcats.com/news/2024/8/7/general-cincinnati-athletics-announces-2024-hall-of-fame-class.aspx"
+      ],
+      "reason": "Correct track-and-field classification; retain legitimate additional sports. No blanket Field Hockey replacement."
+    },
+    {
+      "id": "c4942022-fb32-4a2b-acc0-23005678e5ca",
+      "originalName": "Ted Corbitt",
+      "changes": {
+        "sports": [
+          "Men's Track and Field"
+        ],
+        "sport_display": "Men's Track and Field"
+      },
+      "remove": [],
+      "evidence": [
+        "https://gobearcats.com/ted-corbitt"
+      ],
+      "reason": "UC primary profile identifies Track & Field, not football."
+    },
+    {
+      "id": "2527b3fb-ae13-41ed-9787-647e180d15f3",
+      "originalName": "Becky Reuhl Amann",
+      "changes": {
+        "name": "Becky Ruehl Amann",
+        "last_name": "Amann"
+      },
+      "remove": [],
+      "evidence": [
+        "https://gobearcats.com/news/2005/09/22/uc-athletic-hall-of-fame-taps-standout-pair"
+      ],
+      "reason": "Correct transposed surname spelling; preserve existing working URL."
+    },
+    {
+      "id": "0f70e339-4e96-4114-8975-6869d76d8ca1",
+      "originalName": "Bill Westerfield",
+      "changes": {
+        "name": "Bill Westerfeld",
+        "last_name": "Westerfeld"
+      },
+      "remove": [],
+      "evidence": [
+        "https://gobearcats.com/bill-westerfeld",
+        "https://gobearcats.com/cincinnati-basketball-timeline"
+      ],
+      "reason": "UC heading and historical scoring/timeline use Westerfeld."
+    },
+    {
+      "id": "b16eef9f-b382-49ea-a2d9-4bce83c6ef23",
+      "originalName": "Angie Trostel",
+      "changes": {
+        "name": "Angie Trostel",
+        "last_name": "Trostel"
+      },
+      "remove": [],
+      "evidence": [
+        "https://gobearcats.com/news/2006/10/20/uc-athletics-hall-of-fame-taps-three"
+      ],
+      "reason": "Normalize the five older variants that still spell Trostle."
+    },
+    {
+      "id": "b83a98bf-3028-4109-83fe-f9b294627763",
+      "originalName": "Mary Wineberg",
+      "changes": {
+        "bio": "Cincinnati sprinter Mary Wineberg won an Olympic gold medal with the United States 4x400-meter relay team in Beijing in 2008. A 2002 UC education graduate, she set a Bearcats 400-meter record during her collegiate career and was selected for the UC Athletics Hall of Fame Class of 2010."
+      },
+      "remove": [],
+      "evidence": [
+        "https://gobearcats.com/staff/mary-wineberg"
+      ],
+      "reason": "Replace stale present-tense coaching/training-for-2012 roster prose with a historical summary."
+    },
+    {
+      "id": "21790911-cc86-4a8c-a688-76b0bc56d4c7",
+      "originalName": "Maria Vitazka (Oberg)",
+      "changes": {
+        "bio": "Cincinnati swimmer Maria Oberg earned five NCAA All-America honors and was named to Conference USA's All-Decade Team. She was inducted into the UC Athletics Hall of Fame in 2015."
+      },
+      "remove": [],
+      "evidence": [
+        "https://gobearcats.com/news/2005/02/22/three-bearcats-earn-all-decade-recognition",
+        "https://gobearcats.com/news/2015/10/30/bearcats-sweep-jaguars-at-alumni-meet"
+      ],
+      "reason": "Replace unrelated excerpt about her husband's family with an athlete-focused historical summary."
+    },
+    {
+      "id": "d35ed664-7b2f-4ff9-a84c-69a36411bf69",
+      "originalName": "Jim Herman",
+      "changes": {
+        "bio": "Jim Herman played golf for Cincinnati from 1996 to 2000 and was inducted into the UC Athletics Hall of Fame in 2015. His PGA Tour victories include the 2016 Shell Houston Open, the 2019 Barbasol Championship and the 2020 Wyndham Championship."
+      },
+      "remove": [],
+      "evidence": [
+        "https://gobearcats.com/news/2021/04/07/jim-herman-plays-in-second-masters-tournament-this-week"
+      ],
+      "reason": "Replace expired 2020 current-tense ranking/exemption/next-Masters copy with dated accomplishments."
+    },
+    {
+      "id": "91d2f56a-ae69-4bd6-b089-29f2aec5b03f",
+      "originalName": "Boyd Chambers",
+      "changes": {
+        "bio": "Recognized as UC's first Athletics Director, assuming the position in 1918 until 1928. Also served as basketball coach (1918-28), amassing a 106-81 record and winning Buckeye Athletic Association titles in 1926 and 1928. Was head football coach 1918-21, compiling a 12-15-2 record in four seasons. Under his leadership, UC's athletics department emerged from a one-person operation to an eight-person full-time staff. Inaugurated the sales of basketball season tickets, putting that sport on a sound financial base. UC Athletic Hall of Fame 1977."
+      },
+      "remove": [],
+      "evidence": [
+        "https://gobearcats.com/boyd-chambers"
+      ],
+      "reason": "Correct unambiguous typographical error."
+    },
+    {
+      "id": "06c405b8-bc9e-4fc8-b7f3-3fdd59b18447",
+      "originalName": "Jack Twyman",
+      "changes": {
+        "bio": "Persistence--he was cut from his high school team three times--not only landed him a spot on the varsity as a senior but launched a career that took him to college and professional stardom and a place in the National Basketball Hall of Fame. Impressive play on the junior varsity earned him a berth on the varsity midway through his freshman season at UC. Led the team in scoring and rebounding in each of his final three seasons, averaging 24.6 points and 16.5 rebounds as a senior. Concluded his career as UC's all-time leader in scoring (1,598 points) and rebounding (1,242). Earned second team All-American honors in 1955 (NEA, International News Service, Tempo) and was an honorable mention choice by Converse. Taken by the Rochester Royals in the 1955 NBA draft, embarking on an 11-season NBA career. Earned six NBA All-Star selections in 11 seasons and finished second in league scoring with a 31.2-point average in 1959-60. Became the legal guardian of Royals teammate Maurice Stokes following his disabling injury in 1958 and helped raise money for Stokes' care. Charter member of the UC Athletics Hall of Fame. Enshrined in the Naismith Memorial Basketball Hall of Fame in 1983. His jersey No. 27 was retired by UC in 1993."
+      },
+      "remove": [],
+      "evidence": [
+        "https://gobearcats.com/jack-twyman",
+        "https://pr.nba.com/vince-carter-teammate-of-the-year-award/",
+        "https://www.hoophall.com/hall-of-famers/jack-twyman"
+      ],
+      "reason": "Correct duplicate wording and facts contradicted by NBA and Naismith Hall records: 1959-60 scoring runner-up and 1983 enshrinement. Remove stale current-rank claim and inaccurate injury description."
+    },
+    {
+      "id": "caf71986-6559-41f8-973e-7b7a79934559",
+      "originalName": "Al Lanier",
+      "changes": {
+        "bio": "One of UC's track and field all-time greats who garnered a total of five All-American awards. First Bearcat track athlete to qualify for the NCAA Championships in all four seasons, competing in both the long jump and triple jump at the outdoor championships. Earned All-American honors as a junior with a third place finish in the triple jump. Capped his career by capturing All-American plaudits in both the long jump (second place) and triple jump (sixth) as a senior. Also qualified for the NCAA Indoor Championships in the long jump and triple jump his junior and senior campaigns, garnering All-American honors each year in the triple jump. Closed his career holding UC records in both the long jump (26'1 1/2\") and triple jump (55'6 1/2\"). Narrowly missed earning a berth on the U.S. Olympic Team at the 1972 Trials. Competed on the U.S. Army team that made a tour of China in 1975. UC Athletic Hall of Fame 1988."
+      },
+      "remove": [],
+      "evidence": [
+        "https://gobearcats.com/al-lanier"
+      ],
+      "reason": "Correct unambiguous copy errors; preserve unreviewed statistics."
+    },
+    {
+      "id": "1a03a27c-21ac-4062-a3e9-c10697b83670",
+      "originalName": "Lewis Johnson",
+      "changes": {
+        "bio": "Originally joined the track and field team as a walk-on during his sophomore season and quickly blossomed into one of the team's top point-scorers, specializing in the 400 and 800 meter events. Team captain his junior and senior seasons. Capped his career with an eighth place finish in the 800 at the 1987 NCAA Outdoor Championships, posting a school-record time of 1:47.00. UC Athletic Hall of Fame 1999."
+      },
+      "remove": [],
+      "evidence": [
+        "https://gobearcats.com/lewis-johnson"
+      ],
+      "reason": "Remove corrupted event-distance sentence rather than invent a replacement distance."
+    },
+    {
+      "id": "a95ffe3e-307f-4026-b969-b45637a75c7b",
+      "originalName": "1962-63 Men's Basketball Team",
+      "changes": {
+        "name": "1960-61 Men's Basketball Team",
+        "last_name": "Team",
+        "bio": "Cincinnati's 1960-61 men's basketball team finished 27-3 and defeated Ohio State 70-65 to win the program's first NCAA championship. The team was selected for induction into the UC Athletics Hall of Fame in 2011.",
+        "gb_url": "https://gobearcats.com/news/2011/08/17/2011-james-p-kelly-uc-athletics-hall-of-fame-class-announced",
+        "gb_url_type": "class_article",
+        "current_gb_url": "https://gobearcats.com/news/2011/08/17/2011-james-p-kelly-uc-athletics-hall-of-fame-class-announced",
+        "current_gb_url_type": "class_article",
+        "image_status": "not_sourced",
+        "bio_source_type": "gobearcats_class_announcement",
+        "bio_source_urls": [
+          "https://gobearcats.com/news/2011/08/17/2011-james-p-kelly-uc-athletics-hall-of-fame-class-announced"
+        ],
+        "bio_enhanced_at": "2026-10-23"
+      },
+      "remove": [
+        "image_url",
+        "image_source",
+        "image_credit"
+      ],
+      "evidence": [
+        "https://gobearcats.com/news/2011/08/17/2011-james-p-kelly-uc-athletics-hall-of-fame-class-announced"
+      ],
+      "reason": "The original 2011 announcement names the 1960-61 team. Remove the misidentified 1962-63 team photograph instead of reusing it."
+    },
+    {
+      "id": "f76ffd36-84c8-45af-9695-e7478a5be24b",
+      "originalName": "1961-62 Men's Basketball Team",
+      "changes": {
+        "bio": "Cincinnati's 1961-62 men's basketball team won the 1962 NCAA championship, the program's second consecutive national title under Ed Jucker. UC's 2012 induction announcement identifies this championship team as a Hall of Fame inductee.",
+        "gb_url": "https://gobearcats.com/news/2012/10/12/the-2012-legion-of-excellence-inductees-are-announced",
+        "gb_url_type": "class_article",
+        "current_gb_url": "https://gobearcats.com/news/2012/10/12/the-2012-legion-of-excellence-inductees-are-announced",
+        "current_gb_url_type": "class_article"
+      },
+      "remove": [],
+      "evidence": [
+        "https://gobearcats.com/news/2012/10/12/the-2012-legion-of-excellence-inductees-are-announced"
+      ],
+      "reason": "Separate the 1962 championship team from the prior season instead of merging both teams' biographies."
+    }
+  ],
+  "additions": [
+    {
+      "id": "gb-hof-2026-connor-barwin",
+      "name": "Connor Barwin",
+      "last_name": "Barwin",
+      "initial": "B",
+      "sports": [
+        "Football",
+        "Men's Basketball"
+      ],
+      "sport_display": "Football, Men's Basketball",
+      "category": "Athlete",
+      "year": 2026,
+      "decade": "2020s",
+      "position": "",
+      "bio": "Football and basketball letterwinner Connor Barwin earned first-team All-BIG EAST football honors in 2008 and joined UC's Hall of Fame Class of 2026.",
+      "gb_url": "https://gobearcats.com/news/2026/07/1/connor-barwin-earns-cincinnati-athletics-hall-of-fame-nod",
+      "gb_url_type": "class_article",
+      "current_gb_url": "https://gobearcats.com/news/2026/07/1/connor-barwin-earns-cincinnati-athletics-hall-of-fame-nod",
+      "current_gb_url_type": "class_article",
+      "image_status": "not_sourced"
+    },
+    {
+      "id": "gb-hof-2026-loretta-blaut",
+      "name": "Loretta Blaut",
+      "last_name": "Blaut",
+      "initial": "B",
+      "sports": [
+        "Women's Track and Field"
+      ],
+      "sport_display": "Women's Track and Field",
+      "category": "Athlete",
+      "year": 2026,
+      "decade": "2020s",
+      "position": "",
+      "bio": "High jumper Loretta Blaut earned six All-America honors and finished second at both NCAA championships in 2018. She joined UC's Hall of Fame Class of 2026.",
+      "gb_url": "https://gobearcats.com/news/2026/06/15/high-jumper-loretta-blaut-selected-for-the-cincinnati-athletics-hall-of-fame",
+      "gb_url_type": "class_article",
+      "current_gb_url": "https://gobearcats.com/news/2026/06/15/high-jumper-loretta-blaut-selected-for-the-cincinnati-athletics-hall-of-fame",
+      "current_gb_url_type": "class_article",
+      "image_status": "not_sourced"
+    },
+    {
+      "id": "gb-hof-2026-christy-hoffman",
+      "name": "Christy Hoffman",
+      "last_name": "Hoffman",
+      "initial": "H",
+      "sports": [
+        "Women's Soccer"
+      ],
+      "sport_display": "Women's Soccer",
+      "category": "Athlete",
+      "year": 2026,
+      "decade": "2020s",
+      "position": "",
+      "bio": "Goalkeeper Christy Hoffman helped Cincinnati reach the 2001 NCAA Sweet Sixteen and earned Conference USA Defender of the Year honors. She joined UC's Hall of Fame Class of 2026.",
+      "gb_url": "https://gobearcats.com/news/2026/06/17/standout-goalkeeper-christy-hoffman-selected-for-the-cincinnati-athletics-hall-of-fame",
+      "gb_url_type": "class_article",
+      "current_gb_url": "https://gobearcats.com/news/2026/06/17/standout-goalkeeper-christy-hoffman-selected-for-the-cincinnati-athletics-hall-of-fame",
+      "current_gb_url_type": "class_article",
+      "image_status": "not_sourced"
+    },
+    {
+      "id": "gb-hof-2026-bob-huggins",
+      "name": "Bob Huggins",
+      "last_name": "Huggins",
+      "initial": "H",
+      "sports": [
+        "Men's Basketball"
+      ],
+      "sport_display": "Men's Basketball",
+      "category": "Coach",
+      "year": 2026,
+      "decade": "2020s",
+      "position": "",
+      "bio": "Bob Huggins coached Cincinnati men's basketball from 1989 to 2005 and led the Bearcats to the 1992 Final Four. He joined UC's Hall of Fame Class of 2026.",
+      "gb_url": "https://gobearcats.com/news/2026/06/10/bob-huggins-set-to-be-inducted-into-cincinnati-athletics-hall-of-fame",
+      "gb_url_type": "class_article",
+      "current_gb_url": "https://gobearcats.com/news/2026/06/10/bob-huggins-set-to-be-inducted-into-cincinnati-athletics-hall-of-fame",
+      "current_gb_url_type": "class_article",
+      "image_status": "not_sourced"
+    },
+    {
+      "id": "gb-hof-2026-jason-kelce",
+      "name": "Jason Kelce",
+      "last_name": "Kelce",
+      "initial": "K",
+      "sports": [
+        "Football"
+      ],
+      "sport_display": "Football",
+      "category": "Athlete",
+      "year": 2026,
+      "decade": "2020s",
+      "position": "",
+      "bio": "Former walk-on Jason Kelce became a two-time All-BIG EAST offensive lineman and helped Cincinnati reach two BCS bowls. He joined UC's Hall of Fame Class of 2026.",
+      "gb_url": "https://gobearcats.com/news/2026/08/13/jason-kelce-selected-for-cincinnati-athletics-50th-anniversary-hall-of-fame-class",
+      "gb_url_type": "class_article",
+      "current_gb_url": "https://gobearcats.com/news/2026/08/13/jason-kelce-selected-for-cincinnati-athletics-50th-anniversary-hall-of-fame-class",
+      "current_gb_url_type": "class_article",
+      "image_status": "not_sourced"
+    },
+    {
+      "id": "gb-hof-2026-mike-kinnett",
+      "name": "Mike Kinnett",
+      "last_name": "Kinnett",
+      "initial": "K",
+      "sports": [
+        "Baseball"
+      ],
+      "sport_display": "Baseball",
+      "category": "Athlete",
+      "year": 2026,
+      "decade": "2020s",
+      "position": "",
+      "bio": "First baseman Mike Kinnett was a two-time all-conference selection and finished his UC career with a .372 batting average. He joined the Hall of Fame Class of 2026.",
+      "gb_url": "https://gobearcats.com/news/2026/06/23/mike-kinnett-selected-for-cincinnati-athletics-hall-of-fame",
+      "gb_url_type": "class_article",
+      "current_gb_url": "https://gobearcats.com/news/2026/06/23/mike-kinnett-selected-for-cincinnati-athletics-hall-of-fame",
+      "current_gb_url_type": "class_article",
+      "image_status": "not_sourced"
+    },
+    {
+      "id": "gb-hof-2026-wayne-mason",
+      "name": "Wayne Mason",
+      "last_name": "Mason",
+      "initial": "M",
+      "sports": [
+        "Men's Track and Field"
+      ],
+      "sport_display": "Men's Track and Field",
+      "category": "Athlete",
+      "year": 2026,
+      "decade": "2020s",
+      "position": "",
+      "bio": "All-American hurdler Wayne Mason competed for Cincinnati from 1977 to 1980 and joined UC's Hall of Fame Class of 2026.",
+      "gb_url": "https://gobearcats.com/news/2026/06/25/hurdler-wayne-mason-selected-for-the-cincinnati-athletics-hall-of-fame",
+      "gb_url_type": "class_article",
+      "current_gb_url": "https://gobearcats.com/news/2026/06/25/hurdler-wayne-mason-selected-for-the-cincinnati-athletics-hall-of-fame",
+      "current_gb_url_type": "class_article",
+      "image_status": "not_sourced"
+    }
+  ],
+  "additionsEvidence": [
+    "https://gobearcats.com/news/2026/08/13/jason-kelce-selected-for-cincinnati-athletics-50th-anniversary-hall-of-fame-class"
+  ],
+  "preserveFieldHockey": [
+    "Monica Nolan",
+    "Carol Brestel",
+    "Olga Weil",
+    "Erma Farrel",
+    "Pat Murray Shibinski"
+  ],
+  "holds": [
+    {
+      "subject": "Joe Morrison / John Pease / Sid Gillman",
+      "reason": "Official profile induction metadata conflict with biography closing dates. Existing metadata and text retained until archival evidence resolves them."
+    },
+    {
+      "subject": "Jonathan Ruffin",
+      "reason": "Original 2011 announcement and profile support retaining 2011; 2012 announcement repeats him. No arbitrary year change."
+    },
+    {
+      "subject": "Final banner / plaques",
+      "reason": "No final editable proof inspected. Foam core cleared by Ben; pull-up banner reported wrong. Work-order year references alone do not authorize rewriting final print art."
+    },
+    {
+      "subject": "Other generic search links / generated fallback images",
+      "reason": "No invented destination or portrait replacement. Resolve source identity separately."
+    }
+  ]
+}
