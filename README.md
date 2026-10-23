@@ -26,7 +26,7 @@ V7 reads `window.UC_HOF_WALL_BASE` when set, so a local copy can be tested befor
 
 ## Current publication boundary
 
-On October 23, 2026, the inline script on <https://gobearcats.com/hof> matched the **main-branch V6 source** at commit `d25f293f169c1f4b64d201843f67928bf244a71d`, with one leading newline. The public page contained 222 records, ending with the 2025 class. Updating this repository does **not** replace an inline copy already saved in WMT.
+On October 23, 2026 (about 4:47 pm ET), page 8381 (<https://gobearcats.com/hof>) was switched to **V7** (`hof/uc-hof-dashboard.v7-inline.js`), replacing V6 at commit `d984999` that had been published at 2:14 pm. WMT page 9591 (<https://gobearcats.com/hof-wall>) was published with `hof/uc-hof-wall-page.inline.js`. Backups of each prior state are in the LLM Wiki under `outputs/HOF-3DWall/wmt/`. Updating this repository does **not** replace an inline copy already saved in WMT; the 3D wall itself (`hof/wall/`) is served from GitHub Pages and updates on push.
 
 The reviewed content update supplies 229 records across all six variants. It changes the DATA payload, derived filter dictionaries and one profile-preview guard. The guard prevents class articles, search results and explicitly unsourced portraits from supplying an unrelated image or overriding individual metadata. HTML, CSS and all other runtime code remain unchanged. See [the correction manifest](hof/content-review-2026-10-23.json) for per-record changes and official evidence, including unresolved source conflicts.
 

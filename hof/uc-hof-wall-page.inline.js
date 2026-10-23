@@ -2,7 +2,8 @@
   'use strict';
 
   // gobearcats.com/hof-wall: the 3D Hall of Fame wall filling the window, with the site header,
-  // schedule ticker and footer hidden. A #plaque=<slot_id> link opens on that plaque.
+  // schedule ticker and footer hidden. A #plaque=<slot_id> link opens on that plaque. The layer sits
+  // under the site's cookie consent banner so visitors can still answer it.
   // Mount: <div id="uc-hof-wall-root"></div> in a Full Width Paragraph block on the same page.
   const ROOT_ID = 'uc-hof-wall-root';
   const WALL_ORIGIN = 'https://benhof.github.io';
@@ -13,7 +14,7 @@
     'body:has(#' + ROOT_ID + ') .schedule-ticker-mobile,' +
     'body:has(#' + ROOT_ID + ') footer{display:none!important}' +
     'html:has(#' + ROOT_ID + '),body:has(#' + ROOT_ID + '){overflow:hidden!important}' +
-    '#' + ROOT_ID + '{position:fixed;inset:0;z-index:2147483000;background:#0a0b0d}' +
+    '#' + ROOT_ID + '{position:fixed;inset:0;z-index:1000;background:#0a0b0d}' +
     '#' + ROOT_ID + ' iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}';
 
   function plaqueHash() {
