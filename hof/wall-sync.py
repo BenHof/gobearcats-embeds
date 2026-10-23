@@ -26,7 +26,8 @@ Edits to the page, each of which must apply exactly once or the run stops:
   on gobearcats.com/hof flies to a plaque without reloading the scene.
 - Inside the gobearcats.com frame the page drops its own brand row (the dashboard hero above it
   names the Hall of Fame), the toolbar fits instead of running off the right edge, phones keep the
-  plaque in view above its details panel, and a stairs button drives the existing Hide stairs option.
+  plaque in view above its details panel, and a stairs button drives the existing Hide stairs option
+  (hiding the two atrium columns as well). Share links point at gobearcats.com/hof-wall, the full-window page.
 
 wall/SOURCE.json records the source commit, any uncommitted source changes and a hash of every
 published file, so a later run can show what changed.
@@ -73,6 +74,7 @@ PLANNER_LINKS = [
 MESSAGE_LISTENER = ("addEventListener('message', e => { const d = e.data; "
                     "if (e.source === parent && parent !== window && d && d.type === 'uc-hof:plaque' && SLOT[d.slot]) "
                     "selectSlot(d.slot, true); });\n")
+# gobearcats.com/hof-wall frames the page full window with ?full=1, so it keeps its own header there.
 # The toolbar was laid out for a full browser window: it ran off the right edge between 901 and about
 # 1300 px, and took three rows on a phone. Inside the gobearcats.com frame the dashboard hero already
 # names the Hall of Fame, so the brand row goes; narrower windows tighten the controls and wrap below
@@ -92,7 +94,7 @@ EMBED_HEAD = """<style id="gobearcats-embed">
   @media (max-width: 1280px) and (min-width: 901px) { .band .kicker { font-size:7.5px; letter-spacing:.08em; } .band h1 { font-size:20px; } .hdr-ctl #hl-select { max-width:192px; } .hdr-ctl #goto { max-width:150px; } }
   @media (max-width: 1180px) and (min-width: 901px) { .band #search-wrap { min-width:120px; flex-basis:120px; } .hdr-ctl #goto { max-width:128px; } #search-wrap kbd { display:none; } .hdr-ctl #tour-btn { padding:7px 9px; } }
 </style>
-<script>try { if (window.self !== window.top) document.documentElement.classList.add('embedded'); } catch (e) { document.documentElement.classList.add('embedded'); }</script>
+<script>try { if (window.self !== window.top && !/[?&]full=1/.test(location.search)) document.documentElement.classList.add('embedded'); } catch (e) { document.documentElement.classList.add('embedded'); }</script>
 """
 # The Hide stairs option survives in the build but its checkbox is hidden; these buttons drive it, so a
 # visitor can clear the staircase that stands between the camera and much of the wall. The toolbar
@@ -106,8 +108,9 @@ STAIRS_FAB = ('<button class="stairs-toggle" type="button" aria-pressed="false" 
 STAIRS_ANCHOR = "cb.onchange = () => { apply(cb.checked); try { localStorage.setItem(KEY, cb.checked ? '1' : '0'); } catch (e) {} }; }"
 STAIRS_JS = """
 { const btns = [...document.querySelectorAll('.stairs-toggle')], cb = document.getElementById('opt-hide-stairs');   // buttons for Hide stairs
-  const sync = () => btns.forEach(b => { const off = cb.checked; b.classList.toggle('on', off); b.setAttribute('aria-pressed', off ? 'true' : 'false');
-    b.title = off ? 'Show the stairs' : 'Hide the stairs'; b.setAttribute('aria-label', b.title); });
+  const cols = []; scene.traverse(o => { if (o.name === 'atriumColumn') cols.push(o); });   // the atrium columns go with the stairs
+  const sync = () => { cols.forEach(o => { o.visible = !cb.checked; }); btns.forEach(b => { const off = cb.checked; b.classList.toggle('on', off); b.setAttribute('aria-pressed', off ? 'true' : 'false');
+    b.title = off ? 'Show the stairs' : 'Hide the stairs'; b.setAttribute('aria-label', b.title); }); };
   btns.forEach(b => { b.onclick = () => { cb.checked = !cb.checked; cb.dispatchEvent(new Event('change')); }; });
   cb.addEventListener('change', sync); sync(); }
 { const side = document.getElementById('side'), top = document.querySelector('.top');   // phones: keep the plaque above the details panel
@@ -119,6 +122,13 @@ STAIRS_JS = """
   };
   new MutationObserver(fit).observe(side, { attributes: true, attributeFilter: ['style'] });
   addEventListener('resize', () => requestAnimationFrame(fit)); }"""
+# Two full-height atrium columns stand where the stairs were once they are hidden; the code cites photos
+# (CRW_3507, CRW_3515) that are not in the workspace, so their placement is unconfirmed. Hide them too.
+COLUMN_ANCHOR = "    colMesh.receiveShadow = true;\n    atriumGroup.add(colMesh);"
+COLUMN_NAMED = "    colMesh.receiveShadow = true;\n    colMesh.name = 'atriumColumn';\n    atriumGroup.add(colMesh);"
+# The share button copied this page's own address; visitors should get the gobearcats.com page instead.
+SHARE_URL = ("const url = `${location.origin}${location.pathname}#plaque=${encodeURIComponent(copyBtn.dataset.slot)}`;",
+             "const url = `https://gobearcats.com/hof-wall#plaque=${encodeURIComponent(copyBtn.dataset.slot)}`;")
 SEARCH_PLACEHOLDER = ('placeholder="Find a Bearcat legend, sport, or class year…"', 'placeholder="Search inductees…"')
 
 
@@ -196,6 +206,8 @@ def public_page(w, bios):
         sys.exit("wall_3d.html still links to the 2D planner or docs/ after the edits.")
     w = replace_once(w, '<span class="hof-pill">231 Legends</span>', '', "231 Legends label")
     w = replace_once(w, *SEARCH_PLACEHOLDER, "search placeholder")
+    w = replace_once(w, COLUMN_ANCHOR, COLUMN_NAMED, "atrium columns")
+    w = replace_once(w, *SHARE_URL, "share link")
     w = replace_once(w, 'href="/inductee/${slug}"', 'href="https://hof.gobearcats.ai/inductee/${slug}"', "bio link")
     hashchange = "addEventListener('hashchange', () => { if (checkPlaqueHash()) return;"
     w = replace_once(w, hashchange, MESSAGE_LISTENER + hashchange, "plaque messages")

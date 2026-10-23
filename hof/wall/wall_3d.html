@@ -226,7 +226,7 @@
   @media (max-width: 1280px) and (min-width: 901px) { .band .kicker { font-size:7.5px; letter-spacing:.08em; } .band h1 { font-size:20px; } .hdr-ctl #hl-select { max-width:192px; } .hdr-ctl #goto { max-width:150px; } }
   @media (max-width: 1180px) and (min-width: 901px) { .band #search-wrap { min-width:120px; flex-basis:120px; } .hdr-ctl #goto { max-width:128px; } #search-wrap kbd { display:none; } .hdr-ctl #tour-btn { padding:7px 9px; } }
 </style>
-<script>try { if (window.self !== window.top) document.documentElement.classList.add('embedded'); } catch (e) { document.documentElement.classList.add('embedded'); }</script>
+<script>try { if (window.self !== window.top && !/[?&]full=1/.test(location.search)) document.documentElement.classList.add('embedded'); } catch (e) { document.documentElement.classList.add('embedded'); }</script>
 </head>
 <body>
 <div id="scene"></div>
@@ -2556,6 +2556,7 @@ ceiling([[-860, 135], onArc(arcDegAtZ(135)), ...arcPts(arcDegAtZ(135), arcDegAtX
     colMesh.position.set(cp.x, yRoof / 2, cp.z);
     colMesh.castShadow = true;
     colMesh.receiveShadow = true;
+    colMesh.name = 'atriumColumn';
     atriumGroup.add(colMesh);
   });
 
@@ -8909,7 +8910,7 @@ sideBody.addEventListener('click', e => {
   if (gotoBtn) { selectSlot(gotoBtn.dataset.gotoSlot, true); return; }
   const copyBtn = e.target.closest('#copy-3d-link');
   if (copyBtn) {
-    const url = `${location.origin}${location.pathname}#plaque=${encodeURIComponent(copyBtn.dataset.slot)}`;
+    const url = `https://gobearcats.com/hof-wall#plaque=${encodeURIComponent(copyBtn.dataset.slot)}`;
     navigator.clipboard?.writeText(url);
     copyBtn.textContent = '✓ Plaque Link Copied!';
     toast('Plaque link copied to clipboard');
@@ -9256,8 +9257,9 @@ document.getElementById('ab-btn').onclick = toggleBefore;
   apply(saved);
   cb.onchange = () => { apply(cb.checked); try { localStorage.setItem(KEY, cb.checked ? '1' : '0'); } catch (e) {} }; }
 { const btns = [...document.querySelectorAll('.stairs-toggle')], cb = document.getElementById('opt-hide-stairs');   // buttons for Hide stairs
-  const sync = () => btns.forEach(b => { const off = cb.checked; b.classList.toggle('on', off); b.setAttribute('aria-pressed', off ? 'true' : 'false');
-    b.title = off ? 'Show the stairs' : 'Hide the stairs'; b.setAttribute('aria-label', b.title); });
+  const cols = []; scene.traverse(o => { if (o.name === 'atriumColumn') cols.push(o); });   // the atrium columns go with the stairs
+  const sync = () => { cols.forEach(o => { o.visible = !cb.checked; }); btns.forEach(b => { const off = cb.checked; b.classList.toggle('on', off); b.setAttribute('aria-pressed', off ? 'true' : 'false');
+    b.title = off ? 'Show the stairs' : 'Hide the stairs'; b.setAttribute('aria-label', b.title); }); };
   btns.forEach(b => { b.onclick = () => { cb.checked = !cb.checked; cb.dispatchEvent(new Event('change')); }; });
   cb.addEventListener('change', sync); sync(); }
 { const side = document.getElementById('side'), top = document.querySelector('.top');   // phones: keep the plaque above the details panel

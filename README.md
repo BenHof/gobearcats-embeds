@@ -7,6 +7,7 @@ Static assets loaded by Custom Script blocks on gobearcats.com (WMT CMS).
 - `hof/uc-hof-dashboard.v3-inline.js` — V3 with the hydration-safe mount loop; previously documented as the script pasted into page 8381.
 - `hof/uc-hof-dashboard.v4-inline.js`, `v5-inline.js`, `v6-inline.js` — later inline variants.
 - `hof/uc-hof-dashboard.v7-inline.js` — V6 content plus the 3D wall: Inductee Directory / 3D Virtual Wall tabs, and an "On the Wall" block in each inductee drawer with a Locate on 3D Wall button. On its page it removes the block's margins and unpins the site header.
+- `hof/uc-hof-wall-page.inline.js` — the script on gobearcats.com/hof-wall (WMT page 9591): the 3D wall full window, with the site header, ticker and footer hidden. V7's "open in a new tab" link and the 3D page's Share Plaque button point there, so visitors never see the GitHub Pages address.
 - `hof/wall/` — the public 3D wall (`wall_3d.html`), its plaque images and `master_wall_plaques.json` (public fields), served at <https://benhof.github.io/gobearcats-embeds/hof/wall/>.
 
 ## The 3D wall

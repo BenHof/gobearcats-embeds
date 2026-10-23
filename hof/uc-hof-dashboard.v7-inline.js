@@ -47,7 +47,7 @@
     if (document.getElementById('uc-hof-page-css')) return;
     const s = document.createElement('style');
     s.id = 'uc-hof-page-css';
-    s.textContent = ".full-width-paragraph:has(#uc-hof-dashboard-root){margin:0!important}.full-width-paragraph__container:has(#uc-hof-dashboard-root){padding:0!important;max-width:none!important}body:has(#uc-hof-dashboard-root) header.header{position:relative!important;top:auto!important}";
+    s.textContent = ".full-width-paragraph:has(#uc-hof-dashboard-root){margin:0!important}.full-width-paragraph__container:has(#uc-hof-dashboard-root){padding:0!important;max-width:none!important}body:has(#uc-hof-dashboard-root) header.header{position:relative!important;top:auto!important}body:has(#uc-hof-dashboard-root) .schedule-ticker-desktop{display:none!important}body:has(#uc-hof-dashboard-root) footer > .content-blocks--default:has(> .sponsors){display:none!important}";
     document.head.appendChild(s);
   }
 
@@ -508,15 +508,17 @@
       const overlay = root.getElementById('overlay');
       let activeDrawerId = null;
 
-      // The 3D wall lives on GitHub Pages and loads in an iframe on first view.
+      // The 3D wall lives on GitHub Pages and loads in an iframe on first view; "new tab" opens
+      // gobearcats.com/hof-wall, which frames the same page full window.
       const WALL_BASE = String(window.UC_HOF_WALL_BASE || 'https://benhof.github.io/gobearcats-embeds/hof/wall/').replace(/\/?$/, '/');
       const WALL_PAGE = WALL_BASE + 'wall_3d.html';
+      const FULL_PAGE = 'https://gobearcats.com/hof-wall';
       const viewTabs = Array.from(root.querySelectorAll('[data-view-tab]'));
       const viewPanels = Array.from(root.querySelectorAll('[data-view]'));
       const frame3d = root.getElementById('frame3d');
       let wallLoaded = false;
 
-      root.getElementById('open3d').href = WALL_PAGE;
+      root.getElementById('open3d').href = FULL_PAGE;
 
       frame3d.addEventListener('load', () => {
         wallLoaded = true;
@@ -570,7 +572,7 @@
         } else {
           frame3d.src = WALL_PAGE + hash;
         }
-        root.getElementById('open3d').href = WALL_PAGE + hash;
+        root.getElementById('open3d').href = FULL_PAGE + hash;
         showView('3d');
         requestAnimationFrame(scrollToTabs);
       }
