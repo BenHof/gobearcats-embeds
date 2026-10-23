@@ -135,6 +135,9 @@ STAIRS_BUTTON = ('<button id="stairs-btn" class="ico stairs-toggle" type="button
                  'aria-label="Hide the stairs">' + STAIRS_SVG + '</button>\n      ')
 STAIRS_FAB = ('<button class="stairs-toggle" type="button" aria-pressed="false" title="Hide the stairs" '
               'aria-label="Hide the stairs">' + STAIRS_SVG + '</button>')
+# The stairs start hidden so the wall is in view; a visitor who shows them is remembered ('0').
+STAIRS_DEFAULT = "let saved = false; try { saved = localStorage.getItem(KEY) === '1'; } catch (e) {}"
+STAIRS_DEFAULT_HIDDEN = "let saved = true; try { saved = localStorage.getItem(KEY) !== '0'; } catch (e) {}"
 STAIRS_ANCHOR = "cb.onchange = () => { apply(cb.checked); try { localStorage.setItem(KEY, cb.checked ? '1' : '0'); } catch (e) {} }; }"
 STAIRS_JS = """
 { const btns = [...document.querySelectorAll('.stairs-toggle')], cb = document.getElementById('opt-hide-stairs');   // buttons for Hide stairs
@@ -372,6 +375,10 @@ def public_page(w, bios, profiles):
     w = replace_once(w, '<button id="layers-btn"', STAIRS_BUTTON + '<button id="layers-btn"', "stairs button")
     w = replace_once(w, '<button id="layers-fab"', STAIRS_FAB + '<button id="layers-fab"', "phone stairs button")
     block = w.find("KEY = 'hof-wall-hide-stairs'")
+    default = w.find(STAIRS_DEFAULT, block)
+    if block < 0 or default < 0 or default > w.find(STAIRS_ANCHOR, block):
+        sys.exit("stairs default: the Hide stairs block changed; update wall-sync.py.")
+    w = w[:default] + STAIRS_DEFAULT_HIDDEN + w[default + len(STAIRS_DEFAULT):]
     end = w.find(STAIRS_ANCHOR, block)
     if block < 0 or end < 0 or w.count("KEY = 'hof-wall-hide-stairs'") != 1:
         sys.exit("stairs button code: the Hide stairs block changed; update wall-sync.py.")

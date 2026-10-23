@@ -9284,7 +9284,7 @@ document.getElementById('ab-btn').onclick = toggleBefore;
   const apply = on => { state.noStairs = on; cb.checked = on; cb.parentElement.classList.toggle('on', on);
     downStair.visible = !on; stairPatch.visible = on; scene.getObjectByName('upStair').visible = !on; const u = scene.getObjectByName('circleUnderStairs'); if (u) u.visible = on;
     ['westDownStair', 'westUpStair'].forEach(n => { const o = scene.getObjectByName(n); if (o) o.visible = !on; }); const wp = scene.getObjectByName('westStairPatch'); if (wp) wp.visible = on; };   // the map redraws itself
-  let saved = false; try { saved = localStorage.getItem(KEY) === '1'; } catch (e) {}
+  let saved = true; try { saved = localStorage.getItem(KEY) !== '0'; } catch (e) {}
   apply(saved);
   cb.onchange = () => { apply(cb.checked); try { localStorage.setItem(KEY, cb.checked ? '1' : '0'); } catch (e) {} }; }
 { const btns = [...document.querySelectorAll('.stairs-toggle')], cb = document.getElementById('opt-hide-stairs');   // buttons for Hide stairs
