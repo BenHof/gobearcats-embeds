@@ -1,0 +1,110 @@
+#!/usr/bin/env python3
+"""Validate the reviewed HOF content in every maintained embed.
+
+Run: python hof/verify-content.py [--baseline /path/to/old-checkout]
+The optional baseline also checks that markup, CSS and runtime code did not change.
+"""
+import argparse
+import json
+from pathlib import Path
+import re
+import subprocess
+
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--baseline', type=Path)
+args = parser.parse_args()
+root = Path(__file__).resolve().parent
+review = json.loads((root / 'content-review-2026-10-23.json').read_text())
+files = sorted(root.glob('uc-hof-dashboard*.js'))
+errors = []
+
+def check(ok, message):
+    if not ok:
+        errors.append(message)
+
+def parse(path):
+    text = path.read_text()
+    matches = list(re.finditer(r'const DATA = (.*);\n', text))
+    assert len(matches) == 1, f'{path}: expected exactly one DATA assignment'
+    match = matches[0]
+    return json.loads(match[1]), text[:match.start(1)] + '<DATA>' + text[match.end(1):]
+
+check(len(files) == 6, 'expected six maintained embeds')
+classes_2026 = {'Connor Barwin', 'Loretta Blaut', 'Christy Hoffman', 'Bob Huggins',
+                'Jason Kelce', 'Mike Kinnett', 'Wayne Mason'}
+all_rows = []
+for path in files:
+    data, wrapper = parse(path)
+    rows = data['inductees']
+    index = {r['id']: r for r in rows}
+    names = {r['name']: r for r in rows}
+    prefix = path.name + ': '
+    check(len(rows) == 229, prefix + 'expected 229 records')
+    check(len(index) == len(rows) == len(names), prefix + 'duplicate IDs or names')
+    check({r['name'] for r in rows if r['year'] == 2026} == classes_2026,
+          prefix + '2026 class differs from the official seven inductees')
+    check({r['name'] for r in rows if 'Field Hockey' in r['sports']} ==
+          set(review['preserveFieldHockey']), prefix + 'incorrect Field Hockey members')
+    check("1960-61 Men's Basketball Team" in names and
+          "1962-63 Men's Basketball Team" not in names, prefix + 'wrong 2011 team')
+    if "1960-61 Men's Basketball Team" in names:
+        check('image_url' not in names["1960-61 Men's Basketball Team"],
+              prefix + 'wrong-season photograph was retained')
+    for update in review['updates']:
+        row = index.get(update['id'], {})
+        for key, value in update['changes'].items():
+            check(row.get(key) == value, prefix + update['originalName'] + ': ' + key)
+        for key in update['remove']:
+            check(key not in row, prefix + update['originalName'] + ': remove ' + key)
+    for row in rows:
+        check(all(row.get(k) for k in ('id', 'name', 'last_name', 'initial', 'sports',
+                                      'category', 'year', 'decade', 'bio', 'gb_url')),
+              prefix + row['name'] + ': required metadata missing')
+        check(row['sport_display'] == ', '.join(row['sports']),
+              prefix + row['name'] + ': sports/display mismatch')
+        check(row['decade'] == str(row['year'] // 10 * 10) + 's',
+              prefix + row['name'] + ': year/decade mismatch')
+    for key, field in [('sports', 'sports'), ('categories', 'category'),
+                       ('decades', 'decade'), ('initials', 'initial')]:
+        values = {value for row in rows for value in
+                  (row[field] if isinstance(row[field], list) else [row[field]])}
+        check(set(data[key]) == values and len(data[key]) == len(values),
+              prefix + key + ': filter coverage or duplicate option')
+    for added in review['additions']:
+        check(index.get(added['id']) == added, prefix + added['name'] + ': incomplete addition')
+        check('image_url' not in index.get(added['id'], {}),
+              prefix + added['name'] + ': unsupported portrait')
+    if args.baseline:
+        before, old_wrapper = parse(args.baseline / 'hof' / path.name)
+        guard = ("        // Class/search pages are not individual profiles; keep unsourced portraits empty.\n"
+                 "        if (r.gb_url_type !== 'profile' || r.image_status === 'not_sourced') return null;\n")
+        check(wrapper.count(guard) == 1 and wrapper.replace(guard, '', 1) == old_wrapper,
+              prefix + 'change outside DATA and the reviewed profile-preview guard')
+        expected = {r['id']: r for r in before['inductees']}
+        for update in review['updates']:
+            row = expected[update['id']]
+            row.update(update['changes'])
+            for key in update['remove']:
+                row.pop(key, None)
+        expected.update({r['id']: r for r in review['additions']})
+        check(index == expected, prefix + 'unexpected record change or deletion')
+    syntax = subprocess.run(['node', '--check', str(path)], capture_output=True, text=True)
+    check(syntax.returncode == 0, prefix + 'JavaScript syntax: ' + syntax.stderr.strip())
+    all_rows.append(rows)
+
+if all_rows:
+    canonical = {r['id']: {k: r[k] for k in ('name', 'last_name', 'sports', 'sport_display',
+                                          'category', 'year', 'bio')} for r in all_rows[-1]}
+    for path, rows in zip(files, all_rows):
+        actual = {r['id']: {k: r[k] for k in ('name', 'last_name', 'sports', 'sport_display',
+                                           'category', 'year', 'bio')} for r in rows}
+        check(actual == canonical, path.name + ': content differs across embed variants')
+
+if errors:
+    print(f'FAIL: {len(errors)} content checks failed across {len(files)} embeds')
+    for error in errors[:35]:
+        print(' - ' + error)
+    raise SystemExit(1)
+print(f'PASS: {len(files)} embeds; 229 unique records each; reviewed corrections, 2026 class, '
+      'sport filters, required fields, cross-variant content and JavaScript syntax verified'
+      + ('; layout and other runtime code unchanged' if args.baseline else ''))
