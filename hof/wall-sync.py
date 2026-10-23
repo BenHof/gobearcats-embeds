@@ -95,8 +95,21 @@ EMBED_HEAD = """<style id="gobearcats-embed">
   @media (max-width: 1280px) and (min-width: 901px) { .band .kicker { font-size:7.5px; letter-spacing:.08em; } .band h1 { font-size:20px; } .hdr-ctl #hl-select { max-width:192px; } .hdr-ctl #goto { max-width:150px; } }
   @media (max-width: 1180px) and (min-width: 901px) { .band #search-wrap { min-width:120px; flex-basis:120px; } .hdr-ctl #goto { max-width:128px; } #search-wrap kbd { display:none; } .hdr-ctl #tour-btn { padding:7px 9px; } }
   html.no3d .hdr-ctl, html.no3d #search-wrap, html.no3d #dock, html.no3d #mapctl, html.no3d .legend { display:none !important; }
-  #status[data-fallback] { max-width:min(440px, calc(100vw - 32px)); text-align:center; }
-  #status .no3d-btn { display:inline-block; margin-top:14px; padding:10px 15px; border-radius:4px; background:var(--red); color:#fff; font:700 12px/1 var(--f-body); letter-spacing:.08em; text-decoration:none; }
+  /* Loading screen: the wall itself, dimmed, with a title and a bar that keeps moving while the scene builds */
+  #status { position:fixed; inset:0; left:0; top:0; transform:none; z-index:60; display:grid; place-items:center; padding:24px;
+    background:#050506 url('../img/hof-wall-poster.jpg') center / cover no-repeat; border:0; border-radius:0; box-shadow:none;
+    font:inherit; text-transform:none; letter-spacing:normal; transition:opacity .4s ease; }
+  #status::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at center, rgba(5,5,6,.82) 0%, rgba(5,5,6,.6) 55%, rgba(5,5,6,.78) 100%); }
+  #status.done { opacity:0; pointer-events:none; }
+  #status .ld-card { position:relative; width:min(600px, 100%); text-align:center; color:#fff; }
+  #status .ld-kicker { font:600 10px/1.3 var(--f-body); letter-spacing:.16em; text-transform:uppercase; color:#c9ccd2; }
+  #status .ld-title { font:900 clamp(32px, 6vw, 52px)/.86 var(--f-head); text-transform:uppercase; letter-spacing:.01em; margin:10px 0 18px; }
+  #status .ld-bar { width:min(420px, 100%); margin:0 auto; height:4px; background:rgba(255,255,255,.2); border-radius:2px; overflow:hidden; }
+  #status .ld-bar i { display:block; width:38%; height:100%; background:var(--red); animation:ld-slide 1.15s ease-in-out infinite; }
+  @keyframes ld-slide { from { transform:translateX(-105%); } to { transform:translateX(270%); } }
+  #status .ld-step { margin-top:12px; font:500 12px/1.45 var(--f-body); color:#d6d9de; }
+  @media (prefers-reduced-motion: reduce) { #status .ld-bar i { animation:none; width:100%; opacity:.55; } }
+  #status .no3d-btn { display:inline-block; margin-top:16px; padding:11px 16px; border-radius:4px; background:var(--red); color:#fff; font:700 12px/1 var(--f-body); letter-spacing:.08em; text-transform:uppercase; text-decoration:none; }
 </style>
 <script>try { if (window.self !== window.top && !/[?&]full=1/.test(location.search)) document.documentElement.classList.add('embedded'); } catch (e) { document.documentElement.classList.add('embedded'); }</script>
 <script>
@@ -105,12 +118,12 @@ EMBED_HEAD = """<style id="gobearcats-embed">
   function webgl2() { try { return !!document.createElement('canvas').getContext('webgl2'); } catch (e) { return false; } }
   function fallback(reason) {
     var s = document.getElementById('status');
-    if (!s || s.getAttribute('data-fallback')) return;
+    if (!s || s.getAttribute('data-fallback') || s.classList.contains('done')) return;
     s.setAttribute('data-fallback', reason);
     document.documentElement.classList.add('no3d');
-    s.innerHTML = 'The 3D wall can\\u2019t load here' +
-      '<small>It needs a browser with 3D graphics (WebGL 2), such as a current Chrome, Safari, Edge or Firefox.</small>' +
-      '<a class="no3d-btn" href="' + SITE + '/hof" target="_top">Browse the Inductee Directory</a>';
+    s.innerHTML = '<div class="ld-card"><div class="ld-title">The 3D wall can\\u2019t load here</div>' +
+      '<div class="ld-step">It needs a browser with 3D graphics (WebGL 2), such as a current Chrome, Safari, Edge or Firefox.</div>' +
+      '<a class="no3d-btn" href="' + SITE + '/hof" target="_top">Browse the Inductee Directory</a></div>';
     s.querySelector('a').addEventListener('click', function (e) {   // inside the dashboard, switch its tab instead of reloading the page
       if (!document.documentElement.classList.contains('embedded')) return;
       e.preventDefault();
@@ -223,7 +236,7 @@ TRACK_HOOKS = [
     ("  if (idx < 0 || idx >= TOUR_STOPS.length) { stopTour(); return; }",
      "  if (idx < 0 || idx >= TOUR_STOPS.length) { if (idx >= TOUR_STOPS.length && window.ucHofTrack) ucHofTrack('hof3d_tour_complete'); stopTour(); return; }"),
     ("document.getElementById('status').remove();",
-     "document.getElementById('status').remove();\nif (window.ucHofTrack) ucHofTrack('hof3d_loaded', { mode: document.documentElement.classList.contains('embedded') ? 'dashboard' : 'full_page' });"),
+     "{ const st = document.getElementById('status'); st.classList.add('done'); setTimeout(() => st.remove(), 450); }\nif (window.ucHofTrack) ucHofTrack('hof3d_loaded', { mode: document.documentElement.classList.contains('embedded') ? 'dashboard' : 'full_page' });"),
 ]
 # Two full-height atrium columns stand where the stairs were once they are hidden; the code cites photos
 # (CRW_3507, CRW_3515) that are not in the workspace, so their placement is unconfirmed. Hide them too.
@@ -264,6 +277,15 @@ PROFILE_LINK = ("    + (PROFILE[slotId] ? `<a class=\"btn\" style=\"color:#333;b
 # A second, gray C-Paw supergraphic sat just past column 35, out on the glass beyond the wall's edge,
 # where there is no graphic in the building. The dark red one on the red section stays.
 GLASS_CPAW = "placeCpaw(1.9, 0x3d4249, colX(35) + PW / 2 + 0.62, 1.2);\n"
+# The loading card (title plus "Loading 3D Concourse") sat small in the middle of a black page with the
+# toolbar and controls already showing, and the dashboard added its own text on top. One loading screen
+# now covers the page until the scene is ready, then fades.
+STATUS_OLD = ('<div id="status">James P. Kelly University of Cincinnati Athletics Hall of Fame'
+              '<small>Loading 3D Concourse · Lindner Center Level 4</small></div>')
+STATUS_NEW = ('<div id="status" role="status" aria-live="polite"><div class="ld-card">'
+              '<div class="ld-kicker">James P. Kelly UC Athletics Hall of Fame</div>'
+              '<div class="ld-title">The Hall of Fame Wall</div><div class="ld-bar"><i></i></div>'
+              '<div class="ld-step">Setting up the Lindner Center concourse and all 231 plaques…</div></div></div>')
 SEARCH_PLACEHOLDER = ('placeholder="Find a Bearcat legend, sport, or class year…"', 'placeholder="Search inductees…"')
 
 
@@ -356,6 +378,7 @@ def public_page(w, bios, profiles):
         sys.exit("wall_3d.html still links to the 2D planner or docs/ after the edits.")
     w = replace_once(w, '<span class="hof-pill">231 Legends</span>', '', "231 Legends label")
     w = replace_once(w, *SEARCH_PLACEHOLDER, "search placeholder")
+    w = replace_once(w, STATUS_OLD, STATUS_NEW, "loading screen")
     w = replace_once(w, COLUMN_ANCHOR, COLUMN_NAMED, "atrium columns")
     w = replace_once(w, GLASS_CPAW, "", "gray C-Paw past the wall")
     w = replace_once(w, *SHARE_URL, "share link")

@@ -1,5 +1,5 @@
 {
- "synced_at": "2026-10-23T21:16:27+00:00",
+ "synced_at": "2026-10-23T21:30:29+00:00",
  "source": "/Users/benhofstetter/Documents/antigravity/serene-pythagoras",
  "source_branch": "codex/reconcile-herb-placement",
  "source_commit": "28a809d60a743bdf48dce591cbd80c6a369db602",
@@ -9,15 +9,15 @@
  ],
  "reviewed_bios": 230,
  "plaques_reencoded": "40 PNG to JPEG, <= 1600 px, q82",
- "total_bytes": 59228894,
+ "total_bytes": 59230790,
  "files": {
   "master_wall_plaques.json": {
    "bytes": 217064,
    "sha256": "48dad7fbc9b5d78aeb36cf197f74697e92801973c0bbdfc189dd669082815f7d"
   },
   "wall_3d.html": {
-   "bytes": 968409,
-   "sha256": "dbcaea6a40c67a9c46773150f5d11eec4759c1e29d1c2f95446fc2a8c16050e3"
+   "bytes": 970305,
+   "sha256": "c81e17778538750975423e46a7d9600664c93a5f0da5085a1339dcf4f540165a"
   },
   "web_assets/atlases/atlas_0_e101acb7.webp": {
    "bytes": 392632,
