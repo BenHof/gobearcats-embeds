@@ -28,6 +28,7 @@ Edits to the page, each of which must apply exactly once or the run stops:
   names the Hall of Fame), the toolbar fits instead of running off the right edge, phones keep the
   plaque in view above its details panel, and a stairs button drives the existing Hide stairs option
   (hiding the two atrium columns as well). Share links point at gobearcats.com/hof-wall, the full-window page.
+- The lighting is calmed so the plaque sketches stay legible and the red wall stays UC red.
 
 wall/SOURCE.json records the source commit, any uncommitted source changes and a hash of every
 published file, so a later run can show what changed.
@@ -129,6 +130,28 @@ COLUMN_NAMED = "    colMesh.receiveShadow = true;\n    colMesh.name = 'atriumCol
 # The share button copied this page's own address; visitors should get the gobearcats.com page instead.
 SHARE_URL = ("const url = `${location.origin}${location.pathname}#plaque=${encodeURIComponent(copyBtn.dataset.slot)}`;",
              "const url = `https://gobearcats.com/hof-wall#plaque=${encodeURIComponent(copyBtn.dataset.slot)}`;")
+# The lighting was tuned for drama: a strong studio environment, sky and sun, and grazing spotlights
+# along the top of the wall stacked up so the sketches glared out and UC red turned pink near the
+# soffit. The public copy runs about a third of the spotlight and a calmer environment, and the
+# plaque faces read as satin aluminium instead of clear-coated metal.
+LIGHTING = [
+    ("scene.environmentIntensity = 1.15;", "scene.environmentIntensity = 0.55;"),
+    ("scene.add(new THREE.HemisphereLight(0xfff7f0, 0x8a6e66, 2.4));", "scene.add(new THREE.HemisphereLight(0xfff7f0, 0x8a6e66, 1.4));"),
+    ("const day = new THREE.DirectionalLight(0xfff4e8, 1.6);", "const day = new THREE.DirectionalLight(0xfff4e8, 1.1);"),
+    ("const s = new THREE.SpotLight(0xffe9c8, 5.2, 5.2, 0.95, 0.55, 1.2);", "const s = new THREE.SpotLight(0xffe9c8, 1.7, 5.2, 0.95, 0.55, 1.2);"),
+    ("const s = new THREE.SpotLight(0xfff1dc, 6, 3.5, 0.8, 0.6, 1.3);", "const s = new THREE.SpotLight(0xfff1dc, 3, 3.5, 0.8, 0.6, 1.3);"),
+    ("const troughLight = new THREE.PointLight(0xffecd0, 9, 3.8, 1.4);", "const troughLight = new THREE.PointLight(0xffecd0, 4, 3.8, 1.4);"),
+    ("""const faceMat = new THREE.MeshPhysicalMaterial({
+  metalness: 0.35,
+  roughness: 0.38,""", """const faceMat = new THREE.MeshPhysicalMaterial({
+  metalness: 0.15,
+  roughness: 0.5,"""),
+    ("""  clearcoat: 0.35,
+  clearcoatRoughness: 0.24,
+  envMapIntensity: 1.15,""", """  clearcoat: 0.12,
+  clearcoatRoughness: 0.24,
+  envMapIntensity: 0.6,"""),
+]
 SEARCH_PLACEHOLDER = ('placeholder="Find a Bearcat legend, sport, or class year…"', 'placeholder="Search inductees…"')
 
 
@@ -208,6 +231,8 @@ def public_page(w, bios):
     w = replace_once(w, *SEARCH_PLACEHOLDER, "search placeholder")
     w = replace_once(w, COLUMN_ANCHOR, COLUMN_NAMED, "atrium columns")
     w = replace_once(w, *SHARE_URL, "share link")
+    for old, new in LIGHTING:
+        w = replace_once(w, old, new, "lighting")
     w = replace_once(w, 'href="/inductee/${slug}"', 'href="https://hof.gobearcats.ai/inductee/${slug}"', "bio link")
     hashchange = "addEventListener('hashchange', () => { if (checkPlaqueHash()) return;"
     w = replace_once(w, hashchange, MESSAGE_LISTENER + hashchange, "plaque messages")

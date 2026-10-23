@@ -453,7 +453,7 @@ scene.fog = new THREE.Fog(0xe8ecf0, 110, 320);
 const pmrem = new THREE.PMREMGenerator(renderer);
 const roomEnv = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
 scene.environment = roomEnv;
-scene.environmentIntensity = 1.15;
+scene.environmentIntensity = 0.55;
 let probeTimer = 0, refreshProbe = () => {};
 function queueProbe(delay = 500) { clearTimeout(probeTimer); probeTimer = setTimeout(refreshProbe, delay); }
 function physGlass(transmission = 0.9, roughness = 0.05, thickness = 0.016) {
@@ -497,8 +497,8 @@ controls.maxPolarAngle = Math.PI * 0.49;
 controls.minDistance = 0.35;
 controls.maxDistance = 45;   // room for the bird's-eye view of the whole concourse, and the plan of the hall past the doors
 
-scene.add(new THREE.HemisphereLight(0xfff7f0, 0x8a6e66, 2.4));   // white ceiling + red-floor bounce, not a black room
-{ const day = new THREE.DirectionalLight(0xfff4e8, 1.6); day.position.set(8, 14, 6); scene.add(day); }   // skylight down the atrium
+scene.add(new THREE.HemisphereLight(0xfff7f0, 0x8a6e66, 1.4));   // white ceiling + red-floor bounce, not a black room
+{ const day = new THREE.DirectionalLight(0xfff4e8, 1.1); day.position.set(8, 14, 6); scene.add(day); }   // skylight down the atrium
 const trimMat = new THREE.MeshStandardMaterial({ color: 0x222428, roughness: 0.4, metalness: 0.3 });
 const downlightMat = new THREE.MeshBasicMaterial({ color: 0xfff3dd });
 for (let x = -LEFT + 0.2; x <= WALL_END - 0.1; x += 0.45) {          // visible downlights with trim rings
@@ -509,7 +509,7 @@ for (let x = -LEFT + 0.2; x <= WALL_END - 0.1; x += 0.45) {          // visible 
 }
 let shadowSpot = null, shadowDx = Infinity;
 for (let x = -LEFT + 0.6; x <= WALL_END; x += 2.6) {                // 3 wide-angle grazing spotlights across the HOF wall
-  const s = new THREE.SpotLight(0xffe9c8, 5.2, 5.2, 0.95, 0.55, 1.2);
+  const s = new THREE.SpotLight(0xffe9c8, 1.7, 5.2, 0.95, 0.55, 1.2);
   s.position.set(x, WALL_H - 0.02, 0.22);
   s.target.position.set(x, 0.9, 0);
   scene.add(s, s.target);
@@ -1396,7 +1396,7 @@ graphic.position.set((RX0 + XI(-165.5)) / 2, BASE_H + graphicH / 2, 0.025); left
 
 // Linear LED warm wash light recessed flush into soffit over the sketch wall (IMG_9476, IMG_9477)
 {
-  const troughLight = new THREE.PointLight(0xffecd0, 9, 3.8, 1.4);
+  const troughLight = new THREE.PointLight(0xffecd0, 4, 3.8, 1.4);
   troughLight.position.set((RX0 + XI(-165.5)) / 2, WALL_H - 0.05, 0.28);
   leftArch.add(troughLight);
   const fixture = new THREE.Mesh(new THREE.BoxGeometry(graphicW, 0.006, 0.06), new THREE.MeshStandardMaterial({ color: 0xffffff, emissive: 0xffe6c8, emissiveIntensity: 0.85 }));
@@ -7813,7 +7813,7 @@ const panelCentre = new THREE.Vector3(5 * PX / 2, 1.3, 0).applyEuler(new THREE.E
 const panelNormal = new THREE.Vector3(0, 0, 1).applyEuler(new THREE.Euler(0, PANEL_ROT, 0));
 [-0.5, 0.5].forEach(f => {
   const along = new THREE.Vector3(1, 0, 0).applyEuler(new THREE.Euler(0, PANEL_ROT, 0)).multiplyScalar(f * 0.7);
-  const s = new THREE.SpotLight(0xfff1dc, 6, 3.5, 0.8, 0.6, 1.3);
+  const s = new THREE.SpotLight(0xfff1dc, 3, 3.5, 0.8, 0.6, 1.3);
   s.position.copy(panelCentre).add(along).addScaledVector(panelNormal, 0.5).setY(WALL_H - 0.05);
   s.target.position.copy(panelCentre).add(along); scene.add(s, s.target);
 });
@@ -7877,13 +7877,13 @@ brushedNormalTex.wrapS = brushedNormalTex.wrapT = THREE.RepeatWrapping;
 brushedNormalTex.repeat.set(2, 8);
 
 const faceMat = new THREE.MeshPhysicalMaterial({
-  metalness: 0.35,
-  roughness: 0.38,
+  metalness: 0.15,
+  roughness: 0.5,
   anisotropy: 0.82,
   anisotropyRotation: Math.PI / 2,   // authentic vertical brush grain matching the physical aluminum plates
-  clearcoat: 0.35,
+  clearcoat: 0.12,
   clearcoatRoughness: 0.24,
-  envMapIntensity: 1.15,
+  envMapIntensity: 0.6,
   normalMap: brushedNormalTex,
   normalScale: new THREE.Vector2(0.06, 0.015)
 });
