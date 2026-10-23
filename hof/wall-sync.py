@@ -20,8 +20,8 @@ Edits to the page, each of which must apply exactly once or the run stops:
   recent additions were long generated text.
 - The floor plan dialog is emptied (the plans label telecom and electrical rooms and are never
   copied), and the links to the 2D wall planner are removed.
-- "Full Bio Page" links point at hof.gobearcats.ai, because a root-relative /inductee/ link
-  resolves to benhof.github.io when the page runs in an iframe.
+- "Full Bio Page" becomes "More on GoBearcats.com", opening the inductee's gobearcats.com page (the
+  one the dashboard's profile button opens), and is left out when there is none.
 - The page accepts {type: 'uc-hof:plaque', slot} from its parent window, so "Locate on 3D Wall"
   on gobearcats.com/hof flies to a plaque without reloading the scene.
 - Inside the gobearcats.com frame the page drops its own brand row (the dashboard hero above it
@@ -152,6 +152,13 @@ LIGHTING = [
   clearcoatRoughness: 0.24,
   envMapIntensity: 0.6,"""),
 ]
+# "Full Bio Page" pointed at a /inductee/ route of another site. It now opens the inductee's own
+# gobearcats.com page, the one the dashboard's profile button opens, and is left out when there is none.
+BIO_LINK = ("    + `<a class=\"btn\" style=\"color:#333;border-color:#d4d4d8;background:#fff;padding:7px 11px;text-decoration:none;"
+            "border-radius:4px\" href=\"/inductee/${slug}\" target=\"_blank\" rel=\"noopener\">Full Bio Page ↗</a>`")
+PROFILE_LINK = ("    + (PROFILE[slotId] ? `<a class=\"btn\" style=\"color:#333;border-color:#d4d4d8;background:#fff;padding:7px 11px;"
+                "text-decoration:none;border-radius:4px\" href=\"${esc(PROFILE[slotId])}\" target=\"_blank\" rel=\"noopener\">"
+                "More on GoBearcats.com ↗</a>` : '')")
 SEARCH_PLACEHOLDER = ('placeholder="Find a Bearcat legend, sport, or class year…"', 'placeholder="Search inductees…"')
 
 
@@ -199,18 +206,33 @@ def plaque_jpeg(src, dst):
     im.save(dst, "JPEG", quality=PLAQUE_QUALITY, optimize=True, progressive=True)
 
 
-def reviewed_bios(slots):
-    """{slot id: reviewed biography} from the dashboard, matched to plaques the way wall-enrich.py does."""
+def dashboard_records(slots):
+    """{slot id: dashboard inductee record}, matched to plaques the way wall-enrich.py does."""
     spec = importlib.util.spec_from_file_location("wall_enrich", os.path.join(HERE, "wall-enrich.py"))
     enrich = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(enrich)
     _, _, data = enrich.read_dashboard(enrich.DASHBOARD)
     matched, _ = enrich.match(data["inductees"], slots)
     by_id = {r["id"]: r for r in data["inductees"]}
-    return {s["id"]: by_id[rid]["bio"] for rid, hits in matched.items() for s in hits if by_id[rid].get("bio")}
+    return {s["id"]: by_id[rid] for rid, hits in matched.items() for s in hits}
 
 
-def public_page(w, bios):
+def reviewed_bios(records):
+    return {sid: r["bio"] for sid, r in records.items() if r.get("bio")}
+
+
+def profile_urls(records):
+    """{slot id: the inductee's gobearcats.com page}, the same page the dashboard's profile button opens."""
+    out = {}
+    for sid, r in records.items():
+        url = r.get("current_gb_url") or r.get("gb_url")
+        kind = r.get("current_gb_url_type") or r.get("gb_url_type")
+        if url and url.startswith("https://gobearcats.com/") and kind in ("profile", "class_article", "article"):
+            out[sid] = url
+    return out
+
+
+def public_page(w, bios, profiles):
     m = PAGE_DATA_RE.search(w)
     if not m:
         sys.exit("wall_3d.html: const D not found.")
@@ -233,7 +255,10 @@ def public_page(w, bios):
     w = replace_once(w, *SHARE_URL, "share link")
     for old, new in LIGHTING:
         w = replace_once(w, old, new, "lighting")
-    w = replace_once(w, 'href="/inductee/${slug}"', 'href="https://hof.gobearcats.ai/inductee/${slug}"', "bio link")
+    w = replace_once(w, BIO_LINK, PROFILE_LINK, "bio link")
+    w = replace_once(w, "function profileLinks(name, sport, yr, slotId) {",
+                     "const PROFILE = " + json.dumps(profiles, sort_keys=True) + ";\nfunction profileLinks(name, sport, yr, slotId) {",
+                     "profile urls")
     hashchange = "addEventListener('hashchange', () => { if (checkPlaqueHash()) return;"
     w = replace_once(w, hashchange, MESSAGE_LISTENER + hashchange, "plaque messages")
     w = replace_once(w, "</head>", EMBED_HEAD + "</head>", "embed styles")
@@ -262,8 +287,9 @@ def main():
     source = ap.parse_args().source
 
     raw_data = open(os.path.join(source, DATA), encoding="utf-8").read()
-    bios = reviewed_bios(json.loads(raw_data)["slots"])
-    texts = {PAGE: public_page(open(os.path.join(source, PAGE), encoding="utf-8").read(), bios),
+    records = dashboard_records(json.loads(raw_data)["slots"])
+    bios, profiles = reviewed_bios(records), profile_urls(records)
+    texts = {PAGE: public_page(open(os.path.join(source, PAGE), encoding="utf-8").read(), bios, profiles),
              DATA: public_data(raw_data, bios)}
     assets = sorted({m.group(1) for t in texts.values() for m in ASSET_RE.finditer(t)})
     leaked = [a for a in assets if a.startswith(EXCLUDE_PREFIXES)]
