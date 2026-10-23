@@ -16,6 +16,7 @@ The wall page is built in the antigravity workspace `serene-pythagoras`, which a
 
 ```sh
 python3 hof/wall-sync.py          # copy the 3D page and only the assets it loads into hof/wall/
+python3 hof/make-v7.py            # rebuild V7 from V6 (only needed after a V6 change)
 python3 hof/wall-enrich.py        # write each inductee's plaque location(s) into V7's DATA
 python3 hof/verify-content.py && node hof/verify-profile-loader.mjs
 ```
