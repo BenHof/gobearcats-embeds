@@ -1,32 +1,23 @@
 {
- "synced_at": "2026-10-23T20:17:39+00:00",
+ "synced_at": "2026-10-23T20:31:48+00:00",
  "source": "/Users/benhofstetter/Documents/antigravity/serene-pythagoras",
  "source_branch": "codex/reconcile-herb-placement",
  "source_commit": "28a809d60a743bdf48dce591cbd80c6a369db602",
  "source_uncommitted": [
-  "docs/HOF_Wall_Elevation.pdf",
-  "index.html",
   "master_wall_plaques.json",
   "wall_3d.html"
  ],
+ "reviewed_bios": 230,
  "plaques_reencoded": "40 PNG to JPEG, <= 1600 px, q82",
- "total_bytes": 61792455,
+ "total_bytes": 59204282,
  "files": {
-  "docs/HOF_Wall_Elevation.pdf": {
-   "bytes": 869128,
-   "sha256": "a4a3801ac1163c9dfc97159f0379466c63f5a24e730d7fa1d390172c7e64166f"
-  },
-  "index.html": {
-   "bytes": 1568013,
-   "sha256": "5d9bd5d1a40f656b42c7aaf2d14f87a58961509ba0bcfb99be5f4393fcb7a00d"
-  },
   "master_wall_plaques.json": {
-   "bytes": 290223,
-   "sha256": "e0e56b84f86d05b8680996a21e34cc50a179c615976f7f17ab6d07296de6d157"
+   "bytes": 214637,
+   "sha256": "f4242b5122f9312b0a30561c4709cb5519faa9863aa62dd726ab7063b87da0cd"
   },
   "wall_3d.html": {
-   "bytes": 1021670,
-   "sha256": "a469c77a8eb4fa312f2d3642234ac248a82cace5d58975486386f31bf507d59f"
+   "bytes": 946224,
+   "sha256": "0e9243dd487b6f0dae883a33c375e853fab8e162d3199bc73b3a571577e96dab"
   },
   "web_assets/atlases/atlas_0_e101acb7.webp": {
    "bytes": 392632,

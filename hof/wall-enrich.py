@@ -25,6 +25,7 @@ import unicodedata
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 WALL = os.path.join(HERE, "wall", "master_wall_plaques.json")
+DASHBOARD = os.path.join(HERE, "uc-hof-dashboard.v7-inline.js")
 PREFIX = "  const DATA = "
 MIN_SIMILARITY, MIN_MARGIN = 0.6, 0.15
 
@@ -42,23 +43,26 @@ def location(s):
             "column": s["col"], "row": s["row"], "plaque_num": s["ref_num"]}
 
 
-def main():
-    target = sys.argv[1] if len(sys.argv) > 1 else os.path.join(HERE, "uc-hof-dashboard.v7-inline.js")
-    lines = open(target, encoding="utf-8").read().split("\n")
+def read_dashboard(path):
+    """The dashboard file's lines, the index of its DATA line, and the parsed DATA."""
+    lines = open(path, encoding="utf-8").read().split("\n")
     idx = next(i for i, l in enumerate(lines) if l.startswith(PREFIX))
-    data = json.loads(lines[idx][len(PREFIX):-1])
-    slots = [s for s in json.load(open(WALL))["slots"] if s.get("inducted")]   # skips the dedication plaque
+    return lines, idx, json.loads(lines[idx][len(PREFIX):-1])
 
+
+def match(inductees, slots):
+    """{inductee id: [plaque slots]} plus the name-variant matches made; stops if any inductee has no plaque."""
+    slots = [s for s in slots if s.get("inducted")]   # skips the dedication plaque
     by_name = {}
     for s in slots:
         by_name.setdefault(norm(s["name"]), []).append(s)
     matched, used, fuzzy = {}, set(), []
-    for r in data["inductees"]:
+    for r in inductees:
         hits = by_name.get(norm(r["name"]))
         if hits:
             matched[r["id"]] = hits
             used.update(s["id"] for s in hits)
-    for r in data["inductees"]:
+    for r in inductees:
         if r["id"] in matched:
             continue
         pool = [s for s in slots if s["id"] not in used and str(s["inducted"]) == str(r["year"])]
@@ -69,13 +73,22 @@ def main():
         matched[r["id"]] = [ranked[0][1]]
         used.add(ranked[0][1]["id"])
         fuzzy.append(f"{r['name']} -> {ranked[0][1]['name']}")
+    return matched, fuzzy
+
+
+def main():
+    target = sys.argv[1] if len(sys.argv) > 1 else DASHBOARD
+    lines, idx, data = read_dashboard(target)
+    slots = json.load(open(WALL))["slots"]
+    matched, fuzzy = match(data["inductees"], slots)
 
     for r in data["inductees"]:
         r["wall"] = [location(s) for s in sorted(matched[r["id"]], key=lambda s: s["ref_num"])]
     lines[idx] = PREFIX + json.dumps(data, ensure_ascii=True, separators=(",", ":")) + ";"
     open(target, "w", encoding="utf-8").write("\n".join(lines))
 
-    unplaced = [s["name"] for s in slots if s["id"] not in used]
+    used = {s["id"] for hits in matched.values() for s in hits}
+    unplaced = [s["name"] for s in slots if s.get("inducted") and s["id"] not in used]
     print(f"{len(data['inductees'])} inductees placed on {len(used)} plaques ({len(fuzzy)} by name variant)")
     for f in fuzzy:
         print("  " + f)
