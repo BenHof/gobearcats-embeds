@@ -6,6 +6,22 @@ Static assets loaded by Custom Script blocks on gobearcats.com (WMT CMS).
 - `hof/uc-hof-dashboard.v3.js` — UC editorial restyle with Barlow, Futura PT Condensed and IBM Plex Mono.
 - `hof/uc-hof-dashboard.v3-inline.js` — V3 with the hydration-safe mount loop; previously documented as the script pasted into page 8381.
 - `hof/uc-hof-dashboard.v4-inline.js`, `v5-inline.js`, `v6-inline.js` — later inline variants.
+- `hof/uc-hof-dashboard.v7-inline.js` — V6 content plus the wall: Inductee Directory / 3D Virtual Wall / 2D Wall Explorer tabs, a Printable Wall Map (PDF) button, and an "On the Wall" block in each inductee drawer with a Locate on 3D Wall button.
+- `hof/wall/` — the public 3D wall (`wall_3d.html`), 2D wall explorer (`index.html`), plaque images, `master_wall_plaques.json` (public fields) and the printable PDF (`docs/HOF_Wall_Elevation.pdf`), served at <https://benhof.github.io/gobearcats-embeds/hof/wall/>.
+
+## The 3D wall
+
+The wall pages are built in the antigravity workspace `serene-pythagoras`, which also holds the wall planning work. Refresh the public copy and the dashboard's plaque locations with:
+
+```sh
+python3 hof/wall-sync.py          # copy the pages and only the assets they load into hof/wall/
+python3 hof/wall-enrich.py        # write each inductee's plaque location(s) into V7's DATA
+python3 hof/verify-content.py && node hof/verify-profile-loader.mjs
+```
+
+`wall-sync.py` leaves out the planning material: floor plans, the concourse photo gallery and the planning fields in the plaque data. It re-encodes production plaque PNGs as JPEGs and records the source commit and file hashes in `hof/wall/SOURCE.json`. It also adds a `postMessage` listener to the 3D page, because changing a cross-origin iframe's hash reloads the scene; V7 posts `{type: 'uc-hof:plaque', slot}` once the frame has loaded and uses `#plaque=<slot_id>` only for the first load. `wall-enrich.py` matches inductees to plaques by name, falling back to a single same-year name variant, and stops if any inductee has no plaque.
+
+V7 reads `window.UC_HOF_WALL_BASE` when set, so a local copy can be tested before pushing.
 
 ## Current publication boundary
 

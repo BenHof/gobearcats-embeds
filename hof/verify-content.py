@@ -29,7 +29,7 @@ def parse(path):
     match = matches[0]
     return json.loads(match[1]), text[:match.start(1)] + '<DATA>' + text[match.end(1):]
 
-check(len(files) == 6, 'expected six maintained embeds')
+check(len(files) == 7, 'expected seven maintained embeds')
 classes_2026 = {'Connor Barwin', 'Loretta Blaut', 'Christy Hoffman', 'Bob Huggins',
                 'Jason Kelce', 'Mike Kinnett', 'Wayne Mason'}
 all_rows = []
@@ -78,14 +78,15 @@ for path in files:
     image_keys = {'image_url', 'image_source', 'image_credit', 'image_status', 'image_source_page_url'}
     for added in review['additions']:
         row = index.get(added['id'], {})
-        check({k: v for k, v in row.items() if k not in image_keys} ==
+        # `wall` (v7 plaque locations) comes from hof/wall-enrich.py, not from the content review.
+        check({k: v for k, v in row.items() if k not in image_keys | {'wall'}} ==
               {k: v for k, v in added.items() if k not in image_keys},
               prefix + added['name'] + ': incomplete addition')
         # A portrait is allowed only once it has been sourced from Canto or GoBearcats.
         check('image_url' not in row or (row.get('image_status') == 'primary_image_present'
                                          and row.get('image_source') in ('canto', 'gobearcats_current_article')),
               prefix + added['name'] + ': unsupported portrait')
-    if args.baseline:
+    if args.baseline and (args.baseline / 'hof' / path.name).exists():
         before, old_wrapper = parse(args.baseline / 'hof' / path.name)
         guard = ("        // Class/search pages are not individual profiles; keep unsourced portraits empty.\n"
                  "        if (r.gb_url_type !== 'profile' || r.image_status === 'not_sourced') return null;\n")

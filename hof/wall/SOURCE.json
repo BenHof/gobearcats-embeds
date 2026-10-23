@@ -1,0 +1,1908 @@
+{
+ "synced_at": "2026-10-23T18:29:23+00:00",
+ "source": "/Users/benhofstetter/Documents/antigravity/serene-pythagoras",
+ "source_branch": "codex/reconcile-herb-placement",
+ "source_commit": "28a809d60a743bdf48dce591cbd80c6a369db602",
+ "source_uncommitted": [
+  "docs/HOF_Wall_Elevation.pdf",
+  "index.html",
+  "master_wall_plaques.json",
+  "wall_3d.html"
+ ],
+ "plaques_reencoded": "40 PNG to JPEG, <= 1600 px, q82",
+ "total_bytes": 61789906,
+ "files": {
+  "docs/HOF_Wall_Elevation.pdf": {
+   "bytes": 869128,
+   "sha256": "a4a3801ac1163c9dfc97159f0379466c63f5a24e730d7fa1d390172c7e64166f"
+  },
+  "index.html": {
+   "bytes": 1568013,
+   "sha256": "5d9bd5d1a40f656b42c7aaf2d14f87a58961509ba0bcfb99be5f4393fcb7a00d"
+  },
+  "master_wall_plaques.json": {
+   "bytes": 290223,
+   "sha256": "e0e56b84f86d05b8680996a21e34cc50a179c615976f7f17ab6d07296de6d157"
+  },
+  "wall_3d.html": {
+   "bytes": 1019121,
+   "sha256": "132e1ab590dee86377816b5c1487c95b349b7a38031630b615c313018181b0fb"
+  },
+  "web_assets/atlases/atlas_0_e101acb7.webp": {
+   "bytes": 392632,
+   "sha256": "d249d0a58d338256d6adbc20edf86f566f96cab499de079dbbffe6cee22bd8b8"
+  },
+  "web_assets/atlases/atlas_1_01232849.webp": {
+   "bytes": 387862,
+   "sha256": "6632d9c162d1449e798363e337a2d129c7d4199120aaa726240fa82a2c4f2f0d"
+  },
+  "web_assets/atlases/atlas_2_c5fd12a4.webp": {
+   "bytes": 366808,
+   "sha256": "569c13f2ada047fd46a7da20e44f981ad661fb4f6c9d0d8e9c2946e6c94464af"
+  },
+  "web_assets/atlases/atlas_3_b0b95453.webp": {
+   "bytes": 328656,
+   "sha256": "1e5c24fefe03bbb1cbf1795a81dc1d7984ce638953bf67a1b9a15fdc467bb45b"
+  },
+  "web_assets/atlases/atlas_4_c5917ab3.webp": {
+   "bytes": 284824,
+   "sha256": "779f43796da78fef58b32131f16557a0380e0839c7a8b5679ec16b5fd201ecf6"
+  },
+  "web_assets/lindner_atrium_mural.jpg": {
+   "bytes": 664074,
+   "sha256": "274e999b5d0a369e82b61f5216f0a7c2ae7579ade51936b527c1310be78087f0"
+  },
+  "web_assets/plaque_crops/6387.jpg": {
+   "bytes": 189654,
+   "sha256": "78e3a405217da8096f944662124b16142aca967b55c219539f73200c94b3b6db"
+  },
+  "web_assets/plaque_crops/6388.jpg": {
+   "bytes": 171444,
+   "sha256": "900ee34da4758f81473b820411d93e9b19eabb8eeb7616890dc4c4c66d04e31f"
+  },
+  "web_assets/plaque_crops/6389.jpg": {
+   "bytes": 156531,
+   "sha256": "a83814ea29af765209621082eafdd94ac71c1ae4a0ea92203399f648c11f4a8e"
+  },
+  "web_assets/plaque_crops/6390.jpg": {
+   "bytes": 174423,
+   "sha256": "d8268eb539d7be9dedf8d5895bfaaaa4bb30b773166e800853291d1088478852"
+  },
+  "web_assets/plaque_crops/6391.jpg": {
+   "bytes": 174807,
+   "sha256": "2a20b5143441bc2b97854c94b5737314ad1cb135fc8a35723317475bdb2a080c"
+  },
+  "web_assets/plaque_crops/6392.jpg": {
+   "bytes": 186446,
+   "sha256": "09f6e6ac7afbb2fbb1e82da77f7e649d9509eab49266e8dedda423ea9bcf8f50"
+  },
+  "web_assets/plaque_crops/6393.jpg": {
+   "bytes": 182215,
+   "sha256": "0308cc32d9cfe22b173de48175908959224ada6bd64a90deb54112c11dcc9629"
+  },
+  "web_assets/plaque_crops/6394.jpg": {
+   "bytes": 233025,
+   "sha256": "4b7050a1f395a8be68d353c72a2df67196a949fa9d30a71a2fd186fb551bc0d3"
+  },
+  "web_assets/plaque_crops/6395.jpg": {
+   "bytes": 188489,
+   "sha256": "1cdb3949a8a560f709fcfd7c2c8c8a8d985ae4d1c86fa71a367c207c24fe1770"
+  },
+  "web_assets/plaque_crops/6396.jpg": {
+   "bytes": 147973,
+   "sha256": "3a367a2000292e2579b1757d1221d663847ac9e1605fa736e514aa406828693c"
+  },
+  "web_assets/plaque_crops/6397.jpg": {
+   "bytes": 176840,
+   "sha256": "7ae15e5ee1eb393d89dab0c00c768390304176fe1638d6606441cfecdba45751"
+  },
+  "web_assets/plaque_crops/6398.jpg": {
+   "bytes": 192808,
+   "sha256": "dbe74cebc2443fadaa9dcc9ac1db44d3826fa2f6c4f47cd33db320cf684c9410"
+  },
+  "web_assets/plaque_crops/6399.jpg": {
+   "bytes": 181502,
+   "sha256": "83747965c54e9e0f4bc8b8080be7c70f76f5f628e0d23a76d71c8759a1e7d9d6"
+  },
+  "web_assets/plaque_crops/6400.jpg": {
+   "bytes": 138601,
+   "sha256": "bfeca115a4d9cb15a63946f64f26fe72f4b0694175dcd404796d0f86e9a559e7"
+  },
+  "web_assets/plaque_crops/6401.jpg": {
+   "bytes": 156781,
+   "sha256": "9d17ba76040ef1aa1156c8ec03dc59488ae01fdcaf99cbe7fa1538c901b2b4c5"
+  },
+  "web_assets/plaque_crops/6402.jpg": {
+   "bytes": 144574,
+   "sha256": "2e18972c5c641f4ed57bd7ea6aa022d34a5739def7866e668949a92784390839"
+  },
+  "web_assets/plaque_crops/6403.jpg": {
+   "bytes": 222706,
+   "sha256": "5a745e257373c8daa8b0c4b835be10d586f48fb970da3992a10bc06142441f97"
+  },
+  "web_assets/plaque_crops/6404.jpg": {
+   "bytes": 214255,
+   "sha256": "a349bc2a553b911b96aef2376ddb05e1a3e657ecdc52c4ee36ff57bb1669fbbe"
+  },
+  "web_assets/plaque_crops/6405.jpg": {
+   "bytes": 196506,
+   "sha256": "02aa19b250c83625c98133a9c0ee5123a03d7f6acfdbed3c251d5c2ef871b5ec"
+  },
+  "web_assets/plaque_crops/6406.jpg": {
+   "bytes": 173015,
+   "sha256": "689dfbec2dc3c61e803c3139ff559ff997cf01a407293e5343a6509ad54db878"
+  },
+  "web_assets/plaque_crops/6407.jpg": {
+   "bytes": 264551,
+   "sha256": "f28d0653a8212673a932077afe6f502efd627d52aba9bf35f19835553ed5dd5c"
+  },
+  "web_assets/plaque_crops/6408.jpg": {
+   "bytes": 153290,
+   "sha256": "86e79a17bff55bcb56be60e71744d0184688a2c7e5d9542a3b6cb5669880d752"
+  },
+  "web_assets/plaque_crops/6409.jpg": {
+   "bytes": 144688,
+   "sha256": "f7f001c9f8facb9b0d46b7dd2b12d9e3455dfd32bf0aee4af3b372fd03d63c0f"
+  },
+  "web_assets/plaque_crops/6410.jpg": {
+   "bytes": 196332,
+   "sha256": "4ae1e840b7913294972fc0b58575b2abb3c60de1af3524f5b53d724d837195fb"
+  },
+  "web_assets/plaque_crops/6411.jpg": {
+   "bytes": 130899,
+   "sha256": "f05b712056ae5f467683ef16b1d1fcbbcc612b41413f0335b4b435a26032af41"
+  },
+  "web_assets/plaque_crops/6413.jpg": {
+   "bytes": 104080,
+   "sha256": "87607b3330660b67ca06d646ea91acaaef7421db1c9c2f20eaebfd7148cbb46d"
+  },
+  "web_assets/plaque_crops/6414.jpg": {
+   "bytes": 161582,
+   "sha256": "2afe3fce676d0326f8ea0ce3a4d50b7ab07f7f6df3bac741e86316a7de181b98"
+  },
+  "web_assets/plaque_crops/6415.jpg": {
+   "bytes": 145586,
+   "sha256": "0e74f12df509e2ec925d16e4b3e3e32ec3f19d1f3c6434896bbd5623d05a8869"
+  },
+  "web_assets/plaque_crops/6416.jpg": {
+   "bytes": 194319,
+   "sha256": "d810f6157a07ed1fb733edf33a54cb9f387d17246965957ce1d0629eedcdd794"
+  },
+  "web_assets/plaque_crops/6417.jpg": {
+   "bytes": 190651,
+   "sha256": "0ab753403ddda5e5ffa78da0c9ac196a1937a327526fb52136cacf797d627655"
+  },
+  "web_assets/plaque_crops/6418.jpg": {
+   "bytes": 137211,
+   "sha256": "dcce0b0cbd373e7d820e76d519dc837586b3aac2de3db9534f279e16e39a1ef0"
+  },
+  "web_assets/plaque_crops/6419.jpg": {
+   "bytes": 177933,
+   "sha256": "0598e738fa744f70e39952527251416ba9ea5ed4aa77b24493b5ab0ac8ecd8e8"
+  },
+  "web_assets/plaque_crops/6420.jpg": {
+   "bytes": 188993,
+   "sha256": "1e9cc951595ff07821d18a54c6904f9744a81bf9f8ddc2b1cdbb096b87a59838"
+  },
+  "web_assets/plaque_crops/6421.jpg": {
+   "bytes": 162964,
+   "sha256": "5cbee2913f307c5e0a603f81f3011786f21ce4e87fecc295dd201528cf0e48d7"
+  },
+  "web_assets/plaque_crops/6422.jpg": {
+   "bytes": 171152,
+   "sha256": "cd31a132529d9dc7cd0425f739b3302e1cf937a77d929de0ea2a02c1683195b9"
+  },
+  "web_assets/plaque_crops/6423.jpg": {
+   "bytes": 201356,
+   "sha256": "46ac191d07188a93d2fa4ecc9f4efd850bf6beb43ad98113808e0e987967b8a8"
+  },
+  "web_assets/plaque_crops/6424.jpg": {
+   "bytes": 213701,
+   "sha256": "50538cfe39d383dddd81b6d03920bde936d9e29a8c95d75bb11622b8b2d7e099"
+  },
+  "web_assets/plaque_crops/6425.jpg": {
+   "bytes": 188464,
+   "sha256": "5c2554ca46ea8499a6d836ca0b40e84cb6486f3513dc78bfda4e4f58ec5c5a32"
+  },
+  "web_assets/plaque_crops/6426.jpg": {
+   "bytes": 179298,
+   "sha256": "71c28f49e783c76515b24e5784127daaf2649fc23e5d0a3fe70ad1211f74085a"
+  },
+  "web_assets/plaque_crops/6427.jpg": {
+   "bytes": 168756,
+   "sha256": "26a73682124802279838a950fc4074fa6f2fefc9e65cf37c8a27f3c70e6e9321"
+  },
+  "web_assets/plaque_crops/6428.jpg": {
+   "bytes": 161758,
+   "sha256": "6d02e3dd1f87d07e0789c39d916f9495431e30dc157cf8bbc789c16db98f8827"
+  },
+  "web_assets/plaque_crops/6429.jpg": {
+   "bytes": 186980,
+   "sha256": "7acf26dcad4b95981c2944f1a6be738ac625a4ad733f09e706569fa2d963f429"
+  },
+  "web_assets/plaque_crops/6430.jpg": {
+   "bytes": 191285,
+   "sha256": "e19ca119589fc3bc508d4827500a54cf333dc0ed9e8fd603baaebedbb50cfd90"
+  },
+  "web_assets/plaque_crops/6431.jpg": {
+   "bytes": 137063,
+   "sha256": "8f8b97de03e6fbfb6e32e2d80c14af5dba35069d94ccb4b404f0569ce329609d"
+  },
+  "web_assets/plaque_crops/6432.jpg": {
+   "bytes": 164973,
+   "sha256": "b3932d463e91c140bf45cfc9939691545c991dca12ba545ef1972ed3d892422a"
+  },
+  "web_assets/plaque_crops/6433.jpg": {
+   "bytes": 202896,
+   "sha256": "e19c4c93ef31d474b0ca0770ff76bd527ebf7bb705a6cb89e7d5a93e77b94eb9"
+  },
+  "web_assets/plaque_crops/6434.jpg": {
+   "bytes": 166859,
+   "sha256": "a47f4af66ab12ce0b58cdecdcf1c6027b78c41a568deb5fd2366c0c51627f111"
+  },
+  "web_assets/plaque_crops/6435.jpg": {
+   "bytes": 215018,
+   "sha256": "2ff46e1db0cbb0e0c598568bc787c45dccb67f0bb9f275d91e4e0ddcaaa4ae37"
+  },
+  "web_assets/plaque_crops/6436.jpg": {
+   "bytes": 169376,
+   "sha256": "73c173fb232c04d03f0a8a6ce333ee40ab7e64ebec3431ae8bd9953864f37e7b"
+  },
+  "web_assets/plaque_crops/6437.jpg": {
+   "bytes": 175299,
+   "sha256": "39e755731a5d3e6ce40f8033a84bdbd48937ecf76259d2c275c5037577fa2f75"
+  },
+  "web_assets/plaque_crops/6438.jpg": {
+   "bytes": 121635,
+   "sha256": "a31e4d616bf77e2b8d8e39ba9661f6042cd5d7e3bb4120b9f3a41ba873fb7d67"
+  },
+  "web_assets/plaque_crops/6439.jpg": {
+   "bytes": 165341,
+   "sha256": "9b1fc6baa2cdd7db91793a6ed4d3eca5d1dcefde24b25c9e34bfe05bd88af71d"
+  },
+  "web_assets/plaque_crops/6440.jpg": {
+   "bytes": 197514,
+   "sha256": "d9a81095a324b74b05f51ef491c1cfd5423d652bed883b6d6095a8bfa5309022"
+  },
+  "web_assets/plaque_crops/6441.jpg": {
+   "bytes": 147654,
+   "sha256": "93a63e70beefd05c4be46d01e116f8b948f50e5c15d3773459153e67e6792ae5"
+  },
+  "web_assets/plaque_crops/6444.jpg": {
+   "bytes": 177722,
+   "sha256": "5803084fb14f0b08bc9b876dae80278ee2c3ee7cf23c7aeaa2c678f02861c20f"
+  },
+  "web_assets/plaque_crops/6445.jpg": {
+   "bytes": 202603,
+   "sha256": "665396b5b8a23736d9e7eb532eeac92a50db078246d13d4bcf6d8a3abc873a4f"
+  },
+  "web_assets/plaque_crops/6446.jpg": {
+   "bytes": 208788,
+   "sha256": "a3ace9fe77feb8a9b34e8873f8ebcfdb2119f86a0ee8522e3f8b24378b259ecd"
+  },
+  "web_assets/plaque_crops/6447.jpg": {
+   "bytes": 182457,
+   "sha256": "c95f032e45ae7465cd811abfef472762ab2416e3952c153f19537833fd6d1fd4"
+  },
+  "web_assets/plaque_crops/6448.jpg": {
+   "bytes": 168992,
+   "sha256": "ccee51b5ed367ddd4453b1add6b7deb7b01793925930db23ee27911586842e29"
+  },
+  "web_assets/plaque_crops/6449.jpg": {
+   "bytes": 169465,
+   "sha256": "a71a000329976355422826c24b5daef574bbee1a1f346bec23fd08e46bf2176c"
+  },
+  "web_assets/plaque_crops/6450.jpg": {
+   "bytes": 199532,
+   "sha256": "28a835a8d0851d0a1a80b7c5ebdd3fdb01a2e7835af744c96fd350727fb35ec5"
+  },
+  "web_assets/plaque_crops/6451.jpg": {
+   "bytes": 234564,
+   "sha256": "0edfa5da7c232948ccd8b2398cb73851ba3eb91651f42ea74fb5c44e2da4117f"
+  },
+  "web_assets/plaque_crops/6452.jpg": {
+   "bytes": 183707,
+   "sha256": "19371ec168b2967e729e5f53b51bbda0b5bb77a5bc334096365560462ebc3e00"
+  },
+  "web_assets/plaque_crops/6453.jpg": {
+   "bytes": 184565,
+   "sha256": "ef8ba4874b51eb39f62e23e006717a8610a69a959da15e5996c24abd5ecdd589"
+  },
+  "web_assets/plaque_crops/6454.jpg": {
+   "bytes": 158053,
+   "sha256": "4270318fc54c93a8882f1a890d0bd16788e06758223c1c9604e04ea5fed36b7c"
+  },
+  "web_assets/plaque_crops/6455.jpg": {
+   "bytes": 151777,
+   "sha256": "a189d4766747b6110d231cf5d2c5f4baef3adeae515ea1c82a04195cb9daa9e4"
+  },
+  "web_assets/plaque_crops/6456.jpg": {
+   "bytes": 194654,
+   "sha256": "6c2907c03a2a160b9e4d6f8f373ce6f93b5fd9673e0e7535866a6229670c4083"
+  },
+  "web_assets/plaque_crops/6457.jpg": {
+   "bytes": 161920,
+   "sha256": "0cd6cd960ed49b0c29ab8c3404e100a2a98f561c5a147052313deac88485c65a"
+  },
+  "web_assets/plaque_crops/6458.jpg": {
+   "bytes": 172432,
+   "sha256": "2e015e4830422f9dda3fe3e3e6eeef0f60644a4175a687ea43ee40dc2568f68a"
+  },
+  "web_assets/plaque_crops/6459.jpg": {
+   "bytes": 239383,
+   "sha256": "0ee1a05e9467304175913b6c2da89a81443ee48dd4adb3975a62a9a68970387a"
+  },
+  "web_assets/plaque_crops/6460.jpg": {
+   "bytes": 131712,
+   "sha256": "a19eab1be3b1c1047973f4dae0eda20b5fd98b1d824cb886c7f2eed3ad8d20ca"
+  },
+  "web_assets/plaque_crops/6461.jpg": {
+   "bytes": 151588,
+   "sha256": "6717fd4a6eec0d2f910fd3f195470ad0634a7dfaa96a4e3bb4ee79df31d41bb1"
+  },
+  "web_assets/plaque_crops/6462.jpg": {
+   "bytes": 150557,
+   "sha256": "cadb7d192b3cd1d9c9ca67ea7bd74b78dcad5d3e6f272241cbe9775eb0860ea0"
+  },
+  "web_assets/plaque_crops/6463.jpg": {
+   "bytes": 205081,
+   "sha256": "0fab2855ca44ffbb413b26007968a02a3ad396ec3e7cdd73b40b7d14e753906c"
+  },
+  "web_assets/plaque_crops/6464.jpg": {
+   "bytes": 183814,
+   "sha256": "4dd959ecc6e43beeaf7cdff84bb2d6404203de9caf92936217555d3c01116b58"
+  },
+  "web_assets/plaque_crops/6465.jpg": {
+   "bytes": 156942,
+   "sha256": "b262cf7975465e71d10cb144c02ef2a7ec7afe42869f244114d0440cb65c0339"
+  },
+  "web_assets/plaque_crops/6466.jpg": {
+   "bytes": 164066,
+   "sha256": "03dae3c872ea02fef188de8989666e91827ca365b3cde7fd41c5af7b220d98fa"
+  },
+  "web_assets/plaque_crops/6467.jpg": {
+   "bytes": 147178,
+   "sha256": "8b54fd4df6880a55fc822624641a1d4460425b2eb9b6941bf1a6abd7bc0feeb0"
+  },
+  "web_assets/plaque_crops/6468.jpg": {
+   "bytes": 150174,
+   "sha256": "9d18f6754d6d74f007fa1906a8dd67c281cbb29967005403e9cdecc321db57a6"
+  },
+  "web_assets/plaque_crops/6469.jpg": {
+   "bytes": 159739,
+   "sha256": "69c3e6cabe7c4262c32d9e9f13866ee6abcb3240ae8d1c36ce3eccca37685e10"
+  },
+  "web_assets/plaque_crops/6470.jpg": {
+   "bytes": 188747,
+   "sha256": "d1e74bbe9545b68fbd1a73a86aa99812eda1c49ad3d3685a7f4de706e21285d4"
+  },
+  "web_assets/plaque_crops/6471.jpg": {
+   "bytes": 277837,
+   "sha256": "8a8906f3c8a0e423c959c5146c8fcd866b68664111bde17d9235e34716c54727"
+  },
+  "web_assets/plaque_crops/6472.jpg": {
+   "bytes": 251327,
+   "sha256": "fc745d1e43ff7f751e6079410332ec82f4adfbe7812d05d50000b53cc97292ab"
+  },
+  "web_assets/plaque_crops/6473.jpg": {
+   "bytes": 137802,
+   "sha256": "392e5c302d9808039aa39ca099478615fc30e29e0649e770408d2b957365e97f"
+  },
+  "web_assets/plaque_crops/6474.jpg": {
+   "bytes": 245109,
+   "sha256": "feae64d74ea01fead1090bd7dbda85bd3a80eea4b2c61a50ea306d9592d80db0"
+  },
+  "web_assets/plaque_crops/6475.jpg": {
+   "bytes": 171883,
+   "sha256": "edd413dea0aa73ff9f281b12736b7a8d12ea88be52222066f1d3b92598ff7c65"
+  },
+  "web_assets/plaque_crops/6476.jpg": {
+   "bytes": 144397,
+   "sha256": "4975f3f6b346fdf09dc280714c8f777a1bdf396e1abfcc18fd7fd0efab9714f2"
+  },
+  "web_assets/plaque_crops/6477.jpg": {
+   "bytes": 158830,
+   "sha256": "f29bb707b412b6608a62bd7095ad94b3d90f69213d4a49f3afddedc0d48ad654"
+  },
+  "web_assets/plaque_crops/6478.jpg": {
+   "bytes": 166271,
+   "sha256": "3548a8ce17f94a5bbf9e93ecafa3de63441062999fac813c7a1fdc8722d80f75"
+  },
+  "web_assets/plaque_crops/6479.jpg": {
+   "bytes": 150805,
+   "sha256": "46996132393306928cb59c2f01c297b20346242fa7cf9a6d1c5d213eccc8cd79"
+  },
+  "web_assets/plaque_crops/6480.jpg": {
+   "bytes": 175361,
+   "sha256": "375d2b184b8ef6a0cba355cdf776b49593c9d32c65081d60e1b8645a8a3d7f93"
+  },
+  "web_assets/plaque_crops/6481.jpg": {
+   "bytes": 231920,
+   "sha256": "6c151691de57574da75129eeef56afb3699b796c9c700c0c208fdc8fcdbf5d8d"
+  },
+  "web_assets/plaque_crops/6482.jpg": {
+   "bytes": 177346,
+   "sha256": "4851f7f0651dc917a88128583c21c584dbeb9798a858b378ae55a7b3a2293045"
+  },
+  "web_assets/plaque_crops/6483.jpg": {
+   "bytes": 202128,
+   "sha256": "e560dd8b73c4d7ac1f9d617c825c89a0fda40019701d3831f3850c0afcd18f1e"
+  },
+  "web_assets/plaque_crops/6484.jpg": {
+   "bytes": 238204,
+   "sha256": "a54bf3db778ea5d18edb97472212e7622ffc5add591aad42c74c59a1c83dffa2"
+  },
+  "web_assets/plaque_crops/6485.jpg": {
+   "bytes": 170844,
+   "sha256": "9c7b0cc5cd06aaf4edbd5ef254bf4d7cb437567455b54134562fcdc55cd24077"
+  },
+  "web_assets/plaque_crops/6486.jpg": {
+   "bytes": 160728,
+   "sha256": "9fb9cbfe9bd301948f60af38ca31ca09148fa69e6d319d399df498b7cb9b5c9d"
+  },
+  "web_assets/plaque_crops/6487.jpg": {
+   "bytes": 172479,
+   "sha256": "2d1e5c7c293c5b5272649b3a554825ebcbf985f063898ece36f2758a2b22e998"
+  },
+  "web_assets/plaque_crops/6488.jpg": {
+   "bytes": 164389,
+   "sha256": "b4eceee364ea7c0ff0bbc9edf2b14c713e78162be673bc727124c54d84dd63dc"
+  },
+  "web_assets/plaque_crops/6489.jpg": {
+   "bytes": 178800,
+   "sha256": "4202a9221c23b23e66ee6aef04ce483280ff94ef02c0f4a7dd6603a0da6701eb"
+  },
+  "web_assets/plaque_crops/6490.jpg": {
+   "bytes": 153113,
+   "sha256": "1d434b029e25858fe856d402124090d395cb06f3ea1ba0914eff9042a409df4a"
+  },
+  "web_assets/plaque_crops/6491.jpg": {
+   "bytes": 164416,
+   "sha256": "0b030594a8c99c268ed3a13fdef2cb87630d6be38718d9a0e460b7357573774d"
+  },
+  "web_assets/plaque_crops/6492.jpg": {
+   "bytes": 198261,
+   "sha256": "d7c606bba88921ede9bf735eb3647f6f685bf2b1d0fbfa455c7df3e8a594d1e5"
+  },
+  "web_assets/plaque_crops/6493.jpg": {
+   "bytes": 156155,
+   "sha256": "9fb0bce17d68631e549fd15dc27e74e275a341ab90ec65b1d389e3e004b5396b"
+  },
+  "web_assets/plaque_crops/6494.jpg": {
+   "bytes": 185282,
+   "sha256": "544a75010a991ed1d410da9d8aed7d80bf912e356ee7d431d4968c9cd667056b"
+  },
+  "web_assets/plaque_crops/6495.jpg": {
+   "bytes": 214076,
+   "sha256": "7934de0ddd1a82ca62ba764978ffb8cf2ecc83b35e20ab97e9f47d34ecb400ab"
+  },
+  "web_assets/plaque_crops/6496.jpg": {
+   "bytes": 166798,
+   "sha256": "c3c7dc7701dfd8c2e72bf3fefabf7b5c609574ddf116a2dcdf99fbe22a670a64"
+  },
+  "web_assets/plaque_crops/6497.jpg": {
+   "bytes": 184117,
+   "sha256": "9df3a5e51768023c190c83b00818334fa9cbc502482d3a411bc805c4f749e87d"
+  },
+  "web_assets/plaque_crops/6498.jpg": {
+   "bytes": 181602,
+   "sha256": "c185cedc3df952d88288dda610f45dd130a7d2683aa3be804b218b279218551a"
+  },
+  "web_assets/plaque_crops/6499.jpg": {
+   "bytes": 217835,
+   "sha256": "9526bcb76d096672cf1826cdf97a38f3b45cea51b93764c09678e8d1de29816f"
+  },
+  "web_assets/plaque_crops/6500.jpg": {
+   "bytes": 193197,
+   "sha256": "8c4313db680b800fc6593feda4e2e9ddf3a263eb570c1a010782262a2ee6d080"
+  },
+  "web_assets/plaque_crops/6501.jpg": {
+   "bytes": 178960,
+   "sha256": "2af984c5e2b62ec06c6d2cef6879f1c1f06192814fe44702558694037999cff8"
+  },
+  "web_assets/plaque_crops/6502.jpg": {
+   "bytes": 203576,
+   "sha256": "b27bc7f7eb1a31b49e5d326cf7577de5a0f22c6a65da01e017ec0147be76b11f"
+  },
+  "web_assets/plaque_crops/6503.jpg": {
+   "bytes": 194251,
+   "sha256": "4eb8e330bf1b77274c57f53f47b7047c3fa23d55f09858ffee2a5886bdebf8f8"
+  },
+  "web_assets/plaque_crops/6504.jpg": {
+   "bytes": 229890,
+   "sha256": "c0e43ae075d6f450acb4a171170ac1076b409f237ca24e54566dc1b8aa705fb0"
+  },
+  "web_assets/plaque_crops/6505.jpg": {
+   "bytes": 180221,
+   "sha256": "d0a1ea8e53e5dbff436db1e080b512df36770e9b5dc9e9cdebb759f807a9823a"
+  },
+  "web_assets/plaque_crops/6506.jpg": {
+   "bytes": 179202,
+   "sha256": "ad764cc8dc1db2a9174881d1762ea39c7549f72f95a327e34cb998c0463295e4"
+  },
+  "web_assets/plaque_crops/6507.jpg": {
+   "bytes": 170709,
+   "sha256": "c6920d3a18f2af56ec4aa29f946746d1dd89cd3f7119f5c0b0b27fed83858c97"
+  },
+  "web_assets/plaque_crops/6508.jpg": {
+   "bytes": 145161,
+   "sha256": "2416adacf3c75d3f578194b077e8f1d460d92151fe7122fe42b64f752cda8ee7"
+  },
+  "web_assets/plaque_crops/6509.jpg": {
+   "bytes": 183546,
+   "sha256": "0a1c22ac923415f027b17d60e5390a17153e68e8f0fc3688907cd8b7463886d6"
+  },
+  "web_assets/plaque_crops/6510.jpg": {
+   "bytes": 208922,
+   "sha256": "80f9e5cb13a9c68363a4c57c81e8c64d8d54ecead83e8afb0bba2ba910a98ffd"
+  },
+  "web_assets/plaque_crops/6511.jpg": {
+   "bytes": 188113,
+   "sha256": "2cb63d80a2816a7f68c424c269b713fafafcc72e0fff25a6cc26e255740ec6e8"
+  },
+  "web_assets/plaque_crops/6512.jpg": {
+   "bytes": 146690,
+   "sha256": "29aa4da0be2693407ed810b8e321a7e1a17ff402bbeb49ae1d2a088eebd4a6bb"
+  },
+  "web_assets/plaque_crops/6513.jpg": {
+   "bytes": 179446,
+   "sha256": "1fd96eac8a7524406f968e708a7c3ae77b522d98a9fda624455d5c0cf430ba8a"
+  },
+  "web_assets/plaque_crops/6514.jpg": {
+   "bytes": 229954,
+   "sha256": "a241bbc81869301df63098805ce98f371ed0d2c34481f801c82b388c8428124d"
+  },
+  "web_assets/plaque_crops/6515.jpg": {
+   "bytes": 249115,
+   "sha256": "694bce69af0267acfaba9f3aa1bcadac5de4cf6011fdae66c7b0d6c7b9baa243"
+  },
+  "web_assets/plaque_crops/6516.jpg": {
+   "bytes": 182082,
+   "sha256": "b957f7d232c12d3f355c1296e99527bbeb548a7eceb41f9677ff5cb97a3a8db1"
+  },
+  "web_assets/plaque_crops/6517.jpg": {
+   "bytes": 190520,
+   "sha256": "112c00feff2bfd5fcc29cd10a151a52c85e373734d9e60866b5c4b79e602aab5"
+  },
+  "web_assets/plaque_crops/6518.jpg": {
+   "bytes": 151474,
+   "sha256": "1626630dc41aeb1a51ca69e898b4c9c0c2932bca3493e6fdf1f259437baf63b0"
+  },
+  "web_assets/plaque_crops/6519.jpg": {
+   "bytes": 172648,
+   "sha256": "5a4e16da3104ef67e243160176df857477901179cda3da8d1d72b95ea6f992e9"
+  },
+  "web_assets/plaque_crops/6520.jpg": {
+   "bytes": 195186,
+   "sha256": "37cfb2927abaf35fa5717bf85a4784030d5def6674acbad5576647480a5b83fa"
+  },
+  "web_assets/plaque_crops/6521.jpg": {
+   "bytes": 210017,
+   "sha256": "0bf3e89e441af60f32d709185379b113bfecb82bfbf9bbcd111efe8a25fbed5a"
+  },
+  "web_assets/plaque_crops/6522.jpg": {
+   "bytes": 212715,
+   "sha256": "d07954bff7f917e3a8277a146b8fdb5c33e6f28c22055573d9dfe8b9d6c8fe62"
+  },
+  "web_assets/plaque_crops/6523.jpg": {
+   "bytes": 213571,
+   "sha256": "f263870428d8edf33f686bf588599f86ccd46c1d5f24e92a7aa1d1dec38bec1b"
+  },
+  "web_assets/plaque_crops/6524.jpg": {
+   "bytes": 265793,
+   "sha256": "cd58010c8e697d0aa9504f81556d5b9a1e2e6ec84c1aeceb606ae3f6e65c900b"
+  },
+  "web_assets/plaque_crops/6525.jpg": {
+   "bytes": 187376,
+   "sha256": "edb82c658c710e9137afb2aacbbb2edb2b99dec2f485e4f35740ae7547f3dabd"
+  },
+  "web_assets/plaque_crops/6526.jpg": {
+   "bytes": 176578,
+   "sha256": "721ea1b83e28a6cd596e3a961c40cc7efd71f9054722eb0b9e36580ebf5cee69"
+  },
+  "web_assets/plaque_crops/6527.jpg": {
+   "bytes": 141669,
+   "sha256": "9d27dc8eba02e3b43310b56b183fedc639c254dffcf6f2584531ea4d482c7959"
+  },
+  "web_assets/plaque_crops/6529.jpg": {
+   "bytes": 201728,
+   "sha256": "56ee557faf6e1d7e8bd82b74ab2163bfc6ace30cd64f035ff905a167ae6cf107"
+  },
+  "web_assets/plaque_crops/6530.jpg": {
+   "bytes": 213230,
+   "sha256": "41de1a9ee694d36aa63590aadef14f09ffa5c12b4be44648035f030443a07fc1"
+  },
+  "web_assets/plaque_crops/6531.jpg": {
+   "bytes": 152678,
+   "sha256": "7721af0d13979faa5471997fda47cfcf06b3432870aee9548f02f2a436d2320f"
+  },
+  "web_assets/plaque_crops/6532.jpg": {
+   "bytes": 165336,
+   "sha256": "369ef70145478441fdf1b32fd3ab2299a1d06d055ee6251d17aa49d1d6542a6e"
+  },
+  "web_assets/plaque_crops/6533.jpg": {
+   "bytes": 211189,
+   "sha256": "b058ea34db817ad8a1b0b57acafcfd28796e0259aa6eb65fd3fac444a8df69d7"
+  },
+  "web_assets/plaque_crops/6534.jpg": {
+   "bytes": 170631,
+   "sha256": "26831bc6b8f42c7c8c8e91e2a504422895c46c5a4f051eaee2964cd1ab60a9e4"
+  },
+  "web_assets/plaque_crops/6535.jpg": {
+   "bytes": 175058,
+   "sha256": "65392904ab5c7a9a03b67b8d3e9de986bb0c2333ac8faf5f2fc0f78761df8691"
+  },
+  "web_assets/plaque_crops/6536.jpg": {
+   "bytes": 192095,
+   "sha256": "f512c15afdcceab5d814f5e22a850f4a91e11eedb1858bbc59533a09a14d2d82"
+  },
+  "web_assets/plaque_crops/6537.jpg": {
+   "bytes": 200212,
+   "sha256": "db63c6a3b97cd165b438f160895f7222956c9b292bb817aa40c617af273eace3"
+  },
+  "web_assets/plaque_crops/6538.jpg": {
+   "bytes": 168493,
+   "sha256": "6917eca6f2dcc2d94faff79e1fa8689b0226f90c3e22d0c7bd996f19af8fc1f9"
+  },
+  "web_assets/plaque_crops/6539.jpg": {
+   "bytes": 181943,
+   "sha256": "8e84c2ff9599c50070e3347e897927ef69a9925599a24809f2109db3df71d882"
+  },
+  "web_assets/plaque_crops/6540.jpg": {
+   "bytes": 152169,
+   "sha256": "2bde175e684a1539246eb213ef82897dfd562251bbfda1f8f40997f0a7789278"
+  },
+  "web_assets/plaque_crops/6541.jpg": {
+   "bytes": 192838,
+   "sha256": "7670046241b054bbc75168a8d11b0b9c9a8c255b2208c9374ab618d693b30e8b"
+  },
+  "web_assets/plaque_crops/6542.jpg": {
+   "bytes": 227841,
+   "sha256": "5accc32d210898fa260447813b173c744b0c66415dd27981463d316995b397ea"
+  },
+  "web_assets/plaque_crops/6543.jpg": {
+   "bytes": 181557,
+   "sha256": "a2f6cc9884b4369628c6a55af46f6f83ef91a2333dc8c792dc7cd40be8c30a02"
+  },
+  "web_assets/plaque_crops/6544.jpg": {
+   "bytes": 205959,
+   "sha256": "d8c685507f941384c18b8dab5fdea563739e83235bb17284388c9be382021a4d"
+  },
+  "web_assets/plaque_crops/6545.jpg": {
+   "bytes": 234985,
+   "sha256": "d524e1b5d153ef59da10216501c151d3c1c09da55137077221d4b87759d6d162"
+  },
+  "web_assets/plaque_crops/6546.jpg": {
+   "bytes": 180546,
+   "sha256": "df463699bbabf37e60493650039ccdea85bde2a17d1fdc4ef72ae1e7239b9705"
+  },
+  "web_assets/plaque_crops/6547.jpg": {
+   "bytes": 180801,
+   "sha256": "e6b7f7c3a5598bc72adbc184a1fb7d8975788c16dbb46bdf691e5e8b5ee1d1e5"
+  },
+  "web_assets/plaque_crops/6548.jpg": {
+   "bytes": 199324,
+   "sha256": "d93edf7841f43046d14ef6d3cde1a50d703e5428cfbf3e1a41a7b8de38801227"
+  },
+  "web_assets/plaque_crops/6549.jpg": {
+   "bytes": 185896,
+   "sha256": "0bb89749e2b7e5fd934c39ecdc03be9300aa4a6dfda6c8ec9c9ba941423748a5"
+  },
+  "web_assets/plaque_crops/6550.jpg": {
+   "bytes": 186405,
+   "sha256": "b57a7991d9a02cb59160bfc9acafb5d037f5325b0b4710ebb7290abb78e2814a"
+  },
+  "web_assets/plaque_crops/6551.jpg": {
+   "bytes": 195033,
+   "sha256": "0a53b7bd28aa6c8567ed1167021c35f3264d0c5aa9df8c7723e7a8e4e30cca16"
+  },
+  "web_assets/plaque_crops/6552.jpg": {
+   "bytes": 159652,
+   "sha256": "fc820f5db1b38c48b0938c9d9301eef89bf79d0dd5fbfea2e1e52e015a3c0ee8"
+  },
+  "web_assets/plaque_crops/6553.jpg": {
+   "bytes": 178700,
+   "sha256": "fb3f8ce0b7ec2792b6cfa3adc847b95430db89624fd6e9b93f4a3eee347a20a0"
+  },
+  "web_assets/plaque_crops/6554.jpg": {
+   "bytes": 191190,
+   "sha256": "1580e50c8eddb80bc1da1789d48eff782ec0bcf25a45392b43de3cfd272dbec1"
+  },
+  "web_assets/plaque_crops/6555.jpg": {
+   "bytes": 177635,
+   "sha256": "77cb9617d32ad9710d728d4e674e0c3563fad6f4634ddd12137e375581de2ef8"
+  },
+  "web_assets/plaque_crops/6556.jpg": {
+   "bytes": 205009,
+   "sha256": "15add453a9a63d6a4c98378b1da1a4cf54a7681af7ddde30dd6523ea38be62a0"
+  },
+  "web_assets/plaque_crops/6557.jpg": {
+   "bytes": 219353,
+   "sha256": "4e8b853360c6f32a3da7d83ebe22c0a66cfb8f014e2d1ae14598314fcf528a09"
+  },
+  "web_assets/plaque_crops/6558.jpg": {
+   "bytes": 197283,
+   "sha256": "496396fb9f8cb05bd30a1d4c5fb0f1d4fc1b5d26a70d63eabf4368d2f9fe419c"
+  },
+  "web_assets/plaque_crops/6559.jpg": {
+   "bytes": 185453,
+   "sha256": "a33cf2f32e9c59250a1734d5ac1db74e6c614fa688dd0ca005469ccb02a36b2b"
+  },
+  "web_assets/plaque_crops/6560.jpg": {
+   "bytes": 210408,
+   "sha256": "65ed8f634fa2b2b887262f705dbff842f666d22a9d5ef9581a73286676ac21b0"
+  },
+  "web_assets/plaque_crops/6561.jpg": {
+   "bytes": 157172,
+   "sha256": "73f6fb55f78115cb2622c7c7ce884285e46ff9c573b222735ff6b731e9d56bcf"
+  },
+  "web_assets/plaque_crops/6562.jpg": {
+   "bytes": 142119,
+   "sha256": "f79e3c79e9daa423be11718fe5b35ba0e41a610fc34eb47c9021a99de9e97808"
+  },
+  "web_assets/plaque_crops/6563.jpg": {
+   "bytes": 161409,
+   "sha256": "83c422821aec07684ec2554259a05da78af3d314c5aa60c7f90805a39e792ac7"
+  },
+  "web_assets/plaque_crops/6564.jpg": {
+   "bytes": 173918,
+   "sha256": "fdcd2f2cdd3a2b8679d3e02d025e060446dd3b5de692533efb93d6765a0c5e2c"
+  },
+  "web_assets/plaque_crops/6565.jpg": {
+   "bytes": 172515,
+   "sha256": "8564c66b5b27cffc592cc0b791135ac20515b97dd0cb035887752e6e67b35771"
+  },
+  "web_assets/plaque_crops/6566.jpg": {
+   "bytes": 170534,
+   "sha256": "a0d7359ec0fde84f766090979b977dea0a0deac6ca432596518bace377e9b50a"
+  },
+  "web_assets/plaque_crops/6567.jpg": {
+   "bytes": 146003,
+   "sha256": "20b7518e11d4bf77d4c05cf687a3efe7db16bf337071926f729f6225abab4bb7"
+  },
+  "web_assets/plaque_crops/6568.jpg": {
+   "bytes": 169628,
+   "sha256": "466c9aa426baa022f2106d1388aa485965c31d9f986403ed6939b40cd2443fed"
+  },
+  "web_assets/plaque_crops/6569.jpg": {
+   "bytes": 161976,
+   "sha256": "8dcd2ab9b7183148174c23dfb9081c465e080e65234d824dc26a75e3885c133b"
+  },
+  "web_assets/plaque_crops/6570.jpg": {
+   "bytes": 172317,
+   "sha256": "81b36be837debae1bdb628700bb9cb460846e0d6f5e0b25a4bbde30d52655417"
+  },
+  "web_assets/plaque_crops/6571.jpg": {
+   "bytes": 162060,
+   "sha256": "19d43d0bc60c62faca7dc4ce06db8835cee2c429f7c1452c37653026a316acd7"
+  },
+  "web_assets/plaque_crops/6572.jpg": {
+   "bytes": 179662,
+   "sha256": "476fa18c424c9337d4a167dd82bf1373d5a08944b9b1410d03ca6d74c642a8df"
+  },
+  "web_assets/plaque_crops/6573.jpg": {
+   "bytes": 181585,
+   "sha256": "6e9d846dfce3561904b76c18f23416225a2caacd4dcdf6e356af009a71c1ed11"
+  },
+  "web_assets/plaque_crops/6574.jpg": {
+   "bytes": 152329,
+   "sha256": "1dbc6018ec658932025d7f2bc7b602016f4b301e14140824d26f00cede274cf1"
+  },
+  "web_assets/plaque_crops/6575.jpg": {
+   "bytes": 181113,
+   "sha256": "fa033deab1ba3078ba80583b16ca289ad7f2859018d00250246f14584a760eb5"
+  },
+  "web_assets/plaque_crops/6576.jpg": {
+   "bytes": 192507,
+   "sha256": "a982aa61ff4b9d6c004b2cb49b1a7bada671b181f8bcd405f3105d8d1585dbb4"
+  },
+  "web_assets/plaque_crops/6577.jpg": {
+   "bytes": 211871,
+   "sha256": "622cd06f3f50c5325ab9f56090026526f6b82ec8c69722cb07b06fae29e4b0dc"
+  },
+  "web_assets/plaque_crops/6578.jpg": {
+   "bytes": 167796,
+   "sha256": "6742d27269b6ba6f2fa86966a9737cbfcc13ab0ffe82dcf3391469d783e6fee3"
+  },
+  "web_assets/plaque_crops/6579.jpg": {
+   "bytes": 144923,
+   "sha256": "5e0491adad5edb7b1933eab01eb13424855e2900e2625fa3d9520c5d1b359c6f"
+  },
+  "web_assets/plaque_crops/6580.jpg": {
+   "bytes": 175348,
+   "sha256": "640ee0d2ecaec2c5baed999c8dc51cce3a882f8ae8503bffc32723bc7e3c0b8a"
+  },
+  "web_assets/plaque_crops/jack-lee-9131.jpg": {
+   "bytes": 45903,
+   "sha256": "be7e5de29ec81f0ba9d1556494f9fd79daa81fa09afd339e45bb937e95a39ede"
+  },
+  "web_assets/plaque_thumbs/6387.jpg": {
+   "bytes": 17119,
+   "sha256": "678ad6370cf125ad5dbe3054a170be94444ea9d0c7b27d2a5141c76b0561255e"
+  },
+  "web_assets/plaque_thumbs/6388.jpg": {
+   "bytes": 16734,
+   "sha256": "b00a2b81d609a102506c9c3329d39374680befa20d136767f24c8c5c4e6c36f7"
+  },
+  "web_assets/plaque_thumbs/6389.jpg": {
+   "bytes": 19168,
+   "sha256": "ea52e93c4be27a233d522910a21c04917deec8b9e4dfffb57ffdabbaa1604456"
+  },
+  "web_assets/plaque_thumbs/6390.jpg": {
+   "bytes": 18627,
+   "sha256": "665487ed0cba97b5c84b9dec9e8bd142c656aedffd11c0026204e779583cb2b6"
+  },
+  "web_assets/plaque_thumbs/6391.jpg": {
+   "bytes": 16562,
+   "sha256": "b95e8d0c99253437ccc0d7e18580c32408f42f883f795b3bf05b97c502eb2a6a"
+  },
+  "web_assets/plaque_thumbs/6392.jpg": {
+   "bytes": 15695,
+   "sha256": "44ea6d9ab9123b82acb3dc58af7b02bc6290198a7263cd286af1001eafa5c529"
+  },
+  "web_assets/plaque_thumbs/6393.jpg": {
+   "bytes": 17121,
+   "sha256": "c14b803ec8f96788599a180e6a6e6fe9c4175dce6d4e39dc638512bb814af559"
+  },
+  "web_assets/plaque_thumbs/6394.jpg": {
+   "bytes": 23424,
+   "sha256": "bc03fa88d80ede2163cf1848a75ea25086a61c049f3b9a56126eb6c0d2bfc193"
+  },
+  "web_assets/plaque_thumbs/6395.jpg": {
+   "bytes": 17231,
+   "sha256": "e2ae926ee93c602e4022f26a48f8764683256022bbfcf80b4901408edb797d2a"
+  },
+  "web_assets/plaque_thumbs/6396.jpg": {
+   "bytes": 15244,
+   "sha256": "4f02a9c6a089fe7d0e19805e57aef02f9e18328a052400a034b5fef7dcc73c46"
+  },
+  "web_assets/plaque_thumbs/6397.jpg": {
+   "bytes": 16370,
+   "sha256": "cc17d21606d820dbc93d95e5068f9ae4dfa94e226497c69410fb8a57c6a0dc90"
+  },
+  "web_assets/plaque_thumbs/6398.jpg": {
+   "bytes": 19314,
+   "sha256": "5c35634532fc56acf216617aeafeb873cb3b73d11d9dfb3d9d2589257798f4e3"
+  },
+  "web_assets/plaque_thumbs/6399.jpg": {
+   "bytes": 17555,
+   "sha256": "7bb093b312466d0f186f268c1c1767733dd101a90bfb45a59182f6d4090ac6ec"
+  },
+  "web_assets/plaque_thumbs/6400.jpg": {
+   "bytes": 14120,
+   "sha256": "66eafc803ede1de60135edb77f020fc73901d94f8cd954f475142c9727f2cbd0"
+  },
+  "web_assets/plaque_thumbs/6401.jpg": {
+   "bytes": 17456,
+   "sha256": "bf1088854b666a44293d4b017390a141825a6a40e48b3f66ca4ea2991b62e59d"
+  },
+  "web_assets/plaque_thumbs/6402.jpg": {
+   "bytes": 14473,
+   "sha256": "5e7a93728b271c3e3798237e497012a5ce24d89ec4b0e6a8c30d4164e6d283cb"
+  },
+  "web_assets/plaque_thumbs/6403.jpg": {
+   "bytes": 19625,
+   "sha256": "8ceeb8f373df30c8ae77c16ac7f62698b2a3b5df94b9e527be3c2fd8eee6ff56"
+  },
+  "web_assets/plaque_thumbs/6404.jpg": {
+   "bytes": 17800,
+   "sha256": "5812f03be7c424afd87cb8bb6a55feed672c05c1a41019be14e36fc0e106bf81"
+  },
+  "web_assets/plaque_thumbs/6405.jpg": {
+   "bytes": 17559,
+   "sha256": "858e9eddd53e502e84b1e80ac855718f6c544bd55c328aefbddf5c29f8327e8b"
+  },
+  "web_assets/plaque_thumbs/6406.jpg": {
+   "bytes": 17489,
+   "sha256": "2d99ecd115613f826edc8304585bd3cf3857b77ad1cfa0236901af553fa0bfee"
+  },
+  "web_assets/plaque_thumbs/6407.jpg": {
+   "bytes": 19475,
+   "sha256": "d0f829545ac8fd316867f0f907dadccdbd2510a35713f633d73e2faaedc4f0fd"
+  },
+  "web_assets/plaque_thumbs/6408.jpg": {
+   "bytes": 16225,
+   "sha256": "60d5bec7feaa0677643530e836255e4ceac5e017537a0e227e1370e6dbf0c47b"
+  },
+  "web_assets/plaque_thumbs/6409.jpg": {
+   "bytes": 15958,
+   "sha256": "e6f8f47499a269e53a9297699c7511770d0860d74526d9236c5399ff897f7de5"
+  },
+  "web_assets/plaque_thumbs/6410.jpg": {
+   "bytes": 19215,
+   "sha256": "3b658f2792b1a13b371b2797e32f9cfdd0ca76d86530ac35b990391b9c1dfcdf"
+  },
+  "web_assets/plaque_thumbs/6411.jpg": {
+   "bytes": 13938,
+   "sha256": "a69d198bf6a2c4c429bdc9f16ec3c50157f922e755a81f08aba97bc80d583a6a"
+  },
+  "web_assets/plaque_thumbs/6413.jpg": {
+   "bytes": 14749,
+   "sha256": "f74a1ba7e2909f2f75615e09811ccc5dadbae63e0b1d6d20fba1631825d5df6f"
+  },
+  "web_assets/plaque_thumbs/6414.jpg": {
+   "bytes": 15613,
+   "sha256": "24a1759098b825199651173d160f0ef90bfbeef16b052cd3c2ba7642851af80e"
+  },
+  "web_assets/plaque_thumbs/6415.jpg": {
+   "bytes": 13936,
+   "sha256": "5e849c2f71de6dde4222cb277fb668352dfaf9174e55b29c24987586d1cfdc0e"
+  },
+  "web_assets/plaque_thumbs/6416.jpg": {
+   "bytes": 18246,
+   "sha256": "9d2ecbfb37dfba7a5c79ed6ba5567918b283b859368a3501d5a24800fc934710"
+  },
+  "web_assets/plaque_thumbs/6417.jpg": {
+   "bytes": 18830,
+   "sha256": "24980d8a2ed5eaa9a200f2dba08dadb3c95f44275318638cf4ae1e9df4e3aa88"
+  },
+  "web_assets/plaque_thumbs/6418.jpg": {
+   "bytes": 13565,
+   "sha256": "f2f33fbe440968281baa0dad4a0eb396da4a8ecaf7d81e1536560fd9b118949e"
+  },
+  "web_assets/plaque_thumbs/6419.jpg": {
+   "bytes": 17091,
+   "sha256": "510f79ba611fef32e577f7e1340bed85a264a915691725dd27d62ce4f5f96603"
+  },
+  "web_assets/plaque_thumbs/6420.jpg": {
+   "bytes": 17704,
+   "sha256": "53eda9571822cfbd74cb7df506e538a1136ab29a5b624ccede1122249ee98536"
+  },
+  "web_assets/plaque_thumbs/6421.jpg": {
+   "bytes": 15705,
+   "sha256": "797c92245b4f48754c7bdafba459bf24dac83099d1b547f5771ff2bb11bab9b3"
+  },
+  "web_assets/plaque_thumbs/6422.jpg": {
+   "bytes": 17120,
+   "sha256": "19114161404e0952b8c8def7a5ae2112c13e4fa6e738c979a3290532993889d3"
+  },
+  "web_assets/plaque_thumbs/6423.jpg": {
+   "bytes": 17657,
+   "sha256": "6799a63013cbae0838ac96514f2ec785e871821a9400dda65e4e4b828a47c063"
+  },
+  "web_assets/plaque_thumbs/6424.jpg": {
+   "bytes": 21314,
+   "sha256": "67ca916a0e6004c61b664792f1653fd3f9a341f6cc35ed5534cd771313b1f1bc"
+  },
+  "web_assets/plaque_thumbs/6425.jpg": {
+   "bytes": 19817,
+   "sha256": "750bcdad268a389ae9f2b164a8ac883ee1183496467dc56a090a1f3d11092bc7"
+  },
+  "web_assets/plaque_thumbs/6426.jpg": {
+   "bytes": 17869,
+   "sha256": "d2385934b7af55307fcc92a8961623c1f5bc1b9f2d6b2b3eafacc2514b3b645a"
+  },
+  "web_assets/plaque_thumbs/6427.jpg": {
+   "bytes": 16844,
+   "sha256": "85df55ad57974d8f3e694b1e685b2c82aa46dab24b16844f0f85ea3f9d8ee9d8"
+  },
+  "web_assets/plaque_thumbs/6428.jpg": {
+   "bytes": 14344,
+   "sha256": "c6a5a8550eab3c7ccbc34ba77b4bad18ba068006cddacb1bd150a0466cd7685a"
+  },
+  "web_assets/plaque_thumbs/6429.jpg": {
+   "bytes": 18245,
+   "sha256": "e060f1e538c6706ce6d8495c85f9131c7e61c8f5901939acfd7531e18525b28b"
+  },
+  "web_assets/plaque_thumbs/6430.jpg": {
+   "bytes": 18685,
+   "sha256": "7a3613eb9056a0da404d65b05337183d5ba4ccaa0db3a65e4f3ba88e339832e2"
+  },
+  "web_assets/plaque_thumbs/6431.jpg": {
+   "bytes": 14345,
+   "sha256": "0e4c875f8c926ba16df20481a1ff1fd9e03e229ad62d645cf9b414fa9333c9ac"
+  },
+  "web_assets/plaque_thumbs/6432.jpg": {
+   "bytes": 16123,
+   "sha256": "07e9f5350947ce32c1e76ab69dcde86fbbe9fc1f78f7a4a68802c296e7282f2a"
+  },
+  "web_assets/plaque_thumbs/6433.jpg": {
+   "bytes": 19724,
+   "sha256": "d409423b106aeec22c76a472a0003a7fd32e1d866f1cc824ca5a17de75c65d14"
+  },
+  "web_assets/plaque_thumbs/6434.jpg": {
+   "bytes": 15005,
+   "sha256": "834ee7ed3c550ce686f8415500a0d4be48df570fd4e6509062bb98d043095288"
+  },
+  "web_assets/plaque_thumbs/6435.jpg": {
+   "bytes": 20391,
+   "sha256": "16d7acc9db32acd1abc17dab9aefe1b9c09df980993f16dd27efbcb37b7d7af0"
+  },
+  "web_assets/plaque_thumbs/6436.jpg": {
+   "bytes": 19004,
+   "sha256": "9b69e90503f92f42c8262bcb1b95272c6fd364647321c0f59d3a0d7939eafe31"
+  },
+  "web_assets/plaque_thumbs/6437.jpg": {
+   "bytes": 19275,
+   "sha256": "a10d2367550b0993c133130c42d507e9bddfe5ebc56ad83a08563dc4c452d775"
+  },
+  "web_assets/plaque_thumbs/6438.jpg": {
+   "bytes": 14598,
+   "sha256": "54390a12f785c029349e70cb3c5930e0e00c3ccf8a71d7f03e679fad4c1201bd"
+  },
+  "web_assets/plaque_thumbs/6439.jpg": {
+   "bytes": 18742,
+   "sha256": "1305f508cebeb9710c9172224756fd67e06ee5ed1808703b775d16cf3861c4a7"
+  },
+  "web_assets/plaque_thumbs/6440.jpg": {
+   "bytes": 19708,
+   "sha256": "6aa8b6101f9e3a7a0ef30e71f6d683695f13c7fc98aed619bcbc39ecd5dd3cec"
+  },
+  "web_assets/plaque_thumbs/6441.jpg": {
+   "bytes": 16061,
+   "sha256": "9ba8809e39410b1e66d6a49bc7b6d747069c4e83389d2db6d04b2b5d5f126d63"
+  },
+  "web_assets/plaque_thumbs/6444.jpg": {
+   "bytes": 18415,
+   "sha256": "90747c6e83e619e106ce22eb4bcc7daa311b29eed6379eb0a3429e010dae2efc"
+  },
+  "web_assets/plaque_thumbs/6445.jpg": {
+   "bytes": 19576,
+   "sha256": "68c86897d32f229d060f7c329268fb29f96c67165136eb9b729b71048a0ee953"
+  },
+  "web_assets/plaque_thumbs/6446.jpg": {
+   "bytes": 19924,
+   "sha256": "8a56e7acbce95655e379bcfaa03f4cf4ee3eb0197eb42c65885072c6c6bbd38b"
+  },
+  "web_assets/plaque_thumbs/6447.jpg": {
+   "bytes": 16048,
+   "sha256": "920d1594004d17b11434ac2c5089782d72c6b38dcf681bdce462277f5b4d5360"
+  },
+  "web_assets/plaque_thumbs/6448.jpg": {
+   "bytes": 14992,
+   "sha256": "99df8e9ea535cc460a255246a8bfbcff89b885652cf40d6313e78ce63737cf52"
+  },
+  "web_assets/plaque_thumbs/6449.jpg": {
+   "bytes": 15921,
+   "sha256": "667ddefa4108e98c6ea8306ae687cb0a256580198bd737aab9302926ab9e7699"
+  },
+  "web_assets/plaque_thumbs/6450.jpg": {
+   "bytes": 21219,
+   "sha256": "1a78a9b07625c7bcc39a73ae7f2da5a21d7aec100f7fd18ad08ecac683190d9e"
+  },
+  "web_assets/plaque_thumbs/6451.jpg": {
+   "bytes": 22657,
+   "sha256": "036160d2b5e6bb7ab4ea350337a0f22e602d382279f04269f3abd051db818c66"
+  },
+  "web_assets/plaque_thumbs/6452.jpg": {
+   "bytes": 17535,
+   "sha256": "f690003b8ba8b5d871e4a7db920adabbc0f1cfe99a434a9fbfe48e32fa991beb"
+  },
+  "web_assets/plaque_thumbs/6453.jpg": {
+   "bytes": 21887,
+   "sha256": "5d2362ce207820ca37889e4fb87913776c8535440f613f7eefeb841f9d38c8b0"
+  },
+  "web_assets/plaque_thumbs/6454.jpg": {
+   "bytes": 17384,
+   "sha256": "0cfe5d723c74b49e8b4d8548236411456996b5bc06eb5a634795ad92cecf8131"
+  },
+  "web_assets/plaque_thumbs/6455.jpg": {
+   "bytes": 14608,
+   "sha256": "4fdcc0adc6567af3053d228146ac11077cab0fa50cf7403d26a4bc966eea4d3a"
+  },
+  "web_assets/plaque_thumbs/6456.jpg": {
+   "bytes": 16828,
+   "sha256": "d3991099196204ecce77009481f0044958bb70e8c2f86d8989733dfb077e8b24"
+  },
+  "web_assets/plaque_thumbs/6457.jpg": {
+   "bytes": 15366,
+   "sha256": "460b2b9920839e6536c5d34479fccf4309a29820e514c783893097029db438c2"
+  },
+  "web_assets/plaque_thumbs/6458.jpg": {
+   "bytes": 15687,
+   "sha256": "647e4d55743e3bf37d3ad5b0e12504ef6554b04f34afd50ed4e3ce03c4305eff"
+  },
+  "web_assets/plaque_thumbs/6459.jpg": {
+   "bytes": 22434,
+   "sha256": "68790f761b3ea7a95e95315deb325d643b90db0a273628c57ffbd6959952cefa"
+  },
+  "web_assets/plaque_thumbs/6460.jpg": {
+   "bytes": 13519,
+   "sha256": "b3d0dfcfe7d3f8139c944ba83c28d38b8b80833c3d8226619358de631336ffa0"
+  },
+  "web_assets/plaque_thumbs/6461.jpg": {
+   "bytes": 16290,
+   "sha256": "09722c17fa56c0ff887dbd42bb264be79256c91feae7214a6c40fc2d8073bbc4"
+  },
+  "web_assets/plaque_thumbs/6462.jpg": {
+   "bytes": 15029,
+   "sha256": "90207dd898e480fcebb1afa255957d2bea5aa0c815d12dccd23d6ce46aed5d85"
+  },
+  "web_assets/plaque_thumbs/6463.jpg": {
+   "bytes": 21931,
+   "sha256": "b2d1e08ad14771d532744ac3fd54e7f47b9e92d7fd7640e2c5ff9dfeac16cfd6"
+  },
+  "web_assets/plaque_thumbs/6464.jpg": {
+   "bytes": 17692,
+   "sha256": "5ae6356d0d486e405612b789416a9f77c256efde824e535990e49df23efc32d3"
+  },
+  "web_assets/plaque_thumbs/6465.jpg": {
+   "bytes": 15351,
+   "sha256": "7ee1c11fae6b6f7b1232c39f5550368f61b50282b31a85a0c0933922669dac18"
+  },
+  "web_assets/plaque_thumbs/6466.jpg": {
+   "bytes": 16352,
+   "sha256": "89993027ca6bd6bd8d9a124e543ceb840a127d839b63d05fd034215ddbfe2320"
+  },
+  "web_assets/plaque_thumbs/6467.jpg": {
+   "bytes": 16295,
+   "sha256": "dfb13604b02976df775bb4fc1e426d15e824a3ae7a382df45860af192e959a30"
+  },
+  "web_assets/plaque_thumbs/6468.jpg": {
+   "bytes": 16391,
+   "sha256": "38741b4cf48ffeeab7f8913be5102dc6c5afe3a35f2dc195df5026982c190f86"
+  },
+  "web_assets/plaque_thumbs/6469.jpg": {
+   "bytes": 16264,
+   "sha256": "d18532d6daf4bf1ff6efb09e457d0a830a5ceea21661cf536152a903f852d62e"
+  },
+  "web_assets/plaque_thumbs/6470.jpg": {
+   "bytes": 19048,
+   "sha256": "b3063f56a6e5064e6a6e7fd4880600588a1fa851f2298e052242765b55584b5b"
+  },
+  "web_assets/plaque_thumbs/6471.jpg": {
+   "bytes": 19463,
+   "sha256": "17f0d486187576398f7d94a8698854964dbb571e1d904cf952ab8189f3d74d27"
+  },
+  "web_assets/plaque_thumbs/6472.jpg": {
+   "bytes": 19972,
+   "sha256": "2f025abc770355eb71e63cc30a73ee18d05369f9eb2bf6d17658fa726499e2d8"
+  },
+  "web_assets/plaque_thumbs/6473.jpg": {
+   "bytes": 14423,
+   "sha256": "d582c343451cfed2cd67cabfa38034bfee444ce1709b388d616f4e928a4edd5b"
+  },
+  "web_assets/plaque_thumbs/6474.jpg": {
+   "bytes": 27593,
+   "sha256": "bade7f4d8d72e62c495b98aec8c32ab06f9860f70cf1f6c098b8151fb1861b3d"
+  },
+  "web_assets/plaque_thumbs/6475.jpg": {
+   "bytes": 17895,
+   "sha256": "8f717bde934c63b0c0ad18be5a6a3094f06f61e4113b9ac5c666042f97d1e386"
+  },
+  "web_assets/plaque_thumbs/6476.jpg": {
+   "bytes": 13952,
+   "sha256": "9fbbba883630e70443a84ff98f8a0164045f82c04cc4ccad43f5a76abdd3a051"
+  },
+  "web_assets/plaque_thumbs/6477.jpg": {
+   "bytes": 16565,
+   "sha256": "906565ce223b05e47cfff981cc96ac2cda22909c4515f7cb70fc3ceaacd8e2cd"
+  },
+  "web_assets/plaque_thumbs/6478.jpg": {
+   "bytes": 16841,
+   "sha256": "1c7f4276f702073740bcfd848de61c8db854ee7277095309830cc14a05843751"
+  },
+  "web_assets/plaque_thumbs/6479.jpg": {
+   "bytes": 14604,
+   "sha256": "3e199376872a72cf18afb031f0b4f5fdc9fa5c76552b66ec579c559344aaaa13"
+  },
+  "web_assets/plaque_thumbs/6480.jpg": {
+   "bytes": 18503,
+   "sha256": "8b3003bd72774b32ca9d9dccca96b08a76acbbff2bceacac8b43c6057423ed9f"
+  },
+  "web_assets/plaque_thumbs/6481.jpg": {
+   "bytes": 22926,
+   "sha256": "0fc5b1e2154c195120f576a78acf6d6c17dd787d03665dad285e09b2c934690b"
+  },
+  "web_assets/plaque_thumbs/6482.jpg": {
+   "bytes": 17024,
+   "sha256": "bf0f9af20c7a14bb3d47a5ca0a0c30c4e1347adb1c52eaff7a3d31c0f1a52525"
+  },
+  "web_assets/plaque_thumbs/6483.jpg": {
+   "bytes": 20748,
+   "sha256": "103db7664f1d24fd76aa5a4f61f862b5c981ab5fa81a09edafd1b60f7f8ff839"
+  },
+  "web_assets/plaque_thumbs/6484.jpg": {
+   "bytes": 18831,
+   "sha256": "b292ce852b19ca467d5a5421bf28a3d6fda7b9d2f0c22249d623020dc597b0d7"
+  },
+  "web_assets/plaque_thumbs/6485.jpg": {
+   "bytes": 18633,
+   "sha256": "53d263be1122162ef29b6bf9d3e33eb2ab1cf0b263a8cde6374270b764c2984b"
+  },
+  "web_assets/plaque_thumbs/6486.jpg": {
+   "bytes": 16558,
+   "sha256": "fa233df89e3dad96a4d4ac3ee1db22d97754e1eaf4e413589457128db1b1d5a4"
+  },
+  "web_assets/plaque_thumbs/6487.jpg": {
+   "bytes": 18180,
+   "sha256": "874dc630406f5cf341dc79184d68b2c42ab69423daddc62e496a92a6d0d9d152"
+  },
+  "web_assets/plaque_thumbs/6488.jpg": {
+   "bytes": 16501,
+   "sha256": "f20a387e3aeb350e47c584a83c7a0c6d6eddad99cb42790907b1b15f0b932c54"
+  },
+  "web_assets/plaque_thumbs/6489.jpg": {
+   "bytes": 19070,
+   "sha256": "f2b68e5fe1b27d8ff355ba174dc967c08a8efd077bb3755c834c246fb2329915"
+  },
+  "web_assets/plaque_thumbs/6490.jpg": {
+   "bytes": 18155,
+   "sha256": "0b741eaf1a24f3770d145b2aece819ceca19efebe5f8190b9c20bae37d140a50"
+  },
+  "web_assets/plaque_thumbs/6491.jpg": {
+   "bytes": 15804,
+   "sha256": "eeed760bf5422c6092c888c3d6fc78be898487fdac037954e97900a660ad946b"
+  },
+  "web_assets/plaque_thumbs/6492.jpg": {
+   "bytes": 21362,
+   "sha256": "9aec5756a4a65463351299b4f86e63983585c9ac6f8c9de0e5dd83f97646e986"
+  },
+  "web_assets/plaque_thumbs/6493.jpg": {
+   "bytes": 16999,
+   "sha256": "8d7ca993218af9c1d2b1ca1dc6ff442927f53375fa6e9594a8497a041774e661"
+  },
+  "web_assets/plaque_thumbs/6494.jpg": {
+   "bytes": 18984,
+   "sha256": "9513e3fde4bba093ae162bd501175bac9e058af30796afb9470f34bdd02700b7"
+  },
+  "web_assets/plaque_thumbs/6495.jpg": {
+   "bytes": 20538,
+   "sha256": "cb4d36229744a10a5b8a70773bce180201ab8b90c187c024d69562d8bf5b2f5a"
+  },
+  "web_assets/plaque_thumbs/6496.jpg": {
+   "bytes": 19731,
+   "sha256": "96534a0d65838547e06652c0fb098859a960eb57fed7108f6fe1470b0413a9c6"
+  },
+  "web_assets/plaque_thumbs/6497.jpg": {
+   "bytes": 17684,
+   "sha256": "743880a08f3722c2223f89667020c00ea03be692c082b686e1f54083d93ee4ea"
+  },
+  "web_assets/plaque_thumbs/6498.jpg": {
+   "bytes": 19105,
+   "sha256": "03adb01398bf92163bdcd5168b30a863071d30ad8762616b129b81d066d7e9b6"
+  },
+  "web_assets/plaque_thumbs/6499.jpg": {
+   "bytes": 24647,
+   "sha256": "29c9cfc4bf0021c2c5adf4907780dc9b0acd33588c6461c65492ac0be3dc0f6d"
+  },
+  "web_assets/plaque_thumbs/6500.jpg": {
+   "bytes": 19750,
+   "sha256": "99d77ad567d22cea1db71169b4514f825ff6c8fc359028cc37a96a1c699bcb14"
+  },
+  "web_assets/plaque_thumbs/6501.jpg": {
+   "bytes": 17806,
+   "sha256": "fb511629e7cbed8faa6a4c1b6112fa44e1a3b9070738cd78d182674736687783"
+  },
+  "web_assets/plaque_thumbs/6502.jpg": {
+   "bytes": 20272,
+   "sha256": "fe6ac78bbe8cd7a1d7219eeff95b1c163c7045c9342d965c32c60b6041f4d21c"
+  },
+  "web_assets/plaque_thumbs/6503.jpg": {
+   "bytes": 17685,
+   "sha256": "c21c8d4dcb49d90feb0b1d978e45f5933f2e5866a9c16a8ae8eae1b954e8fbaf"
+  },
+  "web_assets/plaque_thumbs/6504.jpg": {
+   "bytes": 21111,
+   "sha256": "8141aca3cf558c4023faf3ebe4464be28faa6b71e0e4aba2118c013758ef6a48"
+  },
+  "web_assets/plaque_thumbs/6505.jpg": {
+   "bytes": 17088,
+   "sha256": "a2ccc6f6fea94c223b1abbb67c7af3a86c1a4ba1686dbb7f3fb191c19c62cbad"
+  },
+  "web_assets/plaque_thumbs/6506.jpg": {
+   "bytes": 18293,
+   "sha256": "6f25a9855ff3b46c818699426247c019d57fa2cb93e2907d7443614c0352a305"
+  },
+  "web_assets/plaque_thumbs/6507.jpg": {
+   "bytes": 16487,
+   "sha256": "3cba336622d9ff0c20a28f1f78f7dd20205b01641e39d6f17e92d9507b1dc780"
+  },
+  "web_assets/plaque_thumbs/6508.jpg": {
+   "bytes": 15390,
+   "sha256": "3b64fa0cb777fbdfc96832091811ddaafa0bf4e2f322c71a1419e76ff79bca49"
+  },
+  "web_assets/plaque_thumbs/6509.jpg": {
+   "bytes": 20528,
+   "sha256": "5f91ef1128279706d779cf813373bb134196f0d7592142b1e9942d69509211c3"
+  },
+  "web_assets/plaque_thumbs/6510.jpg": {
+   "bytes": 20341,
+   "sha256": "97d1ff49d31716fefee3deb363380443c62a4527dcfb781ec1992c9e28c132da"
+  },
+  "web_assets/plaque_thumbs/6511.jpg": {
+   "bytes": 18538,
+   "sha256": "b8e9a4d995f72acc279745ab0349ad28b3b4b6bfc9ff7c79e5b60514b4df00c7"
+  },
+  "web_assets/plaque_thumbs/6512.jpg": {
+   "bytes": 14124,
+   "sha256": "22a6247b17557ffa5c4094e4053b070b8df6b03c8cfeaf57cc9336728081f788"
+  },
+  "web_assets/plaque_thumbs/6513.jpg": {
+   "bytes": 17871,
+   "sha256": "e3c806a0b738f66fdcca0e70da46461eb63ce092b58be7b971d5242e15013f9f"
+  },
+  "web_assets/plaque_thumbs/6514.jpg": {
+   "bytes": 23140,
+   "sha256": "74eb43b00a1c7876cc32d20c3b3fea69f5e7b300e855f1e7c8d0450f58215284"
+  },
+  "web_assets/plaque_thumbs/6515.jpg": {
+   "bytes": 19690,
+   "sha256": "d23053a82a4c8e8b9b88d0deed8977071a4c16c4773f47bd7a0a4720cf189c24"
+  },
+  "web_assets/plaque_thumbs/6516.jpg": {
+   "bytes": 16990,
+   "sha256": "69697401482cb11a466946da52a859e3c46511dbc16dc23ad37151ba64c4e3e7"
+  },
+  "web_assets/plaque_thumbs/6517.jpg": {
+   "bytes": 18388,
+   "sha256": "f9710b8700cf3a23ecdb1f80925684219a96872ebf09acb73078070ca6d0b08f"
+  },
+  "web_assets/plaque_thumbs/6518.jpg": {
+   "bytes": 15619,
+   "sha256": "7aee5fd25f232c706e722d1d879a419f6bb8e2219096e3c6550d601fa404a484"
+  },
+  "web_assets/plaque_thumbs/6519.jpg": {
+   "bytes": 18847,
+   "sha256": "9193c5372c874427ae3d3df567eb8b136f02640af507dc7f75d91a70cec78362"
+  },
+  "web_assets/plaque_thumbs/6520.jpg": {
+   "bytes": 19689,
+   "sha256": "10e8d75a7e12b832e7aaaffa0817b2d688ab84afe798dca53af995b68aca20ec"
+  },
+  "web_assets/plaque_thumbs/6521.jpg": {
+   "bytes": 22231,
+   "sha256": "a9e4695b7c970d3af38640577dee2ded5cd4b8addf868cf5aed9dbd8e8efd2cc"
+  },
+  "web_assets/plaque_thumbs/6522.jpg": {
+   "bytes": 21891,
+   "sha256": "5dfbdf6c5448dc167789c197cf33cce422b17ca0e519a951f660937d5d96dbe8"
+  },
+  "web_assets/plaque_thumbs/6523.jpg": {
+   "bytes": 19976,
+   "sha256": "81b4ac9edea436ef1432a789a0c34321114a9ac896ae6c8cabc370e5ce915255"
+  },
+  "web_assets/plaque_thumbs/6524.jpg": {
+   "bytes": 20341,
+   "sha256": "5faa4c585fcb713b1145eddf5505841d3062dad8e863a40048a75c34a006f9db"
+  },
+  "web_assets/plaque_thumbs/6525.jpg": {
+   "bytes": 17233,
+   "sha256": "712f305889604ebb57d65f50395ce10fea635476b12af4d7a1a00e500c955f6e"
+  },
+  "web_assets/plaque_thumbs/6526.jpg": {
+   "bytes": 17122,
+   "sha256": "d5a52bf95f5944c1ee3a7406a7103776247b1a848fa1d004194f502c68b2d2f6"
+  },
+  "web_assets/plaque_thumbs/6527.jpg": {
+   "bytes": 13391,
+   "sha256": "31b5c6ccdec0ccbe022185c44a647cdbe4356faadf7bfcada24af02ad55dd051"
+  },
+  "web_assets/plaque_thumbs/6529.jpg": {
+   "bytes": 21841,
+   "sha256": "6a2df03a9db1c5dfef951c9791fad101fdb4c2d31dc5be022c4a78df0e59c401"
+  },
+  "web_assets/plaque_thumbs/6530.jpg": {
+   "bytes": 20480,
+   "sha256": "8a06a826e9be6218ef93c323404e0166e22414cfb049f96dfb201e1213203703"
+  },
+  "web_assets/plaque_thumbs/6531.jpg": {
+   "bytes": 14808,
+   "sha256": "a61f8f15aed69a06976d5fb39fa2edaec6986985d2d450f79370105df69d1d38"
+  },
+  "web_assets/plaque_thumbs/6532.jpg": {
+   "bytes": 16102,
+   "sha256": "14950ca76f0635bde2b4fcb7bf467637c89a5d072e23ef5693021cd387523c08"
+  },
+  "web_assets/plaque_thumbs/6533.jpg": {
+   "bytes": 21327,
+   "sha256": "4b08aabe4eaf840e57325ed3dc94278ec9f0ab3db73be6877c96888a96df33df"
+  },
+  "web_assets/plaque_thumbs/6534.jpg": {
+   "bytes": 16261,
+   "sha256": "8cddd5e772f808e2196f8c2c7a7454fb9bc2c21c9f26b9b795f991ef840b597e"
+  },
+  "web_assets/plaque_thumbs/6535.jpg": {
+   "bytes": 18481,
+   "sha256": "8254113f31c7bea9070a23942b91149e7dedf7883dc899e7c0468ed1b4ac8d59"
+  },
+  "web_assets/plaque_thumbs/6536.jpg": {
+   "bytes": 18066,
+   "sha256": "ceb4ab34b00caf9ad4c336f22372707731424a09fb7d09a7dcf5574cf64d34c2"
+  },
+  "web_assets/plaque_thumbs/6537.jpg": {
+   "bytes": 20722,
+   "sha256": "03cccafc4052941c3a2164c1a31e15729ee98d06d637cc5a67cd28102f3e0a4a"
+  },
+  "web_assets/plaque_thumbs/6538.jpg": {
+   "bytes": 19163,
+   "sha256": "b567a84c3913ece3825d42f80a30bdef22a5979fe3892e1665a283ecfbc70775"
+  },
+  "web_assets/plaque_thumbs/6539.jpg": {
+   "bytes": 19528,
+   "sha256": "c98857f17c53b07c97211a9aa73ea402cfc772d188dc74b94438ea41023dd9af"
+  },
+  "web_assets/plaque_thumbs/6540.jpg": {
+   "bytes": 14989,
+   "sha256": "7d27e92e0bffcea982fc9aa2ff23725a11d9eb2421a5f65c93ac73e798b3e0b6"
+  },
+  "web_assets/plaque_thumbs/6541.jpg": {
+   "bytes": 18487,
+   "sha256": "8ac1c56638283d57894ad40a6685231de807955f370f69d24ddd038a17d7cc6f"
+  },
+  "web_assets/plaque_thumbs/6542.jpg": {
+   "bytes": 23073,
+   "sha256": "182a890d47df19abdcab75ad4e739a2b323874075882fa556a78181897f5a03b"
+  },
+  "web_assets/plaque_thumbs/6543.jpg": {
+   "bytes": 18376,
+   "sha256": "d415b8250fe1ebcfc46a1fffffea095c659713964a1cbe102ef34c337dacdf00"
+  },
+  "web_assets/plaque_thumbs/6544.jpg": {
+   "bytes": 19185,
+   "sha256": "3a17c18b1b724da06095518ed6c1327c0509ec01a5470c09f6f333ca00d5ec77"
+  },
+  "web_assets/plaque_thumbs/6545.jpg": {
+   "bytes": 24114,
+   "sha256": "1aa10338c4ce528bc8044b77fa8eb00aeceba69976239e5b78c48c53e95e3de1"
+  },
+  "web_assets/plaque_thumbs/6546.jpg": {
+   "bytes": 18891,
+   "sha256": "97870f7b154fe843c94466934cad0cb74aff39aacb9ac211abfa6f875886484b"
+  },
+  "web_assets/plaque_thumbs/6547.jpg": {
+   "bytes": 17514,
+   "sha256": "16683bbd752d2408824018ecc0c5a0737294e40406c69d81c6baba4dc6b4d327"
+  },
+  "web_assets/plaque_thumbs/6548.jpg": {
+   "bytes": 18036,
+   "sha256": "b2f640a1fe132dd5f8d844225726bb2f08ef506cc290ddc53dfdd343692efb4a"
+  },
+  "web_assets/plaque_thumbs/6549.jpg": {
+   "bytes": 17769,
+   "sha256": "5f68abf073e8f70e34990e2377c51d398fc8e11dabba49835e5519361b51d842"
+  },
+  "web_assets/plaque_thumbs/6550.jpg": {
+   "bytes": 19044,
+   "sha256": "378fcc6e9050c31a616641a25ca538f753ff38b0eec3249bcd8cdc4631f9fd4a"
+  },
+  "web_assets/plaque_thumbs/6551.jpg": {
+   "bytes": 19625,
+   "sha256": "a8ded98accbc4edf71fdc5f9941b38dbe93993c3e0fdd78f96f1189fcfc0586b"
+  },
+  "web_assets/plaque_thumbs/6552.jpg": {
+   "bytes": 15457,
+   "sha256": "70527c309eb9dc9eca97c60bbd6b89babd0276bfcfaa44e8686729ea61b0b640"
+  },
+  "web_assets/plaque_thumbs/6553.jpg": {
+   "bytes": 17358,
+   "sha256": "9642800b811eaf01ab51aba2a676b45d5dfb964dc9484dcf75b5de77fda41e3c"
+  },
+  "web_assets/plaque_thumbs/6554.jpg": {
+   "bytes": 18461,
+   "sha256": "931ab20dfa54c120bad959dfb0bdd21e2b16640627852f0bc52278cebd2a35db"
+  },
+  "web_assets/plaque_thumbs/6555.jpg": {
+   "bytes": 17402,
+   "sha256": "afec130ac71815e443320451e16c68040e287043622dc7592ed2d648a4f9a72c"
+  },
+  "web_assets/plaque_thumbs/6556.jpg": {
+   "bytes": 19155,
+   "sha256": "2938e58db038459107b310d2ff0ec8d105962b66147ac08332cca5d03d5853ed"
+  },
+  "web_assets/plaque_thumbs/6557.jpg": {
+   "bytes": 21772,
+   "sha256": "2c1d58dc3afdad2bfe636bf6154a76bf77dc0c47e4098acfff110b55fdcfe89d"
+  },
+  "web_assets/plaque_thumbs/6558.jpg": {
+   "bytes": 17624,
+   "sha256": "5f3a22de118d79093a9235cb649881ed878f0752abff8d4147b50dd1b9342364"
+  },
+  "web_assets/plaque_thumbs/6559.jpg": {
+   "bytes": 17969,
+   "sha256": "a6e576f8b01a6fd393f5d91e3677369e229ac6593d4490ca70d95a239e294ae5"
+  },
+  "web_assets/plaque_thumbs/6560.jpg": {
+   "bytes": 19589,
+   "sha256": "55ca4520279d10cd3e356f23981d5e343bff3759884564d897ee34335cedf019"
+  },
+  "web_assets/plaque_thumbs/6561.jpg": {
+   "bytes": 14875,
+   "sha256": "318e8ccb1f4748c7ff96b9776457905fb05a2e371d703278631a2a6075cdda57"
+  },
+  "web_assets/plaque_thumbs/6562.jpg": {
+   "bytes": 14731,
+   "sha256": "827f7b5210142f43f8b28ce85b44290afb9242db5924be690681131738c14993"
+  },
+  "web_assets/plaque_thumbs/6563.jpg": {
+   "bytes": 16351,
+   "sha256": "24f37f6fb8daa11d1f3f557d203551c77049252f66183ddde8bebd37c38d9ec6"
+  },
+  "web_assets/plaque_thumbs/6564.jpg": {
+   "bytes": 18369,
+   "sha256": "617d4fb564dd4b75762ed45f18315e3e2237bea59fb0bf384279fd193c3d1b78"
+  },
+  "web_assets/plaque_thumbs/6565.jpg": {
+   "bytes": 16197,
+   "sha256": "45226ec8f4d4eead4f158175f2fa8f22f4647fb3bd57199cd8fd8041e4f48041"
+  },
+  "web_assets/plaque_thumbs/6566.jpg": {
+   "bytes": 18042,
+   "sha256": "61aa7154927661bdae5c3b694abe0a3ef5daf38ee904f183d11efe140ec82e0d"
+  },
+  "web_assets/plaque_thumbs/6567.jpg": {
+   "bytes": 13448,
+   "sha256": "19c1efdd9d99f6ce4b36d784dfdabdaf64b4ed54f98ec72f638a760da7e306c5"
+  },
+  "web_assets/plaque_thumbs/6568.jpg": {
+   "bytes": 16153,
+   "sha256": "554337b20b4364ef7b2661ccde7c53a8c071ccd504b256e8258504da565a929b"
+  },
+  "web_assets/plaque_thumbs/6569.jpg": {
+   "bytes": 17704,
+   "sha256": "0cdbd98dc5c94ac1b02060ca80f619e993bee6c3c73ccb2b62d861c7fc5ac4ad"
+  },
+  "web_assets/plaque_thumbs/6570.jpg": {
+   "bytes": 17281,
+   "sha256": "3ba360fa52057064a03e371bfd37b0bdb144f0a15dbba53e6f2fa4e0f3934b30"
+  },
+  "web_assets/plaque_thumbs/6571.jpg": {
+   "bytes": 13708,
+   "sha256": "dbaed9acbf9bfa7fdc5ace7d898449a1b1e842740d739b6f8833e16589e64ef9"
+  },
+  "web_assets/plaque_thumbs/6572.jpg": {
+   "bytes": 15571,
+   "sha256": "5f14aced97f6541728930f85c3e21a1323e4756fc6a57897620bf7e62978a4fa"
+  },
+  "web_assets/plaque_thumbs/6573.jpg": {
+   "bytes": 16954,
+   "sha256": "bc32f58dc384ab8f161dd36f20c81add1437b8a8620a94bd5e7136b72cf4a8db"
+  },
+  "web_assets/plaque_thumbs/6574.jpg": {
+   "bytes": 13916,
+   "sha256": "ab47155a5a64bd2f6fe8062a0e2bd6e135be9b0fe06c4c5ce60a71b81c5dc19e"
+  },
+  "web_assets/plaque_thumbs/6575.jpg": {
+   "bytes": 16414,
+   "sha256": "cbd459df9119024ed3dc34f566546412e691e3ce5311a208e851903ccede2cf6"
+  },
+  "web_assets/plaque_thumbs/6576.jpg": {
+   "bytes": 16020,
+   "sha256": "904af5fc78868b4ea0f89a56aec44f46095b4f4baea34089eebe5ab98c5933f0"
+  },
+  "web_assets/plaque_thumbs/6577.jpg": {
+   "bytes": 18281,
+   "sha256": "16575ab7ba3cd3df8748429328f0008a42eccffa58e365300b64bb39397a6598"
+  },
+  "web_assets/plaque_thumbs/6578.jpg": {
+   "bytes": 18136,
+   "sha256": "a85eb22f818eeb846166abf29ab9cc0526ff86244ea946598990fb35ea982f3b"
+  },
+  "web_assets/plaque_thumbs/6579.jpg": {
+   "bytes": 12899,
+   "sha256": "6d8f399f659d74761fdb54ec1c727739bc98c299bc3f63e297251b38738ba522"
+  },
+  "web_assets/plaque_thumbs/6580.jpg": {
+   "bytes": 15770,
+   "sha256": "5f7325620bcff672747e365b921c3bc78d53b82b577a6eb370d91cfa4206457c"
+  },
+  "web_assets/plaque_thumbs/jack-lee-9131.jpg": {
+   "bytes": 7111,
+   "sha256": "6b07e12655c031c176983c8726f5818f7b6fc93c720900a800c90a0f1e9d528d"
+  },
+  "web_assets/production_plaques/2009-football-team_2026-09-25_production_6e7ef689.jpg": {
+   "bytes": 545324,
+   "sha256": "70bda833acaea448711067d6e91335cfef015d58e4b8e8938c0c834ecb49c75f"
+  },
+  "web_assets/production_plaques/ann-degenstein_2026-10-07_designer_313304bf.jpg": {
+   "bytes": 287802,
+   "sha256": "49c8c7f4ea8e88994e52f6a902aff7b0eb4904877a55fa9e8b18ff3829d3f163"
+  },
+  "web_assets/production_plaques/ann-thomas_2026-09-25_production_dfadfbcc.jpg": {
+   "bytes": 512055,
+   "sha256": "a7d9e327cb9e8a728e3b577a0957d146595d2d06cb58a19552547b83f3e9c8e2"
+  },
+  "web_assets/production_plaques/annette-echikunwoke_2026-08-24_production_aad7dcb6.jpg": {
+   "bytes": 411495,
+   "sha256": "988af43ded059d4092e5d5299648704ef5be4e081abcc8e58f675888e2f4d851"
+  },
+  "web_assets/production_plaques/antwan-peek_2026-09-25_production_ba02828f.jpg": {
+   "bytes": 464922,
+   "sha256": "f17ce59af0e17d0e94a093f5f0ad9028c11ff5a38582d7328b9d76d0e8cab541"
+  },
+  "web_assets/production_plaques/bob-huggins_2026-09-25_production_15714d26.jpg": {
+   "bytes": 499016,
+   "sha256": "e57ceefd50b2c3acfc49b1b1127109e6cc870fc9a4dce3c56d825f2a54174283"
+  },
+  "web_assets/production_plaques/chris-wineberg_2026-09-25_production_09ff0252.jpg": {
+   "bytes": 438468,
+   "sha256": "f56229d9f37f7769dffecd61b4b244c136f84b6064d7f35b22570a85c78c3e93"
+  },
+  "web_assets/production_plaques/christy-hoffman_2026-09-25_production_c612d87a.jpg": {
+   "bytes": 504249,
+   "sha256": "8cac039ea25756474736cbe761a0bf62a26cf41117c80d2fb9d2b8bdfecc510c"
+  },
+  "web_assets/production_plaques/connor-barwin_2026-09-25_production_38883e18.jpg": {
+   "bytes": 491499,
+   "sha256": "adc1fa3a36155e8e31ae8595946f7615b1056d7e8afcb52bc127b58b291a9904"
+  },
+  "web_assets/production_plaques/corie-blount_2026-09-25_production_00aca85f.jpg": {
+   "bytes": 485742,
+   "sha256": "79b2df43900413b3a36259c681c99ba5c9b9a51bd328525b80a347d41bf3832e"
+  },
+  "web_assets/production_plaques/dan-hoard_2026-09-25_production_e8a58f6e.jpg": {
+   "bytes": 532789,
+   "sha256": "2ae43f141c4bc1f27522ab550d57faceb292f62bea99d7a067c51b42257511b6"
+  },
+  "web_assets/production_plaques/doris-scott_2026-10-07_designer_35da0fed.jpg": {
+   "bytes": 240482,
+   "sha256": "4ab0963e32b8075c39ca6bf351afbc4309e2be54bd499bf9c5cf4d851acdfd03"
+  },
+  "web_assets/production_plaques/herb-jones_2026-10-07_production_afa5e7b1.jpg": {
+   "bytes": 400504,
+   "sha256": "48fe150f8c54b65c54a882ddf9671678922237a47dec2ea1f840e200e50add01"
+  },
+  "web_assets/production_plaques/jacqueline-keire_2026-10-07_designer_3fae067e.jpg": {
+   "bytes": 357957,
+   "sha256": "46f2e4ff9d179575c4217dbd15304b3764f0942a92c64dcdc8bf7cbaa6549937"
+  },
+  "web_assets/production_plaques/jason-kelce_2026-10-07_designer_8399c661.jpg": {
+   "bytes": 373210,
+   "sha256": "f05b4bd0f27bf5198cad6920649eeff8ae68de1b67f9d607abef4c68d3f0e0c5"
+  },
+  "web_assets/production_plaques/jessie-nevitt_2026-08-20_production_271a166d.jpg": {
+   "bytes": 438347,
+   "sha256": "0a68f726305167c88de6f7e4099911b2f23f07b313384e281b612a49f3361873"
+  },
+  "web_assets/production_plaques/jim-herman_2026-10-07_designer_87739b37.jpg": {
+   "bytes": 246050,
+   "sha256": "e3af4902426a72e2f7092eda70715f26f4cd0958270b4ac725ac15689c902b01"
+  },
+  "web_assets/production_plaques/jim-stanley_2026-10-07_designer_2d6328e5.jpg": {
+   "bytes": 284100,
+   "sha256": "f79e66057b600830242e511af9a514393b11417443e3e9992dbaef20bfa078b7"
+  },
+  "web_assets/production_plaques/jordan-thompson_2026-10-07_designer_7d64373e.jpg": {
+   "bytes": 316574,
+   "sha256": "6b1e2a7e121d9bc3f724a78c730b58f9274f61c74525276d3c836c570a081876"
+  },
+  "web_assets/production_plaques/kara-molony_2026-10-07_designer_55730734.jpg": {
+   "bytes": 332762,
+   "sha256": "c1f7640a34c54a7279de2fd7afef4c04023f11422863cb20281bd87c01d970f8"
+  },
+  "web_assets/production_plaques/kathy-klump_2026-10-07_designer_fbf7f157.jpg": {
+   "bytes": 401753,
+   "sha256": "ec43b48c80053c3e2a6a59b0a00784e0d5bf74221cd2d3b5ea4bee2872760c89"
+  },
+  "web_assets/production_plaques/kb-sharp_2026-09-25_production_62bc85e9.jpg": {
+   "bytes": 314077,
+   "sha256": "2d38e8d16e6b9cb75694783b83a59c19fb64a3805de3c7063a5f3481a230c71f"
+  },
+  "web_assets/production_plaques/laura-lauder_2026-10-07_designer_36de3ee2.jpg": {
+   "bytes": 319192,
+   "sha256": "974707f3f2515ec77e13bbfaaaad8d5995cf5f5b3911695c2e980775ec322734"
+  },
+  "web_assets/production_plaques/laurie-pirtle_2026-10-07_designer_4b4a9624.jpg": {
+   "bytes": 394514,
+   "sha256": "f810134090f5c93ff365b23f7bc8cacd7919f9de97b2fb85db07459a3a210e65"
+  },
+  "web_assets/production_plaques/loretta-blaut_2026-09-25_production_f2edca2d.jpg": {
+   "bytes": 491814,
+   "sha256": "cdd35e7bf51898c7e43d2cf863c508a97af708e6afd7c637c891f518a858c7fc"
+  },
+  "web_assets/production_plaques/mardy-gilyard_2026-09-25_production_41c3e081.jpg": {
+   "bytes": 439663,
+   "sha256": "890f7642da8c4162161121667d5a2a308f89d3c4ea5f0f190f837f1c56a26618"
+  },
+  "web_assets/production_plaques/meridy-glenn_2026-08-10_production_8762b92a.jpg": {
+   "bytes": 527230,
+   "sha256": "ce9c2d2a114b1d93584ef50c8e0b17334e707a191f8147b27ce6bcce65a4af0a"
+  },
+  "web_assets/production_plaques/michelle-macpherson-hojnacki_2026-10-07_designer_3f92d178.jpg": {
+   "bytes": 338524,
+   "sha256": "fb4c78d28b909bb86f4668cf15e1f9e21fbfd085d5e9ea95d8f0aa6eb5245730"
+  },
+  "web_assets/production_plaques/mike-kinnett_2026-09-25_production_c198a4cc.jpg": {
+   "bytes": 403641,
+   "sha256": "3cb318369ac0e346c7357fb27680f778c64fdc5c6974d6279fcc364cf2b98dc5"
+  },
+  "web_assets/production_plaques/mike-mickens_2026-09-15_production_a1f01973.jpg": {
+   "bytes": 457956,
+   "sha256": "53a4d71823845eff8e2694a38d725e5827295d6e14df200cd48ecd48f2949547"
+  },
+  "web_assets/production_plaques/mike-woods_2026-08-20_production_072984dd.jpg": {
+   "bytes": 418800,
+   "sha256": "3e10d27651d22af031a169598e3d75d155127e20bb0366b69b49b4c5df46bcd9"
+  },
+  "web_assets/production_plaques/nick-van-exel_2026-10-07_designer_e76fd543.jpg": {
+   "bytes": 370228,
+   "sha256": "3e97ac539a73daed0999fa789e5c1b574faec483f6759fa0f63a51795b5e04e3"
+  },
+  "web_assets/production_plaques/omar-cummings_2026-09-25_production_0784324b.jpg": {
+   "bytes": 463890,
+   "sha256": "75ebcd384fe1c615d46f3c0a23c21a50712642060df9f5bac13a927e6e442c61"
+  },
+  "web_assets/production_plaques/sean-kilpatrick_2026-08-11_production_4a35d5cb.jpg": {
+   "bytes": 386378,
+   "sha256": "664ae0eb676d900fabc861c7a3df546550802905d3209f9b8e30a85167c88dc6"
+  },
+  "web_assets/production_plaques/tom-marvaso_2026-09-25_production_be375fc6.jpg": {
+   "bytes": 290237,
+   "sha256": "4b96e81644615ab2c4590ee9b0a78286e24917ef4b02366c9466ac1ea94ef31e"
+  },
+  "web_assets/production_plaques/tony-pike_2026-09-25_production_02bd3fdd.jpg": {
+   "bytes": 517212,
+   "sha256": "bce7f5f2ab7c21583804c59bad9dbfe9a113ff1bea2c9823f34e6f38a9dd491f"
+  },
+  "web_assets/production_plaques/trent-cole_2026-09-25_production_65b5a7d6.jpg": {
+   "bytes": 496677,
+   "sha256": "c46b803dd2a4ed03eb9c52abd9ae46578790edf4d0c279a8ac0d016668d82d1f"
+  },
+  "web_assets/production_plaques/trish-ladusaw_2026-10-07_designer_96e58b98.jpg": {
+   "bytes": 358147,
+   "sha256": "e206156a7a46344cf2115d1c13a7b5e41fa7cc6ecf8a096c10ba97fa15cfc4a6"
+  },
+  "web_assets/production_plaques/vanessa-gilles_2026-09-25_production_bf500e89.jpg": {
+   "bytes": 300295,
+   "sha256": "6d8057a4f73567e0ffbf91c2bc1429f900c3418e5ef4cb8ef29187ea1a99f62b"
+  },
+  "web_assets/production_plaques/wayne-mason_2026-09-25_production_56f3dcd4.jpg": {
+   "bytes": 411177,
+   "sha256": "3ca4d98190905287878a56ad6fa4be15fce9169121e444631cc5c50a996549ac"
+  },
+  "web_assets/thumbs/2009-football-team_2026-09-25_production_6e7ef689.jpg": {
+   "bytes": 32555,
+   "sha256": "76564c4aaca639d6d343657ca15c40ca45fb124417705b3aaac6f13fbc740812"
+  },
+  "web_assets/thumbs/ann-degenstein_2026-10-07_designer_313304bf.jpg": {
+   "bytes": 18482,
+   "sha256": "561f40cf1ceadd3848b9e6362ec68b9fa07c11685f524836e1bc17870d677b37"
+  },
+  "web_assets/thumbs/ann-thomas_2026-09-25_production_dfadfbcc.jpg": {
+   "bytes": 27925,
+   "sha256": "6ff55a4154b8c8fa43e09f6f0e00307026fef0a5168d5dcb5da2f0f5131bade6"
+  },
+  "web_assets/thumbs/annette-echikunwoke_2026-08-24_production_aad7dcb6.jpg": {
+   "bytes": 21943,
+   "sha256": "cc393afb8ecc33e2ec80decbe1a9156cc89140f7929db8efc81a7c5ccff8d1a2"
+  },
+  "web_assets/thumbs/antwan-peek_2026-09-25_production_ba02828f.jpg": {
+   "bytes": 27026,
+   "sha256": "0c4df9760108340c5bf746f5b2741d8dcc7e02bad92a490982ab84c4894ebd13"
+  },
+  "web_assets/thumbs/bob-huggins_2026-09-25_production_15714d26.jpg": {
+   "bytes": 27240,
+   "sha256": "0682c6c956172432a163e2b14845a9d278431f9dbf88f6d7478eab27c0abe6b8"
+  },
+  "web_assets/thumbs/chris-wineberg_2026-09-25_production_09ff0252.jpg": {
+   "bytes": 25130,
+   "sha256": "0e476a5be04803b0a6a713d504e98f628a266e366fd1026cf21ac83e58b8a940"
+  },
+  "web_assets/thumbs/christy-hoffman_2026-09-25_production_c612d87a.jpg": {
+   "bytes": 28628,
+   "sha256": "d18d2b0a98c7de3c3db8a3f4b49cab20708215fbd0ddd0deaff28f218769615c"
+  },
+  "web_assets/thumbs/connor-barwin_2026-09-25_production_38883e18.jpg": {
+   "bytes": 28199,
+   "sha256": "51377ad2db87b35fb8b61d10a94fe4388dc6e08bc7a7544d21d4749c66e260b6"
+  },
+  "web_assets/thumbs/corie-blount_2026-09-25_production_00aca85f.jpg": {
+   "bytes": 27144,
+   "sha256": "756e47e21e3a8b8bb164b1cf00891b0f3ae0fffe981f08bcf1bf167dec4f2634"
+  },
+  "web_assets/thumbs/dan-hoard_2026-09-25_production_e8a58f6e.jpg": {
+   "bytes": 29996,
+   "sha256": "64111d4cc8e8cf19f9b50d8732f45eda9141fc039524c82403e3f3532f254769"
+  },
+  "web_assets/thumbs/doris-scott_2026-10-07_designer_35da0fed.jpg": {
+   "bytes": 16406,
+   "sha256": "5a41200fa0427cbeb3a999893202cd3479bccbca64cf8933acce2249edca34dd"
+  },
+  "web_assets/thumbs/herb-jones_2026-10-07_production_afa5e7b1.jpg": {
+   "bytes": 16602,
+   "sha256": "100f4b7baef701af30ebadda7d696e20688948b57abc3a011513934a674c099e"
+  },
+  "web_assets/thumbs/jacqueline-keire_2026-10-07_designer_3fae067e.jpg": {
+   "bytes": 22065,
+   "sha256": "775ba408a51e4b0819c5128788f7539e2df810267bf5b50a27d0cfa325785211"
+  },
+  "web_assets/thumbs/jason-kelce_2026-10-07_designer_8399c661.jpg": {
+   "bytes": 23045,
+   "sha256": "ae1cf246ad71ad28d97792d51bf71fcc37009237f2d4b5b8e11e6a32cb30c58e"
+  },
+  "web_assets/thumbs/jessie-nevitt_2026-08-20_production_271a166d.jpg": {
+   "bytes": 21373,
+   "sha256": "4762cd189f856da5d96e2359830387180a364ce560eeff97ca60d523061add52"
+  },
+  "web_assets/thumbs/jim-herman_2026-10-07_designer_87739b37.jpg": {
+   "bytes": 15031,
+   "sha256": "1237376346e01abe88b17a1a12c36a92c12f0717abbaabdc4bcf04c5bdf6d022"
+  },
+  "web_assets/thumbs/jim-stanley_2026-10-07_designer_2d6328e5.jpg": {
+   "bytes": 17753,
+   "sha256": "675a0a8112559676335c88ffd1348000a93cf4d2d0a70f67c1a1b40f8f79a94b"
+  },
+  "web_assets/thumbs/jordan-thompson_2026-10-07_designer_7d64373e.jpg": {
+   "bytes": 21632,
+   "sha256": "e072d079737d41533c5bef7025e491853bec9ca43886d374175e4059652422e1"
+  },
+  "web_assets/thumbs/kara-molony_2026-10-07_designer_55730734.jpg": {
+   "bytes": 20932,
+   "sha256": "3fab3d0757b3e4ab911aece59452068857221310fe8592d33312ea111a5f258b"
+  },
+  "web_assets/thumbs/kathy-klump_2026-10-07_designer_fbf7f157.jpg": {
+   "bytes": 24486,
+   "sha256": "5f6fbb89219d1143c3998ada0be16e2b237a784c4ba88d89077a1258921fc704"
+  },
+  "web_assets/thumbs/kb-sharp_2026-09-25_production_62bc85e9.jpg": {
+   "bytes": 19312,
+   "sha256": "822f5c91b1b0e9e066df8448bfd1fec3d8f5bea6712a9a7a26d009373ea91fc8"
+  },
+  "web_assets/thumbs/laura-lauder_2026-10-07_designer_36de3ee2.jpg": {
+   "bytes": 21144,
+   "sha256": "fceeafc5588c2f158c8c34b4fadeb26b448786e5e5a1eee43a86c7560e788ded"
+  },
+  "web_assets/thumbs/laurie-pirtle_2026-10-07_designer_4b4a9624.jpg": {
+   "bytes": 24184,
+   "sha256": "6b36560585aa5ceffc38777b1cdbe72e34f4cfdfdb78841da773e663342e44ae"
+  },
+  "web_assets/thumbs/loretta-blaut_2026-09-25_production_f2edca2d.jpg": {
+   "bytes": 26898,
+   "sha256": "1e06fde8b5c8fca6a14a4c92172ae41a37a403ce4bb2e4b095ad0376457b182a"
+  },
+  "web_assets/thumbs/mardy-gilyard_2026-09-25_production_41c3e081.jpg": {
+   "bytes": 25002,
+   "sha256": "cd72191ecf404ba9a1c6a84b652b06092b628acb57ede00e306338b1cd47129b"
+  },
+  "web_assets/thumbs/meridy-glenn_2026-08-10_production_8762b92a.jpg": {
+   "bytes": 24131,
+   "sha256": "03648a1aa78c2a4bc40f4a66815ab5f0e9e4c650d78fa010f3bd66c963a14b31"
+  },
+  "web_assets/thumbs/michelle-macpherson-hojnacki_2026-10-07_designer_3f92d178.jpg": {
+   "bytes": 22191,
+   "sha256": "74bb987b8ec2fafb34f0901bd8848b0d12a1e67aab485442e7fef0a6c8651618"
+  },
+  "web_assets/thumbs/mike-kinnett_2026-09-25_production_c198a4cc.jpg": {
+   "bytes": 23233,
+   "sha256": "d19b42d70c268b814ec05f337443dfc951de91d15fc9c4d977be36003f6ec57f"
+  },
+  "web_assets/thumbs/mike-mickens_2026-09-15_production_a1f01973.jpg": {
+   "bytes": 21677,
+   "sha256": "2e9426cea23120648cc9ca171ef326709cf5e4b95d25da6d0063737c5f4a56fa"
+  },
+  "web_assets/thumbs/mike-woods_2026-08-20_production_072984dd.jpg": {
+   "bytes": 22368,
+   "sha256": "8efc94066ac8f482e64edd72446ac2af50ab545cb3ab79f3802bf561c23772b0"
+  },
+  "web_assets/thumbs/nick-van-exel_2026-10-07_designer_e76fd543.jpg": {
+   "bytes": 22409,
+   "sha256": "4ec5007d848524105fe5b768c1e8e951d69d9e7c2ff4dfc1baffb7047f516eb5"
+  },
+  "web_assets/thumbs/omar-cummings_2026-09-25_production_0784324b.jpg": {
+   "bytes": 26796,
+   "sha256": "261f6a4539d3ccac5f389acee038faef460aa4c79fc02bd5ffb0df96d676a40b"
+  },
+  "web_assets/thumbs/sean-kilpatrick_2026-08-11_production_4a35d5cb.jpg": {
+   "bytes": 18688,
+   "sha256": "39a256dfd373b3e487041aa9094f34d9a84df839b56ce8e6d1171be508b22767"
+  },
+  "web_assets/thumbs/tom-marvaso_2026-09-25_production_be375fc6.jpg": {
+   "bytes": 17097,
+   "sha256": "7d5e2a2118b35ed5b92151e484d614eac7a3586919c7986b5441417ea93d24fa"
+  },
+  "web_assets/thumbs/tony-pike_2026-09-25_production_02bd3fdd.jpg": {
+   "bytes": 28428,
+   "sha256": "ac791a8ec9ddcc90be61051401416435b47d11614d218abcb4a059cde0efa0cb"
+  },
+  "web_assets/thumbs/trent-cole_2026-09-25_production_65b5a7d6.jpg": {
+   "bytes": 25418,
+   "sha256": "50b1a9c7bd4e633a89fce0322bc19b20ca431280a420c5c24dd19062676116e9"
+  },
+  "web_assets/thumbs/trish-ladusaw_2026-10-07_designer_96e58b98.jpg": {
+   "bytes": 20726,
+   "sha256": "e62a0ba435afbe40951345432e60c2b3fee42112b07833a55fe2081a324afd19"
+  },
+  "web_assets/thumbs/vanessa-gilles_2026-09-25_production_bf500e89.jpg": {
+   "bytes": 16893,
+   "sha256": "bbaf7df33f2b01453f9e3c40f4c9986be3af915f1b8be757fb5822b4c7ef0d4f"
+  },
+  "web_assets/thumbs/wayne-mason_2026-09-25_production_56f3dcd4.jpg": {
+   "bytes": 23206,
+   "sha256": "6e03e81c64e9e262e55b84a5701d2d8a9163f0eee1a54f34d327f51898d68962"
+  },
+  "web_assets/wall_panorama_2026-09-30.jpg": {
+   "bytes": 507967,
+   "sha256": "637c90f1586c13a3a58e402d311f6f0b720eef94fc5c1bad3e3d65670f1ea783"
+  }
+ }
+}

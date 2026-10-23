@@ -36,4 +36,4 @@ for (const file of readdirSync(root).filter(n => /^uc-hof-dashboard.*\.js$/.test
   assert.equal(await load(profile), preview, `${file}: profile preview still caches`);
   assert.equal(requests.length, 1, `${file}: only the actual profile was fetched once`);
 }
-console.log('PASS: all six loaders skip class/search/generated pages and unsourced images; individual profile loading/cache retained');
+console.log('PASS: all loaders skip class/search/generated pages and unsourced images; individual profile loading/cache retained');
