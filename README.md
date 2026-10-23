@@ -33,4 +33,4 @@ The baseline option additionally verifies unchanged layout and runtime outside t
 4. Preview, then publish through WMT. Check 229 records, the 2026 class, Mary Wineberg/Annette Echikunwoke/Loretta Blaut sport labels, the two championship teams, genuine Field Hockey entries, search/filters and detail panels on desktop and mobile.
 5. Confirm the public page after publication. Repository merge alone is not evidence of publication.
 
-No final print/banner artwork is changed by this update. The three conflicting historical induction dates remain unresolved, and 2026 portraits are not invented.
+No final print/banner artwork is changed by this update, and 2026 portraits are not invented. UC's archived October 2006 Hall of Fame roster corroborates Joe Morrison (1978), John Pease (1980) and Sid Gillman (1981); their contradictory biography closings are corrected while the existing index years are retained.

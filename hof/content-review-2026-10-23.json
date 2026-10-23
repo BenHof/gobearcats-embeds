@@ -436,6 +436,45 @@
         "https://gobearcats.com/news/2012/10/12/the-2012-legion-of-excellence-inductees-are-announced"
       ],
       "reason": "Separate the 1962 championship team from the prior season instead of merging both teams' biographies."
+    },
+    {
+      "id": "3d1c2d5a-0de2-4ec4-bbbf-1fb2371ada83",
+      "originalName": "Joe Morrison",
+      "changes": {
+        "bio": "Long before he attained the title \"Mr. Versatility\" as a professional, he demonstrated his variety of skills as a Bearcat. Began his career as a quarterback, leading the team in passing as a freshman. Moved to halfback as a sophomore and was the team's top ground-gainer his junior campaign. Also led UC in receiving in 1958 and was the team scoring leader his freshman and junior seasons. Rugged member of the secondary who led UC in interceptions in three of his four seasons. Returned a pair of interceptions for touchdowns as a freshman, scoring from 87 and 88 yards. Held UC career interception return yardage record when he graduated, a mark since tied. Closed his career as UC's all-time leading scorer (127 points). Earned All-Missouri Valley Conference honors as a sophomore. Played in the North-South, Senior Bowl and College All-Star games. Selected in the third round of the 1959 NFL Draft by the New York Giants and continued to display his versatility during his 13 seasons with the club, setting team records as a receiver. Successful head coach on the major college level. UC Athletic Hall of Fame 1978."
+      },
+      "remove": [],
+      "evidence": [
+        "https://s3.us-east-2.amazonaws.com/sidearm.nextgen.sites/gobearcats.com/documents/2006/10/20/HallofFamers-asof102006.pdf",
+        "https://s3.us-east-2.amazonaws.com/sidearm.nextgen.sites/gobearcats.com/documents/2020/7/15/06cincinnati.pdf"
+      ],
+      "reason": "Archived UC October 2006 Hall of Fame roster and 2006 football media guide corroborate the existing index year. Correct the contradictory biography closing, retaining metadata."
+    },
+    {
+      "id": "87664f2d-4f7d-4fca-b59b-68cec80194e8",
+      "originalName": "John Pease",
+      "changes": {
+        "bio": "Outstanding football player who continued his love of the Bearcats through lifetime support of the program. Three-year letterwinner as a rugged lineman. Team captain as a senior. Inducted into the Sigma Sigma honorary. One of the founders of UNOCIN, an early organization that raised financial support for football. UC Athletic Hall of Fame 1980."
+      },
+      "remove": [],
+      "evidence": [
+        "https://s3.us-east-2.amazonaws.com/sidearm.nextgen.sites/gobearcats.com/documents/2006/10/20/HallofFamers-asof102006.pdf",
+        "https://s3.us-east-2.amazonaws.com/sidearm.nextgen.sites/gobearcats.com/documents/2020/7/15/06cincinnati.pdf"
+      ],
+      "reason": "Archived UC October 2006 Hall of Fame roster and 2006 football media guide corroborate the existing index year. Correct the contradictory biography closing, retaining metadata."
+    },
+    {
+      "id": "dc54f9a4-785e-4a29-8bfc-9d4873633bfa",
+      "originalName": "Sid Gillman",
+      "changes": {
+        "bio": "Sid Gillman was the architect of what is considered the greatest era of UC football. His teams compiled a 50-13-1 record in six seasons, won three Mid-American Conference championships and played in a pair of bowl games. Originator of the passing game now considered the West Coast Offense, Gillman began developing that attack while at UC, earning national aerial game rankings. Left UC to become head coach of the Los Angeles Rams and launch a pro coaching career. UC Athletic Hall of Fame 1981."
+      },
+      "remove": [],
+      "evidence": [
+        "https://s3.us-east-2.amazonaws.com/sidearm.nextgen.sites/gobearcats.com/documents/2006/10/20/HallofFamers-asof102006.pdf",
+        "https://s3.us-east-2.amazonaws.com/sidearm.nextgen.sites/gobearcats.com/documents/2020/7/15/06cincinnati.pdf"
+      ],
+      "reason": "Archived UC October 2006 Hall of Fame roster and 2006 football media guide corroborate the existing index year. Correct the contradictory biography closing, retaining metadata."
     }
   ],
   "additions": [
@@ -592,10 +631,6 @@
     "Pat Murray Shibinski"
   ],
   "holds": [
-    {
-      "subject": "Joe Morrison / John Pease / Sid Gillman",
-      "reason": "Official profile induction metadata conflict with biography closing dates. Existing metadata and text retained until archival evidence resolves them."
-    },
     {
       "subject": "Jonathan Ruffin",
       "reason": "Original 2011 announcement and profile support retaining 2011; 2012 announcement repeats him. No arbitrary year change."
