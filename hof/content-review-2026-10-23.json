@@ -404,22 +404,17 @@
         "gb_url_type": "class_article",
         "current_gb_url": "https://gobearcats.com/news/2011/08/17/2011-james-p-kelly-uc-athletics-hall-of-fame-class-announced",
         "current_gb_url_type": "class_article",
-        "image_status": "not_sourced",
         "bio_source_type": "gobearcats_class_announcement",
         "bio_source_urls": [
           "https://gobearcats.com/news/2011/08/17/2011-james-p-kelly-uc-athletics-hall-of-fame-class-announced"
         ],
         "bio_enhanced_at": "2026-10-23"
       },
-      "remove": [
-        "image_url",
-        "image_source",
-        "image_credit"
-      ],
+      "remove": [],
       "evidence": [
         "https://gobearcats.com/news/2011/08/17/2011-james-p-kelly-uc-athletics-hall-of-fame-class-announced"
       ],
-      "reason": "The original 2011 announcement names the 1960-61 team. Remove the misidentified 1962-63 team photograph instead of reusing it."
+      "reason": "The original 2011 announcement names the 1960-61 team. Remove the misidentified 1962-63 team photograph instead of reusing it. The 1962-63 photograph was later replaced with the 1960-61 national championship team photo from Canto (1960-61MBKBTeamBW.jpg)."
     },
     {
       "id": "f76ffd36-84c8-45af-9695-e7478a5be24b",

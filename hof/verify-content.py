@@ -48,7 +48,7 @@ for path in files:
     check("1960-61 Men's Basketball Team" in names and
           "1962-63 Men's Basketball Team" not in names, prefix + 'wrong 2011 team')
     if "1960-61 Men's Basketball Team" in names:
-        check('image_url' not in names["1960-61 Men's Basketball Team"],
+        check('1962-63' not in names["1960-61 Men's Basketball Team"].get('image_url', ''),
               prefix + 'wrong-season photograph was retained')
     for update in review['updates']:
         row = index.get(update['id'], {})
@@ -75,9 +75,15 @@ for path in files:
                   (row[field] if isinstance(row[field], list) else [row[field]])}
         check(set(data[key]) == values and len(data[key]) == len(values),
               prefix + key + ': filter coverage or duplicate option')
+    image_keys = {'image_url', 'image_source', 'image_credit', 'image_status', 'image_source_page_url'}
     for added in review['additions']:
-        check(index.get(added['id']) == added, prefix + added['name'] + ': incomplete addition')
-        check('image_url' not in index.get(added['id'], {}),
+        row = index.get(added['id'], {})
+        check({k: v for k, v in row.items() if k not in image_keys} ==
+              {k: v for k, v in added.items() if k not in image_keys},
+              prefix + added['name'] + ': incomplete addition')
+        # A portrait is allowed only once it has been sourced from Canto or GoBearcats.
+        check('image_url' not in row or (row.get('image_status') == 'primary_image_present'
+                                         and row.get('image_source') in ('canto', 'gobearcats_current_article')),
               prefix + added['name'] + ': unsupported portrait')
     if args.baseline:
         before, old_wrapper = parse(args.baseline / 'hof' / path.name)
