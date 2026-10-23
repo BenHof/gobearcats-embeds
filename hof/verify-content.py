@@ -58,8 +58,13 @@ for path in files:
             check(key not in row, prefix + update['originalName'] + ': remove ' + key)
     for row in rows:
         check(all(row.get(k) for k in ('id', 'name', 'last_name', 'initial', 'sports',
-                                      'category', 'year', 'decade', 'bio', 'gb_url')),
+                                      'category', 'year', 'decade', 'bio')),
               prefix + row['name'] + ': required metadata missing')
+        # An empty link is allowed only when no official GoBearcats page exists.
+        check(bool(row.get('gb_url')) or row.get('gb_url_type') == 'none',
+              prefix + row['name'] + ': link missing')
+        check(row.get('gb_url_type') != 'search' and 'web.archive.org' not in row.get('gb_url', ''),
+              prefix + row['name'] + ': placeholder link')
         check(row['sport_display'] == ', '.join(row['sports']),
               prefix + row['name'] + ': sports/display mismatch')
         check(row['decade'] == str(row['year'] // 10 * 10) + 's',
