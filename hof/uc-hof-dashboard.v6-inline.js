@@ -103,7 +103,7 @@
       }
 
       records.forEach(r => {
-        if (!r.gb_url) {
+        if (!r.gb_url && r.gb_url_type !== 'none') {
           r.gb_url = officialUrlFor(r);
           r.gb_url_type = 'generated';
         } else if (!r.gb_url_type) {
