@@ -39,6 +39,18 @@
     root.appendChild(frame);
   }
 
+  // The wall reports what visitors do there (plaques opened, tour, shares); pass it to the site's Google Analytics.
+  window.addEventListener('message', e => {
+    const d = e.data;
+    if (e.origin !== WALL_ORIGIN || !d || d.type !== 'uc-hof:event' || typeof window.gtag !== 'function') return;
+    if (!/^hof3d_[a-z_]{1,32}$/.test(String(d.name))) return;
+    const params = {};
+    Object.entries(d.params || {}).forEach(([k, v]) => {
+      if (/^[a-z_]{1,24}$/.test(k) && /^(string|number|boolean)$/.test(typeof v)) params[k] = typeof v === 'string' ? v.slice(0, 100) : v;
+    });
+    window.gtag('event', d.name, params);
+  });
+
   // A new #plaque= on this page flies the loaded wall there instead of reloading it.
   window.addEventListener('hashchange', () => {
     const frame = document.querySelector('#' + ROOT_ID + ' iframe');

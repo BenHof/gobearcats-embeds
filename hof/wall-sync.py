@@ -94,8 +94,37 @@ EMBED_HEAD = """<style id="gobearcats-embed">
   @media (max-width: 900px) { html.embedded .band { padding:8px 10px; } html.embedded .hdr-ctl #hl-select { flex:1 1 auto; min-width:0; max-width:none; } }
   @media (max-width: 1280px) and (min-width: 901px) { .band .kicker { font-size:7.5px; letter-spacing:.08em; } .band h1 { font-size:20px; } .hdr-ctl #hl-select { max-width:192px; } .hdr-ctl #goto { max-width:150px; } }
   @media (max-width: 1180px) and (min-width: 901px) { .band #search-wrap { min-width:120px; flex-basis:120px; } .hdr-ctl #goto { max-width:128px; } #search-wrap kbd { display:none; } .hdr-ctl #tour-btn { padding:7px 9px; } }
+  html.no3d .hdr-ctl, html.no3d #search-wrap, html.no3d #dock, html.no3d #mapctl, html.no3d .legend { display:none !important; }
+  #status[data-fallback] { max-width:min(440px, calc(100vw - 32px)); text-align:center; }
+  #status .no3d-btn { display:inline-block; margin-top:14px; padding:10px 15px; border-radius:4px; background:var(--red); color:#fff; font:700 12px/1 var(--f-body); letter-spacing:.08em; text-decoration:none; }
 </style>
 <script>try { if (window.self !== window.top && !/[?&]full=1/.test(location.search)) document.documentElement.classList.add('embedded'); } catch (e) { document.documentElement.classList.add('embedded'); }</script>
+<script>
+(function () {   // no WebGL 2, a script error or a long stall: say so and point to the directory instead of "Loading" forever
+  var SITE = 'https://gobearcats.com';
+  function webgl2() { try { return !!document.createElement('canvas').getContext('webgl2'); } catch (e) { return false; } }
+  function fallback(reason) {
+    var s = document.getElementById('status');
+    if (!s || s.getAttribute('data-fallback')) return;
+    s.setAttribute('data-fallback', reason);
+    document.documentElement.classList.add('no3d');
+    s.innerHTML = 'The 3D wall can\\u2019t load here' +
+      '<small>It needs a browser with 3D graphics (WebGL 2), such as a current Chrome, Safari, Edge or Firefox.</small>' +
+      '<a class="no3d-btn" href="' + SITE + '/hof" target="_top">Browse the Inductee Directory</a>';
+    s.querySelector('a').addEventListener('click', function (e) {   // inside the dashboard, switch its tab instead of reloading the page
+      if (!document.documentElement.classList.contains('embedded')) return;
+      e.preventDefault();
+      parent.postMessage({ type: 'uc-hof:directory' }, SITE);
+    });
+    try { if (parent !== window) parent.postMessage({ type: 'uc-hof:event', name: 'hof3d_unsupported', params: { reason: reason } }, SITE); } catch (e) {}
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    if (!webgl2()) return fallback('no_webgl2');
+    window.addEventListener('error', function () { if (document.getElementById('status')) fallback('script_error'); });
+    setTimeout(function () { if (document.getElementById('status')) fallback('timeout'); }, 30000);
+  });
+})();
+</script>
 """
 # The Hide stairs option survives in the build but its checkbox is hidden; these buttons drive it, so a
 # visitor can clear the staircase that stands between the camera and much of the wall. The toolbar
@@ -122,7 +151,77 @@ STAIRS_JS = """
     camera.setViewOffset(w, h, 0, Math.max(0, h / 2 - (above + below) / 2), w, h);
   };
   new MutationObserver(fit).observe(side, { attributes: true, attributeFilter: ['style'] });
-  addEventListener('resize', () => requestAnimationFrame(fit)); }"""
+  addEventListener('resize', () => requestAnimationFrame(fit)); }
+{ const track = (name, params = {}) => {   // gobearcats.com forwards these to its Google Analytics
+    try { if (parent !== window) parent.postMessage({ type: 'uc-hof:event', name, params }, 'https://gobearcats.com'); } catch (e) {} };
+  window.ucHofTrack = track;
+  let lastSlot = null;
+  const replace = history.replaceState.bind(history);
+  history.replaceState = (st, title, url) => {   // opening a plaque rewrites the hash to #plaque=<slot>
+    replace(st, title, url);
+    const m = /#plaque=([^&]+)/.exec(String(url || '')), id = m && decodeURIComponent(m[1]);
+    if (id && id !== lastSlot && SLOT[id]) { lastSlot = id; track('hof3d_plaque_view', { slot: id, inductee: SLOT[id].name }); }
+  };
+  document.addEventListener('click', e => {
+    const share = e.target.closest('#copy-3d-link');
+    if (share) track('hof3d_share', { slot: share.dataset.slot });
+    if (e.target.closest('#side-body a[href^="https://gobearcats.com/"]')) track('hof3d_profile_click', { slot: state.selected || '' });
+    if (e.target.closest('.stairs-toggle')) setTimeout(() => track('hof3d_stairs', { hidden: document.getElementById('opt-hide-stairs').checked }), 0);
+  }, true); }"""
+# The planner's scenarios (restored backers, the 2026 run in today's gaps, touch-panel mock-ups) are
+# still in the page and were reachable with #scn=, #opts=, #tp= links. Only #plaque= and #ref= are read.
+HASH_GET = ("const hashGet = key => { const m = new RegExp('[#&]' + key + '=([^&]*)').exec(location.hash); "
+            "return m ? decodeURIComponent(m[1]) : null; };")
+HASH_GET_PUBLIC = ("const hashGet = key => { if (key !== 'plaque' && key !== 'ref') return null;   // public build: no planning scenarios by URL\n"
+                   "  const m = new RegExp('[#&]' + key + '=([^&]*)').exec(location.hash); return m ? decodeURIComponent(m[1]) : null; };")
+# The tour spent its first three stops on the elevator lobby and architecture, and its plaque stop
+# misplaced Kelce and Barwin. The public tour walks the wall and stops at each Class of 2026 plaque;
+# every line comes from the inductee's official announcement.
+TOUR_START = "const TOUR_STOPS = ["
+TOUR_OLD_MARK = "Elevator Doors & Concourse Entrance"
+TOUR_JS = """const tourAt = id => {   // stand back from a plaque, level with it, so its neighbours frame it
+  const s = SLOT[id], o = slotObjs[id], p = worldPos(s);
+  const n = new THREE.Vector3(0, 0, 1).applyQuaternion(o.group.getWorldQuaternion(new THREE.Quaternion()));
+  return { pos: p.clone().addScaledVector(n, 1.35), look: p };
+};
+const tourPlaque = (id, title, sub, desc) => ({ title, sub, desc, pos: () => tourAt(id).pos, look: () => tourAt(id).look, fov: 50, dur: 1.5, stay: 6500 });
+const TOUR_STOPS = [
+  { title: 'The Hall of Fame Wall', sub: 'Lindner Center · Fourth-Floor Concourse', fov: FOV0, dur: 1.6, stay: 7000,
+    pos: () => new THREE.Vector3(OV_X, 1.7, 8.4), look: () => new THREE.Vector3(OV_X, 1.3, 0),
+    desc: 'Every plaque on this wall honors a member of the James P. Kelly UC Athletics Hall of Fame, from the first class in 1976 to the 50th anniversary Class of 2026.' },
+  { title: 'The C-Paw Wall', sub: 'Columns 1–15', fov: 58, dur: 1.6, stay: 6500,
+    pos: () => new THREE.Vector3(colX(7.5), EYE, 2.2), look: () => new THREE.Vector3(colX(7.5), 1.65, 0),
+    desc: 'The first 15 columns hang on the UC Red wall beneath the C-Paw. Four members of the Class of 2026 are here.' },
+  tourPlaque('main-c01-r-1', 'Christy Hoffman', 'Class of 2026 · Women’s Soccer',
+    'The program’s career leader in shutouts and goalkeeper wins, Hoffman guided UC to its first NCAA Sweet Sixteen.'),
+  tourPlaque('main-c04-r5', 'Wayne Mason', 'Class of 2026 · Men’s Track and Field',
+    'A 1980 First Team All-American in the 110-meter hurdles, Mason finished fifth at that year’s Olympic Trials.'),
+  tourPlaque('main-c07-r0', 'Bob Huggins', 'Class of 2026 · Men’s Basketball Coach',
+    'Cincinnati’s winningest coach with 399 victories, Huggins led the Bearcats to 14 NCAA Tournaments and the 1992 Final Four.'),
+  tourPlaque('main-c14-r0', 'Loretta Blaut', 'Class of 2026 · Women’s Track and Field',
+    'A six-time All-American high jumper, Blaut was NCAA runner-up indoors and outdoors in 2018.'),
+  { title: 'Under the Hall of Fame Letters', sub: 'Columns 16–36', fov: 62, dur: 1.8, stay: 6500,
+    pos: () => new THREE.Vector3(colX(22), EYE, STAND + 0.4), look: () => new THREE.Vector3(colX(23), 1.45, 0),
+    desc: 'The wall continues on brushed gray beneath the HALL OF FAME lettering, where two more 2026 inductees hang.' },
+  tourPlaque('main-c21-r0', 'Mike Kinnett', 'Class of 2026 · Baseball',
+    'UC’s career batting average leader at .372, Kinnett hit .407 as a sophomore in 1985.'),
+  tourPlaque('main-c36-r2', 'Connor Barwin', 'Class of 2026 · Football and Men’s Basketball',
+    'Barwin led the BIG EAST with 11.0 sacks in 2008, then played 10 NFL seasons and earned Pro Bowl honors.'),
+  { title: 'The Concourse Feature Panel', sub: '31 Plaques', fov: 54, dur: 1.6, stay: 6500,
+    pos: () => panelCentre.clone().addScaledVector(panelNormal, STAND).setY(EYE), look: () => panelCentre.clone(),
+    desc: 'Beside the stairs, a separate panel holds 31 more plaques, including the last member of the Class of 2026.' },
+  tourPlaque('panel-c02-r5', 'Jason Kelce', 'Class of 2026 · Football',
+    'A walk-on who became a two-time All-BIG EAST lineman, Kelce went on to six All-Pro selections and a Super Bowl title with the Eagles.')
+];
+"""
+TRACK_HOOKS = [
+    ("function startTour(fromIdx = 0) {",
+     "function startTour(fromIdx = 0) {\n  if (window.ucHofTrack) ucHofTrack('hof3d_tour_start', { from_stop: fromIdx + 1 });"),
+    ("  if (idx < 0 || idx >= TOUR_STOPS.length) { stopTour(); return; }",
+     "  if (idx < 0 || idx >= TOUR_STOPS.length) { if (idx >= TOUR_STOPS.length && window.ucHofTrack) ucHofTrack('hof3d_tour_complete'); stopTour(); return; }"),
+    ("document.getElementById('status').remove();",
+     "document.getElementById('status').remove();\nif (window.ucHofTrack) ucHofTrack('hof3d_loaded', { mode: document.documentElement.classList.contains('embedded') ? 'dashboard' : 'full_page' });"),
+]
 # Two full-height atrium columns stand where the stairs were once they are hidden; the code cites photos
 # (CRW_3507, CRW_3515) that are not in the workspace, so their placement is unconfirmed. Hide them too.
 COLUMN_ANCHOR = "    colMesh.receiveShadow = true;\n    atriumGroup.add(colMesh);"
@@ -255,6 +354,14 @@ def public_page(w, bios, profiles):
     w = replace_once(w, *SHARE_URL, "share link")
     for old, new in LIGHTING:
         w = replace_once(w, old, new, "lighting")
+    w = replace_once(w, HASH_GET, HASH_GET_PUBLIC, "planning links")
+    start = w.find(TOUR_START)
+    end = w.find("\n];\n", start)
+    if start < 0 or end < 0 or w.count(TOUR_START) != 1 or TOUR_OLD_MARK not in w[start:end]:
+        sys.exit("guided tour: the TOUR_STOPS block changed; update wall-sync.py.")
+    w = w[:start] + TOUR_JS + w[end + len("\n];\n"):]
+    for old, new in TRACK_HOOKS:
+        w = replace_once(w, old, new, "analytics hooks")
     w = replace_once(w, BIO_LINK, PROFILE_LINK, "bio link")
     w = replace_once(w, "function profileLinks(name, sport, yr, slotId) {",
                      "const PROFILE = " + json.dumps(profiles, sort_keys=True) + ";\nfunction profileLinks(name, sport, yr, slotId) {",
