@@ -261,6 +261,9 @@ BIO_LINK = ("    + `<a class=\"btn\" style=\"color:#333;border-color:#d4d4d8;bac
 PROFILE_LINK = ("    + (PROFILE[slotId] ? `<a class=\"btn\" style=\"color:#333;border-color:#d4d4d8;background:#fff;padding:7px 11px;"
                 "text-decoration:none;border-radius:4px\" href=\"${esc(PROFILE[slotId])}\" target=\"_blank\" rel=\"noopener\">"
                 "More on GoBearcats.com ↗</a>` : '')")
+# A second, gray C-Paw supergraphic sat just past column 35, out on the glass beyond the wall's edge,
+# where there is no graphic in the building. The dark red one on the red section stays.
+GLASS_CPAW = "placeCpaw(1.9, 0x3d4249, colX(35) + PW / 2 + 0.62, 1.2);\n"
 SEARCH_PLACEHOLDER = ('placeholder="Find a Bearcat legend, sport, or class year…"', 'placeholder="Search inductees…"')
 
 
@@ -354,6 +357,7 @@ def public_page(w, bios, profiles):
     w = replace_once(w, '<span class="hof-pill">231 Legends</span>', '', "231 Legends label")
     w = replace_once(w, *SEARCH_PLACEHOLDER, "search placeholder")
     w = replace_once(w, COLUMN_ANCHOR, COLUMN_NAMED, "atrium columns")
+    w = replace_once(w, GLASS_CPAW, "", "gray C-Paw past the wall")
     w = replace_once(w, *SHARE_URL, "share link")
     for old, new in LIGHTING:
         w = replace_once(w, old, new, "lighting")
